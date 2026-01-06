@@ -92,7 +92,7 @@ export default async function BlogPage({
         </div>
       </div>
 
-      <div className="px-4 py-4 bottom-dashed sticky top-16 z-10 bg-background">
+      <div className="px-4 py-4 bottom-dashed sticky top-16 z-10 backdrop-blur-md">
         <Toc toc={toc} />
       </div>
 

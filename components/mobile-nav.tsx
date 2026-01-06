@@ -55,7 +55,7 @@ export function MobileNav() {
         </Button>
       </PopoverTrigger>
       <PopoverContent
-        className="bg-background/90 no-scrollbar h-(--radix-popper-available-height) w-(--radix-popper-available-width) overflow-y-auto rounded-none border-none p-0 shadow-none backdrop-blur"
+        className="no-scrollbar h-(--radix-popper-available-height) w-(--radix-popper-available-width) overflow-y-auto rounded-none border-none p-0 shadow-none backdrop-blur-md"
         align="center"
         side="bottom"
         sideOffset={17}
