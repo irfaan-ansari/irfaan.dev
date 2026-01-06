@@ -1,0 +1,99 @@
+---
+title: "Hand Wave Animation in React Using Motion and Tailwind CSS"
+summary: "Learn how to build a reusable animated SVG component in React using Motion and Tailwind CSS, adding subtle, natural motion to modern user interfaces."
+publishedAt: "2026-01-01"
+tags: ["Next.js", "Motion", "Tailwind CSS", "Frontend", "Animations"]
+featured: true
+readTime: "8 min read"
+thumbnail: "/creating-a-hand-wave-animation-in-react-using-motion.png"
+---
+
+Thoughtful micro-interactions can transform a static interface into something more welcoming and human. In this project, I built a hand-wave animation component using React, Motion, and Tailwind CSS to demonstrate how subtle motion can improve user experience without overwhelming the design.
+
+In this post, we’ll create a reusable animated SVG component using Motion to handle animation states and transitions.
+
+## Objective
+
+- Animate a standard SVG icon using Motion
+- Keep the animation smooth and natural
+- Make the component reusable across different parts of an application
+
+## Tech Stack
+
+- `Next.js` App Router
+- `Motion` for animation control
+- `Tailwind` CSS for styling and sizing
+- `SVG` for scalable, crisp visuals
+
+## Component Structure
+
+The animation is applied directly to the SVG itself using `motion.svg`.
+
+```tsx
+<motion.svg
+  fill="none"
+  viewBox="0 0 16 16"
+  className={cn("size-4", className)}
+>
+```
+
+Instead of using a regular SVG element with additional CSS keyframe animations, this component uses `motion.svg`, which provides built-in animation capabilities such as `initial`, `animate`, and `transition` props.
+
+## Styling and Reusability
+
+The SVG uses currentColor, allowing it to inherit text color from its parent.
+Sizing is handled via Tailwind `size-4` by default, and the optional `className` prop allows full customization.
+
+## Wave Animation Logic
+
+The waving motion is created using a sequence of rotation values combined with subtle scaling:
+
+```ts
+animate={{
+  rotate: [0, 20, -10, 20, -5, 0],
+  scale: [1, 1.2, 1.2, 1],
+}}
+```
+
+Instead of a single rotation, multiple angles are used to simulate a natural hand wave.
+The slight scale increase adds a sense of energy without being distracting.
+
+## Timing and Loop Behavior
+
+```ts
+transition={{
+  duration: 1,
+  repeat: Infinity,
+  times: [0, 0.2, 0.8, 1],
+  repeatDelay: 2,
+  ease: "easeInOut",
+}}
+```
+
+- 1 second per wave
+- Infinite looping
+- 2 second pause between waves
+- Smooth easing for a natural feel
+
+This timing ensures the animation feels friendly and intentional, not repetitive or noisy.
+
+## Live Demo: How It Feels in the UI
+
+<Preview>
+  <WaveIcon className="size-6" />
+</Preview>
+
+## Here’s the complete code
+
+<include cwd lang="tsx">
+  ./components/icons/wave-icon.tsx
+</include>
+
+Notice the `use client` directive at the top of the file. This is necessary because
+Motion uses browser APIs that are unavailable in server components.
+
+## Final Thoughts
+
+This hand-wave animation is a small but intentional detail designed to add personality without distraction. By combining Motion’s animation control with Tailwind’s styling flexibility, the result is a clean, expressive UI component suitable for real-world production use.
+
+Micro-interactions like this can make interfaces feel more approachable—and often, that’s what users remember most.

@@ -1,0 +1,138 @@
+---
+title: "Scalable Modal Management in React with Zustand"
+summary: "Managing modals in React often becomes messy as apps grow—prop drilling, duplicated state, and unclear ownership quickly creep in"
+publishedAt: "2026-01-01"
+tags: ["React", "Zustand", "Shadcn", "Frontend", "JavaScript"]
+featured: true
+readTime: "9 min read"
+thumbnail: "/scalable-modal-management-react-zustand.png"
+---
+
+Managing multiple modals in React can get messy if each modal has its own state. Zustand makes it simple to centralize modal state, and pairing it with ShadCN Dialogs gives a polished, accessible UI out-of-the-box.
+
+We’ll walk through a step-by-step approach to make your modals scalable, maintainable, and easy to use.
+
+## Install Zustand
+
+```bash
+npm install zustand
+```
+
+## Create a Central Modal Store
+
+```ts title='lib/modalStore.ts'
+import { create } from "zustand";
+
+type AppModal = "login" | "signup" | "feedback";
+
+interface ModalManager {
+  modals: Record<AppModal, boolean>;
+  openModal: (modal: AppModal) => void;
+  closeModal: (modal: AppModal) => void;
+  toggleModal: (modal: AppModal) => void;
+  isOpen: (modal: AppModal) => boolean;
+}
+
+export const useModalManager = create<ModalManager>((set, get) => ({
+  modals: {
+    login: false,
+    signup: false,
+    feedback: false,
+  },
+
+  openModal: (modal) =>
+    set(({ modals }) => ({ modals: { ...modals, [modal]: true } })),
+
+  closeModal: (modal) =>
+    set(({ modals }) => ({ modals: { ...modals, [modal]: false } })),
+
+  toggleModal: (modal) =>
+    set(({ modals }) => ({ modals: { ...modals, [modal]: !modals[modal] } })),
+
+  isOpen: (modal) => get().modals[modal],
+}));
+```
+
+### What’s happening here:
+
+- `modals`: Tracks which modal is currently open.
+- `openModal`, `closeModal`, `toggleModal`: Easy functions to control modals anywhere.
+- `isOpen`: Quick check to see if a modal is visible.
+
+## Create Modal Components Using shadcn Components
+
+```tsx title='login-modal.tsx'
+import React from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  DialogClose,
+} from "@/components/ui/dialog";
+import { useModalManager } from "@/lib/modalStore";
+
+export const LoginModal = () => {
+  const { isOpen, toggleModal } = useModalManager();
+
+  return (
+    <Dialog open={isOpen("login")} onOpenChange={() => toggleModal("login")}>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Login</DialogTitle>
+        </DialogHeader>
+        <p>Welcome back! Please enter your credentials.</p>
+        {/* login form */}
+        <DialogClose>Close</DialogClose>
+      </DialogContent>
+    </Dialog>
+  );
+};
+```
+
+Similarly, you can create `SignupModal` and `FeedbackModal` by changing the modal key and content.
+
+## Open Modals from Anywhere
+
+```tsx title='header-actions.tsx'
+import React from "react";
+import { useModalManager } from "@/lib/modalStore";
+
+export const HeaderActions = () => {
+  const { openModal } = useModalManager();
+
+  return (
+    <div className="flex gap-2">
+      <button className="btn" onClick={() => openModal("login")}>
+        Login
+      </button>
+      <button className="btn" onClick={() => openModal("signup")}>
+        Signup
+      </button>
+      <button className="btn" onClick={() => openModal("feedback")}>
+        Feedback
+      </button>
+    </div>
+  );
+};
+```
+
+No prop drilling required! You can open modals from anywhere in your app.
+
+## Benefits of This Approach
+
+1. Centralized state: All modal states live in `useModalManager`.
+2. Type-safe keys: Only valid modal names (`login`, `signup`, `feedback`) are allowed.
+3. Reusable logic: `openModal`, `closeModal`, `toggleModal` can be used anywhere.
+4. Shadcn Dialogs: Built-in accessibility, animations, and styling.
+
+## Wrapping Up
+
+By combining Zustand with Shadcn Dialogs, you get:
+
+- A scalable modal management system.
+- Type safety for modal keys.
+- Clean, reusable components with polished UI.
+
+This pattern will save you from messy useState spaghetti as your app grows.
