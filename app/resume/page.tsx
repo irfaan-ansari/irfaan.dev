@@ -15,7 +15,7 @@ export const metadata = meta;
 const ResumePage = () => {
   return (
     <section>
-      <div className="px-6 py-10 md:px-10 bottom-dashed">
+      <div className="px-4 py-10 bottom-dashed">
         <DotPattern className="mask-x-from-80% mask-y-from-80% text-border" />
         <div className="relative flex flex-col items-center justify-center max-w-sm gap-4 mx-auto min-h-24 z-1">
           <h1 className="text-xl font-semibold">Resume</h1>
@@ -25,7 +25,7 @@ const ResumePage = () => {
           </p>
         </div>
       </div>
-      <div className="px-6 py-10 md:px-10 bottom-dashed">
+      <div className="px-4 py-10 bottom-dashed">
         <ResumeFrame />
       </div>
     </section>
