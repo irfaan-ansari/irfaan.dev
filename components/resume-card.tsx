@@ -61,7 +61,7 @@ const ResumeCard = async ({ item }: { item: Resume }) => {
                 } as React.CSSProperties
               }
               variant="secondary"
-              className="rounded-md py-2 px-3 gap-2 dark:bg-primary/10 ring-(--icon-color)/50 ring-2"
+              className="rounded-md py-1.5 px-2.5 gap-2 dark:bg-primary/10 ring-(--icon-color)/50 ring-1"
             >
               <svg
                 viewBox="0 0 24 24"
