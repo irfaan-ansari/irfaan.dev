@@ -26,7 +26,9 @@ const Footer = () => {
 
           <div className="flex justify-between w-full text-background drop-shadow-xs text-4xl sm:text-7xl uppercase font-bold dark:drop-shadow-highlight">
             {[...name].map((letter, i) => (
-              <span className="min-w-4">{letter}</span>
+              <span className="min-w-4" key={i}>
+                {letter}
+              </span>
             ))}
           </div>
         </div>
