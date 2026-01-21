@@ -27,6 +27,8 @@
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
+
+  --highlight: oklch(0.6634 0.1774 22.85);
 }
 
 @theme inline {
@@ -59,6 +61,7 @@
   --radius-4xl: calc(var(--radius) + 16px);
 
   --animate-wiggle: wiggle 1s ease-out infinite;
+  --color-highlight: var(--highlight);
 }
 
 .dark {

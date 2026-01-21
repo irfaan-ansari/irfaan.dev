@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { Suspense } from "react";
 import { RESUME } from "@/lib/resume";
+import { LOCATION } from "@/lib/config";
 import VisitCount from "@/components/visit-count";
 import { Skeleton } from "@/components/ui/skeleton";
-import { LOCATION, SOCIAL_LINKS } from "@/lib/config";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import { ArrowUpRight, Globe, MapPinned } from "lucide-react";
+import { SocialLinks } from "./social-links";
 
 const { name } = RESUME;
 
@@ -13,41 +14,8 @@ const Footer = () => {
   return (
     <footer className="pb-4 max-w-3xl mx-auto w-full">
       {/* social links */}
-      <div className="px-4 py-6 bottom-dashed">
-        <h2 className="text-xl/snug font-semibold tracking-wider mb-10">
-          Connect
-          <span className="text-xs uppercase font-medium text-muted-foreground ml-4">
-            Find me online
-          </span>
-        </h2>
 
-        <div className="divide-y divide-border/50">
-          {SOCIAL_LINKS.map((link, i) => (
-            <a
-              key={i}
-              href={link.href}
-              target="_blank"
-              className="flex items-center py-4 group/contact first:pt-0"
-            >
-              <div className="flex items-center gap-3 grow shrink basis-0">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="size-4 text-muted-foreground transition ease-out group-hover/contact:text-primary"
-                >
-                  <path d={link?.icon?.path}></path>
-                </svg>
-
-                <span>{link.label}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <ArrowUpRight className="transition ease-out size-4 text-muted-foreground group-hover/contact:translate-x-0.5 group-hover/contact:-translate-y-0.5" />
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
-
+      <SocialLinks />
       {/* name */}
       <div className="px-4 py-10 bottom-dashed">
         <DotPattern className="mask-x-from-80% mask-y-from-80% text-border" />
@@ -55,16 +23,19 @@ const Footer = () => {
           <span className="text-xs font-medium uppercase text-muted-foreground">
             Designed and developed by
           </span>
-          <span className="text-background drop-shadow-md text-4xl sm:text-7xl uppercase font-bold dark:drop-shadow-input">
-            {name}
-          </span>
+
+          <div className="flex justify-between w-full text-background drop-shadow-xs text-4xl sm:text-7xl uppercase font-bold dark:drop-shadow-highlight">
+            {[...name].map((letter, i) => (
+              <span className="min-w-4">{letter}</span>
+            ))}
+          </div>
         </div>
       </div>
 
       <div className="px-4 py-4 text-sm bottom-dashed">
         <div className="flex flex-col sm:flex-row gap-3 items-center justify-between">
           <div className="inline-flex gap-2 items-center hover:[&_svg]:translate-x-4 border rounded-full py-1 pl-1 pr-3">
-            <span className="h-8 w-14 justify-start px-3 rounded-full bg-[#FF949D] text-black inline-flex items-center rounded-br-none">
+            <span className="h-8 w-14 justify-start px-3 rounded-full bg-[#BDEE63] text-black inline-flex items-center rounded-br-none">
               <Globe className="size-4 transition duration-500" />
             </span>
             <div className="text-sm font-medium inline-flex items-center gap-2">
