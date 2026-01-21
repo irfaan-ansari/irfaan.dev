@@ -13,7 +13,6 @@ import BlogRecent from "@/components/blog/blog-recent";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import BookCallButton from "@/components/action-buttons/book-call-button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { SOCIAL_LINKS } from "@/lib/config";
 
 const { projects, experiences, technicalSkills } = RESUME;
 

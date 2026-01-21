@@ -14,7 +14,7 @@ const Skills = ({ skill }: { skill: Skill }) => {
           <Badge
             key={sk.name}
             variant="outline"
-            className="rounded-md px-2.5 py-1.5 bg-secondary/80 dark:bg-accent/80 border-border/60 gap-2 ring-2 ring-(--icon-color)/30 hover:ring-(--icon-color) transition ease-out cursor-default"
+            className="rounded-md px-2.5 py-1.5 bg-secondary/80 dark:bg-accent/80 border-border/60 gap-2 ring-2 ring-border hover:ring-(--icon-color)/50 transition ease-out cursor-default"
             style={{ "--icon-color": `#${sk.icon.hex}` } as React.CSSProperties}
           >
             <svg

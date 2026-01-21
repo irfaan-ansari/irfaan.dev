@@ -43,7 +43,7 @@ export default function RootLayout({
     >
       <Analytics />
       <body
-        className={`${inter.variable} ${script.variable} antialiased selection:bg-primary selection:text-primary-foreground min-h-dvh relative font-inter`}
+        className={`${inter.variable} ${script.variable} antialiased selection:bg-highlight selection:text-white min-h-dvh relative font-inter`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Toaster position="top-center" />
