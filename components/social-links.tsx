@@ -6,9 +6,6 @@ export const SocialLinks = () => {
     <div className="px-4 py-6 bottom-dashed">
       <h2 className="text-xl/snug font-semibold tracking-wider mb-10">
         Connect
-        <span className="text-xs uppercase font-medium text-muted-foreground ml-4">
-          Find me online
-        </span>
       </h2>
 
       <div className="divide-y divide-border/50">

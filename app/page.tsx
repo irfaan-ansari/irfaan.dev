@@ -37,9 +37,6 @@ export default async function Home() {
       <section className="px-4 py-10 bottom-dashed" id="skills">
         <h2 className="text-xl/snug font-semibold tracking-wider mb-10">
           Skills
-          <span className="text-xs uppercase font-medium text-muted-foreground ml-4">
-            Which I use/know
-          </span>
         </h2>
 
         {technicalSkills.map((skill) => (
@@ -51,9 +48,6 @@ export default async function Home() {
       <section className="px-4 py-10 bottom-dashed" id="projects">
         <h2 className="text-xl/snug font-semibold tracking-wider mb-10">
           Projects
-          <span className="text-xs uppercase font-medium text-muted-foreground ml-4">
-            some of my Projects
-          </span>
         </h2>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {projects.slice(0, 4).map((project, index) => (
@@ -74,9 +68,6 @@ export default async function Home() {
       <section className="px-4 py-10 bottom-dashed" id="experience">
         <h2 className="text-xl/snug font-semibold tracking-wider mb-10">
           Work
-          <span className="text-xs uppercase font-medium text-muted-foreground ml-4">
-            my work experience!
-          </span>
         </h2>
 
         <Accordion
@@ -121,10 +112,7 @@ export default async function Home() {
       {/* blog */}
       <section className="px-4 py-10 bottom-dashed" id="blog">
         <h2 className="text-xl/snug font-semibold tracking-wider mb-10">
-          Blog
-          <span className="text-xs uppercase font-medium text-muted-foreground ml-4">
-            Things I write
-          </span>
+          Writing
         </h2>
         <BlogRecent limit={2} />
         <div className="pt-10 text-center border-t">

@@ -2,11 +2,11 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { RESUME } from "@/lib/resume";
 import { LOCATION } from "@/lib/config";
+import { SocialLinks } from "./social-links";
 import VisitCount from "@/components/visit-count";
 import { Skeleton } from "@/components/ui/skeleton";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import { ArrowUpRight, Globe, MapPinned } from "lucide-react";
-import { SocialLinks } from "./social-links";
 
 const { name } = RESUME;
 
