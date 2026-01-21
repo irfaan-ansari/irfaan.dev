@@ -88,7 +88,7 @@ const ProjectCard = ({
             {technologies.map((tech) => (
               <Badge
                 variant="secondary"
-                className="text-xs rounded-md bg-(--color-1) shadow-sm text-primary"
+                className="text-xs rounded-sm bg-(--color-1) shadow-sm text-primary"
                 key={tech}
               >
                 {tech}

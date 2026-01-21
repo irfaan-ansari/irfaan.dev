@@ -54,7 +54,10 @@ export default async function Home() {
           ))}
         </div>
         <div className="mt-10 text-center">
-          <Button asChild className="hover:[&>svg]:translate-x-0.5">
+          <Button
+            asChild
+            className="hover:[&>svg]:translate-x-0.5 bg-linear-to-br from-secondary to secondary/50 border border-border/50 bg-transparent rounded-sm text-foreground hover:bg-transparent border-b-2"
+          >
             <Link href="/projects">
               View all
               <ArrowRight className="transition ease-out" />
@@ -115,7 +118,10 @@ export default async function Home() {
         </h2>
         <BlogRecent limit={2} />
         <div className="pt-10 text-center border-t">
-          <Button asChild className="hover:[&>svg]:translate-x-0.5">
+          <Button
+            asChild
+            className="hover:[&>svg]:translate-x-0.5 bg-linear-to-br from-secondary to secondary/50 border border-border/50 bg-transparent rounded-sm text-foreground hover:bg-transparent border-b-2"
+          >
             <Link href="/blog">
               View all
               <ArrowRight className="transition ease-out" />

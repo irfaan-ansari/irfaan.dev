@@ -8,31 +8,34 @@ export const SocialLinks = () => {
         Connect
       </h2>
 
-      <div className="divide-y divide-border/50">
+      <ul className="flex flex-col">
         {SOCIAL_LINKS.map((link, i) => (
-          <a
+          <li
             key={i}
-            href={link.href}
-            target="_blank"
-            className="flex items-center py-4 group/contact first:pt-0"
+            className="py-5 group/contact first:pt-0 relative last:[&>span]:hidden"
           >
-            <div className="flex items-center gap-3 grow shrink basis-0">
-              <svg
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="size-4 text-muted-foreground transition ease-out group-hover/contact:text-primary"
-              >
-                <path d={link?.icon?.path}></path>
-              </svg>
+            <a href={link.href} target="_blank" className="flex items-center">
+              <div className="flex items-center gap-3 grow shrink basis-0">
+                <span className="size-9 bg-linear-to-br from-secondary to secondary/50 border border-border/50 rounded-sm inline-flex items-center justify-center">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="size-4 text-muted-foreground transition ease-out group-hover/contact:text-primary"
+                  >
+                    <path d={link?.icon?.path}></path>
+                  </svg>
+                </span>
 
-              <span>{link.label}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <ArrowUpRight className="transition ease-out size-4 text-muted-foreground group-hover/contact:translate-x-0.5 group-hover/contact:-translate-y-0.5" />
-            </div>
-          </a>
+                <span className="block">{link.label}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <ArrowUpRight className="transition ease-out size-4 text-muted-foreground group-hover/contact:translate-x-0.5 group-hover/contact:-translate-y-0.5" />
+              </div>
+            </a>
+            <span className="absolute bottom-0 h-px inset-x-0 bg-border mask-radial-at-center mask-b-from-50% mask-b-to-80%"></span>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };

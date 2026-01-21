@@ -24,9 +24,12 @@ const Footer = () => {
             Designed and developed by
           </span>
 
-          <div className="flex justify-between w-full text-background drop-shadow-xs text-4xl sm:text-7xl uppercase font-bold dark:drop-shadow-highlight">
+          <div className="flex justify-between w-full text-background drop-shadow-[0_1px_0.5px_var(--tw-drop-shadow-color)] text-[2.75rem] sm:text-7xl uppercase font-bold drop-shadow-highlight">
             {[...name].map((letter, i) => (
-              <span className="min-w-4" key={i}>
+              <span
+                className="min-w-4 shrink-0 scale-y-125 sm:scale-y-100"
+                key={i}
+              >
                 {letter}
               </span>
             ))}

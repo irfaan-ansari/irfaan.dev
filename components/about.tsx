@@ -51,7 +51,7 @@ const About = () => {
         <ResumeButton />
         <CopyEmailButton />
         <ChatButton />
-        <ShareButton className="[&>svg]:text-muted-foreground" />
+        <ShareButton className="[&>svg]:text-muted-foreground pr-1.5! text-xs h-8 bg-linear-to-br from-secondary to secondary/50 border border-border/50 bg-transparent rounded-sm text-foreground border-b-2" />
       </div>
     </React.Fragment>
   );
