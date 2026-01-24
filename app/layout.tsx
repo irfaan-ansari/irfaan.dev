@@ -25,7 +25,7 @@ const script = Dancing_Script({
   subsets: ["latin"],
 });
 
-const meta = createMetadata({});
+const meta = createMetadata({ path: "/" });
 
 export const metadata = meta;
 
