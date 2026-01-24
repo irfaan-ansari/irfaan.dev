@@ -4,8 +4,8 @@ import { Badge } from "./ui/badge";
 
 const Skills = ({ skill }: { skill: Skill }) => {
   return (
-    <div className="mb-8 last:mb-0 flex flex-col sm:flex-row gap-4 items-start">
-      <h3 className="font-medium uppercase text-sm min-w-3xs grow-0 shrink-0">
+    <div className="mb-6 last:mb-0 flex flex-col sm:flex-row gap-4 items-start">
+      <h3 className="font-medium uppercase text-sm min-w-3xs grow-0 shrink-0 text-muted-foreground">
         {skill.title}
       </h3>
 

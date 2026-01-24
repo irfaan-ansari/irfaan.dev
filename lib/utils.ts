@@ -72,6 +72,14 @@ export function formatDate(date: string) {
   return formattedDate;
 }
 
+export function calculateReadTime(text: string, wordsPerMinute = 200) {
+  if (!text) return 0;
+
+  const words = text.trim().split(/\s+/).length;
+
+  return Math.ceil(words / wordsPerMinute);
+}
+
 /**
  * Builds a full URL from a slug or returns the URL if already absolute
  *
@@ -79,14 +87,15 @@ export function formatDate(date: string) {
  * @returns {string}
  */
 
-export function buildUrl(input: string) {
-  // If already a full URL, return as-is
-  if (/^http?:\/\//i.test(input)) {
-    return input;
-  }
+export function absoluteUrl(input: string) {
+  if (/^http?:\/\//i.test(input)) return input;
 
   const joined = `${SITE_URL}/${input}`;
 
-  // Remove duplicate slashes except after protocol
   return joined.replace(/([^:]\/)[\/#]+/g, "$1");
 }
+
+export const truncate = (str: string | null, length: number) => {
+  if (!str || str.length <= length) return str;
+  return `${str.slice(0, length - 3)}...`;
+};

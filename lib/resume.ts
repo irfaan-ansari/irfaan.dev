@@ -12,7 +12,6 @@ import {
   siDrizzle,
   siWordpress,
   siShopify,
-  siVercel,
   siPostman,
   siTailwindcss,
   siHono,
@@ -37,8 +36,8 @@ export const RESUME = {
   initials: "i",
   status: "Available for work",
   roles: ["Full-Stack Developer", "Coder", "Problem Solver"],
-  about: `I build interactive web applications with a focus on code quality, structure, and long-term maintainability.
-I enjoy working close to the details, refining logic, improving performance, and shaping interfaces through  well-written and clear code.`,
+  about: `I build interactive and beautiful web applications and enjoy turning complex ideas into smooth, working experiences.
+  I’m a Full Stack Developer — I handle both frontend and backend. I’m always improving my skills and looking for new opportunities to learn, grow and build awesome solutions.`,
   technicalSkills: [
     {
       title: "< Languages />",
@@ -50,7 +49,7 @@ I enjoy working close to the details, refining logic, improving performance, and
       ],
     },
     {
-      title: "< Frameworks / Libraries />",
+      title: "< Frameworks />",
       items: [
         { name: "Next.js", icon: siNextdotjs },
         { name: "Express.js", icon: siExpress },
@@ -73,7 +72,7 @@ I enjoy working close to the details, refining logic, improving performance, and
       ],
     },
     {
-      title: "< Developer Tools />",
+      title: "< Tools />",
       items: [
         { name: "GitHub", icon: siGithub },
         { name: "Git", icon: siGit },
@@ -313,10 +312,10 @@ I enjoy working close to the details, refining logic, improving performance, and
     {
       company: "Goldys Nestt",
       role: "Full-Stack Developer",
-      location: "New Delhi",
+      location: "New Delhi, India",
       logoUrl: "/logo/gn-logo.png",
       start: "Dec 2022",
-      end: undefined,
+      end: "Now",
       technologies: [
         { name: "Next.js", icon: siNextdotjs },
         { name: "Typescript", icon: siTypescript },
@@ -344,7 +343,7 @@ handling development, feature implementation to production deployment.
     {
       company: "DigiAcai",
       role: "Shopify & WordPress Developer",
-      location: "Remote",
+      location: "India, Remote",
       logoUrl: "/logo/da-logo.png",
       start: "Sep 2021",
       end: "Nov 2022",
@@ -372,7 +371,7 @@ managing development from start to finish.
     {
       company: "Priyanka Gill",
       role: "Wordpress Developer",
-      location: "Remote",
+      location: "India, Remote",
       logoUrl: "/logo/pg-logo.png",
       start: "Oct 2020",
       end: "Aug 2021",
@@ -394,7 +393,7 @@ managing development from start to finish.
     {
       company: "Matrix",
       role: "Wordpress Developer",
-      location: "New Delhi",
+      location: "New Delhi, India",
       logoUrl: "/assets/matrix.png",
       start: "Jul 2018",
       end: "Mar 2020",

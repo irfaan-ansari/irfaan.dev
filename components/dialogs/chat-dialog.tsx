@@ -32,7 +32,7 @@ const ChatDialog = () => {
 
   return (
     <Dialog open={open} onOpenChange={() => toggle("chat")}>
-      <DialogContent className="top-auto bottom-0 gap-2 mb-6 translate-y-0 h-full sm:max-w-md pt-5 pb-0 px-0 flex max-h-[min(600px,80vh)] flex-col bg-background dark:bg-secondary/80 backdrop-blur-2xl border-b-4">
+      <DialogContent className="top-auto bottom-0 gap-2 mb-6 translate-y-0 h-full sm:max-w-md pt-5 pb-0 px-0 flex max-h-[min(600px,80vh)] flex-col bg-popover">
         <DialogTitle className="sr-only">Chat</DialogTitle>
 
         <div

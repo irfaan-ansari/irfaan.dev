@@ -21,12 +21,7 @@ const NavButtons = ({
   const { previous, next } = navigation;
 
   return (
-    <div
-      className={cn(
-        "px-4 backdrop-blur-3xl bg-background/70 z-3 py-4 bottom-dashed flex gap-2",
-        className
-      )}
-    >
+    <div className={cn("py-4 flex gap-2", className)}>
       {/* register shortcutk key previous and next */}
       <HotKey
         type="navigate"
@@ -44,9 +39,9 @@ const NavButtons = ({
       {/* back button */}
       <Button
         asChild
-        variant="secondary"
+        variant="outline"
         size="sm"
-        className="hover:[&>svg]:-translate-x-0.5"
+        className="hover:[&>svg]:-translate-x-0.5 border border-border/50! h-7"
       >
         <Link href={homeUrl}>
           <ChevronLeft className="transition ease-out" /> Back
@@ -68,7 +63,12 @@ const NavButtons = ({
             </span>
           }
         >
-          <Button variant="secondary" size="icon-sm" asChild>
+          <Button
+            variant="outline"
+            size="icon-sm"
+            asChild
+            className="size-7 border-border/50!"
+          >
             {previous?.url ? (
               <Link href={previous.url}>
                 <ArrowLeft />
@@ -92,7 +92,12 @@ const NavButtons = ({
             </span>
           }
         >
-          <Button variant="secondary" size="icon-sm" asChild>
+          <Button
+            variant="outline"
+            size="icon-sm"
+            asChild
+            className="size-7 border-border/50!"
+          >
             {next?.url ? (
               <Link href={next.url}>
                 <ArrowRight />

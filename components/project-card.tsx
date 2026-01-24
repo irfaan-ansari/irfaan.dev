@@ -38,7 +38,7 @@ const ProjectCard = ({
   return (
     <div
       className={cn(
-        "bg-linear-to-br from-(--color-1) to-(--color-2) overflow-hidden rounded-lg ring-4 group/project ring-border relative animate-pulse",
+        "bg-linear-to-br from-(--color-1) to-(--color-2) overflow-hidden rounded-lg ring-[3px] transition ease-out group/project ring-border relative animate-pulse hover:ring-offset-1 ring-offset-background",
         "data-[loaded=false]:*:data-[slot=image]:opacity-0 data-[loaded=false]:*:data-[slot=image]:translate-y-2",
         "data-[loaded=true]:*:data-[slot=image]:animate-in data-[loaded=true]:*:data-[slot=image]:fade-in-50 data-[loaded=true]:*:data-[slot=image]:slide-in-from-bottom-2",
         "data-[loaded=false]:*:data-[slot=info]:opacity-0 data-[loaded=false]:*:data-[slot=info]:translate-y-2",
@@ -88,7 +88,7 @@ const ProjectCard = ({
             {technologies.map((tech) => (
               <Badge
                 variant="secondary"
-                className="text-xs rounded-sm bg-(--color-1) shadow-sm text-primary"
+                className="text-xs ring-2 ring-(--color-1)/50 border border-primary/10 rounded-sm bg-(--color-1) shadow-sm text-primary"
                 key={tech}
               >
                 {tech}
@@ -102,7 +102,7 @@ const ProjectCard = ({
               <Button
                 asChild
                 size="sm"
-                className="hover:[&>svg:last-child]:translate-x-0.5 hover:[&>svg:last-child]:-translate-y-0.5"
+                className="h-7! hover:[&>svg:last-child]:translate-x-0.5 hover:[&>svg:last-child]:-translate-y-0.5"
               >
                 <a href={source} target="_blank">
                   Source
@@ -114,7 +114,7 @@ const ProjectCard = ({
               <Button
                 asChild
                 size="sm"
-                className="hover:[&>svg:last-child]:translate-x-0.5 hover:[&>svg:last-child]:-translate-y-0.5 "
+                className="h-7! hover:[&>svg:last-child]:translate-x-0.5 hover:[&>svg:last-child]:-translate-y-0.5 "
               >
                 <a href={href} target="_blank">
                   Website

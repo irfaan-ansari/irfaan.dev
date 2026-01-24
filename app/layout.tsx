@@ -1,6 +1,5 @@
 import "./styles/globals.css";
 import { Suspense } from "react";
-import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { createMetadata } from "@/lib/metadata";
 import { Toaster } from "@/components/ui/sonner";
@@ -8,7 +7,8 @@ import Analytics from "@/components/misc/analytics";
 import { Inter, Dancing_Script } from "next/font/google";
 import ChatDialog from "@/components/dialogs/chat-dialog";
 import ShareDialog from "@/components/dialogs/share-dialog";
-import CommandMenu from "@/components/dialogs/command-menu";
+import { ScrollProgress } from "@/components/scroll-progress";
+import { NavigationMenu } from "@/components/navigation-menu";
 import ContactDialog from "@/components/dialogs/contact-dialog";
 import { ThemeProvider } from "@/components/misc/theme-provider";
 import BookCallDialog from "@/components/dialogs/book-call-dialog";
@@ -47,17 +47,18 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Toaster position="top-center" />
-          {/* header */}
-          <Header />
+          {/* scroll progress */}
+          <ScrollProgress />
+          <NavigationMenu />
+          <div className="max-w-180 mx-auto w-full px-4">
+            {/* main */}
+            <main className="relative ">{children}</main>
 
-          {/* main */}
-          <main className="relative max-w-3xl mx-auto w-full">{children}</main>
+            {/* footer */}
+            <Footer />
+          </div>
 
-          {/* footer */}
-          <Footer />
-
-          {/* component rendered accross site (global components) */}
-          <CommandMenu />
+          {/* global components */}
           <BookCallDialog />
           <ContactDialog />
           <Suspense>

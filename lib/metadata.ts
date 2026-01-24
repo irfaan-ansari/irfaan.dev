@@ -1,19 +1,16 @@
-import type { Metadata } from "next";
-import { SITE_URL } from "./config";
 import { RESUME } from "./resume";
+import { SITE_URL } from "./config";
+import type { Metadata } from "next";
+import { absoluteUrl } from "./utils";
 
 const { name, about, roles } = RESUME;
 
 type CreateMetadataProps = {
   title?: string;
   description?: string;
-  keywords?: string[];
   path?: string;
-  ogImage?: string;
   type?: "website" | "article";
-  publishedTime?: string;
-  modifiedTime?: string;
-  tags?: string[];
+  [key: string]: Metadata[keyof Metadata];
 };
 
 export function createMetadata({
@@ -21,21 +18,21 @@ export function createMetadata({
   description = about,
   keywords = [],
   path = "/",
-  ogImage = "/og/home.png",
   type = "website",
-  publishedTime,
+  ...props
 }: CreateMetadataProps): Metadata {
-  const url = new URL(path, SITE_URL).toString();
+  const ogUrl = new URL(absoluteUrl("/og"));
+  ogUrl.searchParams.set("title", title as string);
+  ogUrl.searchParams.set("description", description);
 
-  let og = ogImage;
-
-  if (!ogImage.startsWith("http")) {
-    og = new URL(ogImage, SITE_URL).toString();
-  }
-
-  const mergedKeywords = Array.from(
-    new Set([
-      ...keywords,
+  return {
+    metadataBase: absoluteUrl(path),
+    title: title || {
+      default: `${name} | ${roles[0]}`,
+      template: `%s | ${name}`,
+    },
+    description,
+    keywords: [
       "portfolio",
       "developer",
       "full stack developer",
@@ -45,51 +42,36 @@ export function createMetadata({
       "blog",
       "tutorials",
       "technical writing",
-    ])
-  );
-
-  return {
-    metadataBase: url,
-    title: title || {
-      default: `${name} | ${roles[0]}`,
-      template: `%s | ${name}`,
-    },
-    description,
-    keywords: mergedKeywords,
+    ],
     applicationName: name,
     authors: [{ name, url: SITE_URL }],
     creator: name,
     publisher: name,
     alternates: {
-      canonical: url,
+      canonical: absoluteUrl(path),
     },
     openGraph: {
       type,
       locale: "en_US",
-      url,
+      url: absoluteUrl(path),
       title,
       description,
       siteName: `${name} Portfolio`,
       images: [
         {
-          url: og,
+          url: ogUrl,
           width: 1200,
           height: 630,
           alt: title,
         },
       ],
-      ...(type === "article" && {
-        publishedTime,
-        authors: [name],
-        tags: keywords,
-      }),
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      // creator: "handle",
-      images: [og],
+      creator: "@irfaanansari1",
+      images: [ogUrl],
     },
     robots: {
       index: true,
@@ -103,6 +85,7 @@ export function createMetadata({
         "max-snippet": -1,
       },
     },
-    category: type === "article" ? "technology" : "portfolio",
+    category: "portfolio",
+    ...props,
   };
 }

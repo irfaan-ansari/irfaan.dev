@@ -1,14 +1,13 @@
-import { Suspense } from "react";
 import Toc from "@/components/blog/toc";
-import { formatDate } from "@/lib/utils";
 import { notFound } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { createMetadata } from "@/lib/metadata";
 import NavButtons from "@/components/nav-buttons";
 import { useMDXComponents } from "@/mdx-components";
-import { Skeleton } from "@/components/ui/skeleton";
+import { PublishDate } from "@/components/blog/blogs";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import { getPost, getPostNav, getSortedPosts } from "@/lib/source";
+import { Divider } from "@/components/ui/divider";
 
 // create metadata
 export const generateMetadata = async ({
@@ -21,16 +20,13 @@ export const generateMetadata = async ({
 
   if (!post) return {};
 
-  const { title, tags, publishedAt, summary, thumbnail } = post.data;
+  const { title, summary } = post.data;
 
   return createMetadata({
     title,
     description: summary,
-    keywords: tags,
     type: "article",
-    publishedTime: publishedAt,
     path: post.url,
-    ogImage: thumbnail ?? "/og/blog.png",
   });
 };
 
@@ -41,11 +37,6 @@ export async function generateStaticParams() {
     slug: post.slugs[0],
   }));
 }
-
-const PublishDate = async ({ publishedAt }: { publishedAt: string }) => {
-  "use cache";
-  return <span>{formatDate(publishedAt)}</span>;
-};
 
 export default async function BlogPage({
   params,
@@ -64,13 +55,14 @@ export default async function BlogPage({
   return (
     <section>
       {/* buttons */}
-      <NavButtons homeUrl="/blog" homeShortcutKey="B" navigation={navigation} />
 
+      <NavButtons homeUrl="/blog" homeShortcutKey="B" navigation={navigation} />
+      <Divider />
       {/* details */}
-      <div className="px-4 py-10 bottom-dashed">
+      <div className="py-10 relative">
         <DotPattern className="mask-x-from-80% mask-y-from-80% text-border" />
         <div className="relative flex flex-col items-start justify-center gap-4 min-h-24 animate-in slide-in-from-bottom-4">
-          <h1 className="text-3xl/relaxed font-bold max-w-prose">{title}</h1>
+          <h1 className="text-3xl/normal font-bold max-w-prose">{title}</h1>
           {tags.length > 0 && (
             <div className="flex gap-2 flex-wrap">
               {tags.map((tag, i) => (
@@ -86,22 +78,25 @@ export default async function BlogPage({
           )}
           <div className="flex items-center gap-2 text-xs text-muted-foreground">
             <PublishDate publishedAt={publishedAt} />
-            <span className="opacity-30 text-[10px]">&#9632;</span>
+            <span className="w-0.5 bg-border shrink-0 h-3"></span>
             <span>{readTime}</span>
           </div>
         </div>
       </div>
-
-      <div className="px-4 py-4 bottom-dashed sticky top-16 z-10 backdrop-blur-md">
-        <Toc toc={toc} />
+      <div className="sticky top-0 z-10">
+        <Divider />
+        <div className="relative py-4 after:inset-0 after:absolute after:backdrop-blur-md after:mask-b-from-80% after:mask-x-from-98%">
+          <Toc toc={toc} />
+        </div>
+        <Divider />
       </div>
-
       {/* article */}
-      <article className="max-w-full px-4 py-10 bottom-dashed">
+      <article className="max-w-full py-10">
         <div className="animate-in slide-in-from-bottom-4 prose dark:prose-invert max-w-none  prose-headings:mt-6 prose-headings:mb-2 prose-headings:scroll-mt-8 prose-headings:font-bold prose-a:no-underline prose-headings:tracking-tight prose-headings:text-balance prose-p:tracking-tight">
           <Mdx components={useMDXComponents()} />
         </div>
       </article>
+      <Divider />
     </section>
   );
 }

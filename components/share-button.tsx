@@ -17,8 +17,9 @@ const ShareButton = () => {
       }
     >
       <Button
-        variant="secondary"
+        variant="outline"
         size="icon-sm"
+        className="size-7 border-border/50!"
         onClick={() => toggle("share")}
       >
         <Share />

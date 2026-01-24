@@ -28,7 +28,7 @@ const Toc = ({ toc }: { toc: TOCItemType[] }) => {
     <Popover>
       <PopoverTrigger asChild>
         <Button
-          className="flex items-center w-full justify-start h-10 border  data-[state=open]:bg-secondary! data-[state=open]:border-border data-[state=open]:rounded-b-none"
+          className="flex items-center relative z-12 w-full justify-start h-10 border  data-[state=open]:bg-secondary! data-[state=open]:border-border data-[state=open]:rounded-b-none"
           variant="secondary"
           onClick={() => setOpen(!open)}
         >
@@ -51,7 +51,7 @@ const Toc = ({ toc }: { toc: TOCItemType[] }) => {
         side="bottom"
         sideOffset={0}
         avoidCollisions={false}
-        className="w-(--radix-popover-trigger-width) rounded-t-none no-scrollbar h-full max-h-(--radix-popper-available-height) border-b-4 bg-secondary/70 backdrop-blur-3xl"
+        className="w-(--radix-popover-trigger-width) rounded-t-none no-scrollbar h-full max-h-(--radix-popper-available-height) shadow-2xs shadow-border bg-secondary/80 backdrop-blur-xl"
       >
         <div className="flex flex-col gap-2 text-sm">
           {toc.map((item) => (

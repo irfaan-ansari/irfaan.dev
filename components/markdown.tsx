@@ -1,7 +1,6 @@
 import { cn } from "@/lib/utils";
 import { compileMdx } from "@/lib/source";
 
-
 const Markdown = async ({
   className,
   content,

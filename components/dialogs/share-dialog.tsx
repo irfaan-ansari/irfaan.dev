@@ -7,7 +7,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { buildUrl } from "@/lib/utils";
+import { absoluteUrl } from "@/lib/utils";
 import { useModalStore } from "@/lib/store";
 import { SHARE_OPTIONS } from "@/lib/config";
 import { Input } from "@/components/ui/input";
@@ -29,7 +29,7 @@ const ShareDialog = () => {
   const open = useModalStore((state) => state.isOpen("share"));
 
   React.useEffect(() => {
-    const url = buildUrl(
+    const url = absoluteUrl(
       `${pathname}${searchParams.toString() ? `?${searchParams}` : ""}`
     );
     setUrl(url);
@@ -37,7 +37,7 @@ const ShareDialog = () => {
 
   return (
     <Dialog open={open} onOpenChange={() => toggle("share")}>
-      <DialogContent className="gap-8 border-b-4 bg-background dark:bg-secondary/80 backdrop-blur-2xl sm:max-w-md">
+      <DialogContent className="gap-8 bg-popover sm:max-w-md">
         <DialogHeader className="gap-1.5 text-left">
           <DialogTitle>Share</DialogTitle>
           <DialogDescription>
@@ -53,7 +53,7 @@ const ShareDialog = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-md px-3 py-2.5 flex gap-3 border items-center
-              bg-accent outline-none focus-visible:ring-ring/50 focus-visible:ring-[3px]"
+              bg-secondary/50 outline-none focus-visible:ring-ring/50 focus-visible:ring-[3px]"
               style={
                 { "--icon-color": `#${option.icon.hex}` } as React.CSSProperties
               }

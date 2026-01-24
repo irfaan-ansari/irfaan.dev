@@ -13,9 +13,9 @@ const ShareButton = ({ className }: { className?: string }) => {
   };
   return (
     <Button
-      variant="secondary"
       size="sm"
-      className={cn("pr-1.5 text-xs", className)}
+      variant="outline"
+      className={cn("pr-1! pl-2! border border-border/50! h-7", className)}
       onClick={handleClick}
     >
       <Share />

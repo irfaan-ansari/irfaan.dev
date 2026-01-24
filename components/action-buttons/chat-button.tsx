@@ -14,9 +14,9 @@ const ChatButton = () => {
 
   return (
     <Button
-      variant="secondary"
       size="sm"
-      className="pr-1.5! text-xs h-8 bg-linear-to-br from-secondary to secondary/50 border border-border/50 bg-transparent rounded-sm text-foreground border-b-2"
+      variant="outline"
+      className="pr-1! pl-2! border border-border/50! h-7"
       onClick={handleClick}
     >
       <MessageCircleMore className="text-muted-foreground" />

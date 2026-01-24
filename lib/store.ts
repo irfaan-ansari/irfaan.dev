@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 export type ModalKey =
-  | "command"
+  | "menu"
   | "chat"
   | "contact"
   | "bookCall"
@@ -18,7 +18,7 @@ interface ModalState {
 
 export const useModalStore = create<ModalState>((set, get) => ({
   modals: {
-    command: false,
+    menu: false,
     chat: false,
     contact: false,
     bookCall: false,

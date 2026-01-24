@@ -63,7 +63,7 @@ const ContactDialog = () => {
 
   return (
     <Dialog open={open} onOpenChange={() => toggle("contact")}>
-      <DialogContent className="gap-6 border-b-4 bg-background dark:bg-secondary/80 backdrop-blur-2xl sm:max-w-md">
+      <DialogContent className="gap-6 bg-popover sm:max-w-md">
         <DialogHeader className="gap-1.5 text-left">
           <DialogTitle>Contact</DialogTitle>
           <DialogDescription>

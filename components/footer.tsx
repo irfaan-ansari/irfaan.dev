@@ -4,20 +4,22 @@ import { RESUME } from "@/lib/resume";
 import { LOCATION } from "@/lib/config";
 import { SocialLinks } from "./social-links";
 import VisitCount from "@/components/visit-count";
+import { Divider } from "@/components/ui/divider";
 import { Skeleton } from "@/components/ui/skeleton";
+import { ArrowUpRight, MapPinned } from "lucide-react";
 import { DotPattern } from "@/components/ui/dot-pattern";
-import { ArrowUpRight, Globe, MapPinned } from "lucide-react";
 
 const { name } = RESUME;
 
 const Footer = () => {
   return (
-    <footer className="pb-4 max-w-3xl mx-auto w-full">
+    <footer className="pb-4 w-full">
       {/* social links */}
 
       <SocialLinks />
+      <Divider />
       {/* name */}
-      <div className="px-4 py-10 bottom-dashed">
+      <div className="py-10 relative">
         <DotPattern className="mask-x-from-80% mask-y-from-80% text-border" />
         <div className="flex flex-col items-center justify-center relative gap-3">
           <span className="text-xs font-medium uppercase text-muted-foreground">
@@ -36,12 +38,38 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
-      <div className="px-4 py-4 text-sm bottom-dashed">
+      <Divider />
+      <div className="py-4 text-sm">
         <div className="flex flex-col sm:flex-row gap-3 items-center justify-between">
-          <div className="inline-flex gap-2 items-center hover:[&_svg]:translate-x-4 border rounded-full py-1 pl-1 pr-3">
-            <span className="h-8 w-14 justify-start px-3 rounded-full bg-[#BDEE63] text-black inline-flex items-center rounded-br-none">
-              <Globe className="size-4 transition duration-500" />
+          <div className="inline-flex gap-2 items-center border rounded-full py-0.5 pl-0.5 pr-3">
+            <span className="size-8 justify-center rounded-full bg-[#BDEE63] text-black inline-flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="size-5 transition duration-500"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                <path d="M21 12h.01" />
+                <path d="M3 12h.01" />
+                <path d="M5 15h.01" />
+                <path d="M5 9h.01" />
+                <path d="M19 15h.01" />
+                <path d="M12 18h.01" />
+                <path d="M12 6h.01" />
+                <path d="M8 17h.01" />
+                <path d="M8 7h.01" />
+                <path d="M16 17h.01" />
+                <path d="M16 7h.01" />
+                <path d="M19 9h.01" />
+              </svg>
             </span>
             <div className="text-sm font-medium inline-flex items-center gap-2">
               Visitor
@@ -73,6 +101,10 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      <Divider />
+      {/* spacer */}
+      <div className="h-20"></div>
     </footer>
   );
 };
