@@ -57,9 +57,12 @@ export async function GET(request: Request) {
         <div tw="flex absolute bg-neutral-300 w-4 h-4 right-[56.5px] bottom-[56.5px]" />
 
         {/* logo */}
-        <div tw="flex absolute flex-row items-center justify-center bottom-28 right-28">
+        <div tw="flex absolute flex-row items-center gap-4 justify-center bottom-28 right-28">
           <div tw="bg-black rounded-sm size-12 flex text-white items-center justify-center">
             <Logo width="36" height="36" />
+          </div>
+          <div tw="text-gray-700 flex text-[32px] font-semibold tracking-tight ml-2">
+            irfaan.dev
           </div>
         </div>
 
