@@ -5,7 +5,7 @@ import { Logo } from "@/components/icons/logo";
 
 const { name } = RESUME;
 
-const defaultDescription = `Design, Delopop, Test, Deploy`;
+const defaultDescription = `I build interactive and beautiful web applications and enjoy turning complex ideas into smooth, working experiences.`;
 
 async function loadAssets(): Promise<
   { name: string; data: Buffer; weight: 400 | 600; style: "normal" }[]
@@ -64,7 +64,7 @@ export async function GET(request: Request) {
         </div>
 
         {/* content */}
-        <div tw="flex flex-col absolute justify-center items-center inset-0 pt-20 pb-24 w-full h-full">
+        <div tw="flex flex-col absolute justify-center items-center inset-0 px-18 pt-20 pb-24 w-full h-full">
           <div tw="flex flex-col items-center justify-center text-center w-full h-full">
             <div tw="tracking-tight flex flex-col justify-center text-black text-balance font-semibold text-[80px]">
               {title ?? name}
