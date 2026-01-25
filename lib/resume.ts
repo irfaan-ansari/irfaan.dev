@@ -107,7 +107,7 @@ export const RESUME = {
         "Google Sheet API",
         "Framer Motion",
       ],
-      source: null,
+      source: "https://github.com/irfaan-ansari/irfaan.dev",
       image: "/projects/portfolio.png",
       className:
         "aspect-[1/1.5] **:data-[slot=image]:inset-x-2 **:data-[slot=image]:top-1/2 sm:aspect-video sm:col-span-2 sm:**:data-[slot=info]:max-w-1/2 sm:**:data-[slot=info]:h-full sm:**:data-[slot=info]:pr-10 sm:**:data-[slot=info]:justify-end sm:**:data-[slot=image]:w-1/2 sm:**:data-[slot=image]:right-10 sm:**:data-[slot=image]:top-10 sm:**:data-[slot=image]:left-auto",

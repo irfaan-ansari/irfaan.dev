@@ -55,7 +55,7 @@ const ResumeCard = async ({ item }: { item: Resume }) => {
         </div>
       </AccordionTrigger>
 
-      <AccordionContent className="pl-1 sm:pl-16">
+      <AccordionContent className="pl-8 sm:pl-16">
         <div className="flex flex-wrap gap-2 mb-4 pt-1">
           {item.technologies.map((tech) => (
             <Badge
