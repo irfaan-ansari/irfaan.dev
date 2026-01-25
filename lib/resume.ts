@@ -94,6 +94,7 @@ export const RESUME = {
   projects: [
     {
       title: "Portfolio",
+      href: null,
       active: true,
       description:
         "My personal website showcasing selected projects, skills, and professional experience in a clean, modern layout.",
