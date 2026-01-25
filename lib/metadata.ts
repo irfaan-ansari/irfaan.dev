@@ -22,7 +22,8 @@ export function createMetadata({
   ...props
 }: CreateMetadataProps): Metadata {
   const ogUrl = new URL(absoluteUrl("/og"));
-  ogUrl.searchParams.set("title", title as string);
+
+  ogUrl.searchParams.set("title", title ?? name);
   ogUrl.searchParams.set("description", description);
 
   return {
