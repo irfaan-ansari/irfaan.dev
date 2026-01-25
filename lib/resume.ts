@@ -94,7 +94,6 @@ export const RESUME = {
   projects: [
     {
       title: "Portfolio",
-      href: "https://irfanansari.vercel.app/",
       active: true,
       description:
         "My personal website showcasing selected projects, skills, and professional experience in a clean, modern layout.",
@@ -102,13 +101,13 @@ export const RESUME = {
         "Next.js",
         "TailwindCSS",
         "Shadcn UI",
+        "Motion",
         "Fumadocs",
-        "Firebase",
-        "Google Sheet API",
-        "Framer Motion",
+        "Counter API",
+        "Google Sheet",
       ],
       source: "https://github.com/irfaan-ansari/irfaan.dev",
-      image: "/projects/portfolio.png",
+      image: "/projects/irfaan.dev.png",
       className:
         "aspect-[1/1.5] **:data-[slot=image]:inset-x-2 **:data-[slot=image]:top-1/2 sm:aspect-video sm:col-span-2 sm:**:data-[slot=info]:max-w-1/2 sm:**:data-[slot=info]:h-full sm:**:data-[slot=info]:pr-10 sm:**:data-[slot=info]:justify-end sm:**:data-[slot=image]:w-1/2 sm:**:data-[slot=image]:right-10 sm:**:data-[slot=image]:top-10 sm:**:data-[slot=image]:left-auto",
     },
