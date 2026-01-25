@@ -8,10 +8,6 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const isActiveLink = (path: string, href: string) => {
-  return path === href || (path.startsWith(href) && href !== "/");
-};
-
 export const generateColorsFromHex = (hex: string) => {
   const tiny = new TinyColor(hex);
   const dominantColor = tiny.saturate(20).toHexString();
@@ -81,9 +77,8 @@ export function calculateReadTime(text: string, wordsPerMinute = 200) {
 }
 
 /**
- * Builds a full URL from a slug or returns the URL if already absolute
- *
- * @param {string} input - slug or full URL (e.g. https://example.com or /link-page)
+ * return full url from slug
+ * @param {string} input
  * @returns {string}
  */
 

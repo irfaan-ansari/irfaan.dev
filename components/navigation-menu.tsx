@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Kbd } from "./ui/kbd";
 import { Button } from "./ui/button";
 import { Ellipsis } from "lucide-react";
-import { isActiveLink } from "@/lib/utils";
 import { useModalStore } from "@/lib/store";
 import { usePathname } from "next/navigation";
 import { useNavigation } from "@/hooks/use-navigation";
@@ -15,6 +14,10 @@ export const NavigationMenu = () => {
   const { handleAction } = useNavigation();
   const toggle = useModalStore((state) => state.toggle);
   const open = useModalStore((state) => state.isOpen("menu"));
+
+  const isActivePath = (href: string) => {
+    return pathname === href || (pathname.startsWith(href) && href !== "/");
+  };
 
   return (
     <Popover open={open} onOpenChange={() => toggle("menu")} modal>
@@ -33,11 +36,7 @@ export const NavigationMenu = () => {
                 }}
                 href={link.href}
                 className={`flex flex-col items-center gap-0.5 justify-center text-muted-foreground focus-visible:scale-110 transition ease-out hover:text-primary focus-visible:text-primary outline-0
-                  ${
-                    isActiveLink(pathname, link.href)
-                      ? "scale-110 text-primary"
-                      : ""
-                  }`}
+                  ${isActivePath(link.href) ? "scale-110 text-primary" : ""}`}
               >
                 <link.icon className="size-4" />
                 <span className="text-xs">{link.title}</span>
