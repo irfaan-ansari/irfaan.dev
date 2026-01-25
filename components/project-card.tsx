@@ -102,7 +102,7 @@ const ProjectCard = ({
               <Button
                 asChild
                 size="sm"
-                className="h-7! hover:[&>svg:last-child]:translate-x-0.5 hover:[&>svg:last-child]:-translate-y-0.5"
+                className="h-7! opacity-70 hover:[&>svg:last-child]:translate-x-0.5 hover:[&>svg:last-child]:-translate-y-0.5"
               >
                 <a href={source} target="_blank">
                   Source
