@@ -18,7 +18,7 @@ export const NavigationMenu = () => {
   return (
     <Popover open={open} onOpenChange={() => toggle("menu")} modal>
       <div className="fixed bottom-0 pointer-events-none inset-x-0 z-1 backdrop-blur-md mask-[linear-gradient(0deg,#000_30%,transparent)] [-webkit-mask-image:linear-gradient(0deg,#000_30%,transparent)] h-20" />
-      <div className="fixed bottom-4 z-10 left-1/2 h-fit -translate-x-1/2 rounded-lg w-[calc(100vw-2rem)] sm:w-auto sm:bottom-6 border border-border/50 bg-background/80 shadow-md backdrop-blur-xl">
+      <div className="fixed bottom-4 z-10 left-1/2 h-fit -translate-x-1/2 rounded-lg w-[calc(100vw-2rem)] sm:w-auto sm:bottom-6 border border-border/50 bg-background/80 dark:bg-secondary/60 shadow-md backdrop-blur-md">
         <PopoverAnchor className="opacity-0 pointer-events-none" />
         <div className="flex flex-row gap-4 sm:gap-8 px-6 py-3 justify-between">
           {NAVIGATION.map((link) => {
@@ -58,9 +58,10 @@ export const NavigationMenu = () => {
       </div>
 
       <PopoverContent
-        className="no-scrollbar bg-background/80 backdrop-blur-3xl h-full max-h-[calc(var(--radix-popper-available-height)-1rem)] sm:max-h-[calc(var(--radix-popper-available-height)-2rem)] w-(--radix-popper-anchor-width) overflow-y-auto rounded-lg px-2 py-4 shadow-md"
+        className="no-scrollbar bg-background/80 dark:bg-secondary/60 backdrop-blur-md h-full max-h-[calc(var(--radix-popper-available-height)-1rem)] sm:max-h-[calc(var(--radix-popper-available-height)-2rem)] w-(--radix-popper-anchor-width) overflow-y-auto rounded-lg px-2 py-4 shadow-none border-border/50"
         align="center"
         side="top"
+        sideOffset={0}
       >
         <div className="flex flex-col gap-12 overflow-auto">
           <div className="flex flex-col gap-2">
