@@ -2,12 +2,12 @@
 
 This is the source code for my personal portfolio website.
 
-## About
+### About
 
 I’m a Full-Stack Developer who works on both frontend and backend.  
 I like building clean, functional web experiences and solving real problems with code.
 
-## Tech Stack
+### Tech Stack
 
 - Next.js
 - Tailwind CSS
@@ -17,7 +17,7 @@ I like building clean, functional web experiences and solving real problems with
 - **Google Sheets Webhook** (contact form submissions)
 - **Counter API** (to show site visit count)
 
-## What’s Inside
+### What’s Inside
 
 - About me
 - Skills
@@ -28,7 +28,7 @@ I like building clean, functional web experiences and solving real problems with
 - Contact form (connected to Google Sheets)
 - Live visit counter
 
-## Live Site
+### Live Site
 
 https://irfaan.vercel.app/
 

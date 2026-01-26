@@ -5,30 +5,34 @@ import { formatDate } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import EmptySection from "@/components/empty-section";
 import { BlogCard as BlogCardType } from "@/lib/types";
 
 export const Blogs = async ({ perPage = 2 }: { perPage: number }) => {
-  const currentPage = 1;
+  const currentPage = 2;
   const { data } = getPosts(currentPage, perPage);
 
   if (data.length === 0) {
     return (
-      <EmptySection
-        title="No blog posts found"
-        description="There are no blog posts to display right now. Try removing the filters and check again."
-        action={
+      <div className="py-10">
+        <div className="flex flex-col gap-2 items-start justify-center relative z-1 max-w-sm">
+          <h1 className="font-medium italic tracking-wider">
+            No blog posts found
+          </h1>
+          <p className="leading-relaxed text-sm text-muted-foreground">
+            There are no blog posts to display right now. Try removing the
+            filters and check again.
+          </p>
           <Button
             asChild
-            variant="secondary"
-            className="hover:[&>svg]:-translate-x-0.5"
+            variant="outline"
+            className="hover:[&>svg]:-translate-x-0.5 border border-border/50! h-7 mt-4"
           >
             <Link href="/">
               <ArrowLeft className="transition ease-out" /> Back to home
             </Link>
           </Button>
-        }
-      />
+        </div>
+      </div>
     );
   }
 
