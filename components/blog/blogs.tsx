@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { BlogCard as BlogCardType } from "@/lib/types";
 
 export const Blogs = async ({ perPage = 2 }: { perPage: number }) => {
-  const currentPage = 2;
+  const currentPage = 1;
   const { data } = getPosts(currentPage, perPage);
 
   if (data.length === 0) {
