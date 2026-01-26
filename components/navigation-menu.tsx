@@ -15,34 +15,36 @@ export const NavigationMenu = () => {
   const toggle = useModalStore((state) => state.toggle);
   const open = useModalStore((state) => state.isOpen("menu"));
 
-  const isActivePath = (href: string) => {
-    return pathname === href || (pathname.startsWith(href) && href !== "/");
-  };
-
   return (
     <Popover open={open} onOpenChange={() => toggle("menu")} modal>
       <div className="fixed bottom-0 pointer-events-none inset-x-0 z-1 backdrop-blur-md mask-[linear-gradient(0deg,#000_30%,transparent)] [-webkit-mask-image:linear-gradient(0deg,#000_30%,transparent)] h-20" />
       <div className="fixed bottom-4 z-10 left-1/2 h-fit -translate-x-1/2 rounded-lg w-[calc(100vw-2rem)] sm:w-auto sm:bottom-6 border border-border/50 bg-background/80 shadow-md backdrop-blur-xl">
         <PopoverAnchor className="opacity-0 pointer-events-none" />
         <div className="flex flex-row gap-4 sm:gap-8 px-6 py-3 justify-between">
-          {NAVIGATION.map((link) => (
-            <div className="relative" key={link.href}>
-              <Link
-                onClick={(e) => {
-                  if (link.type !== "navigate") {
-                    e.preventDefault();
-                  }
-                  handleAction({ ...link });
-                }}
-                href={link.href}
-                className={`flex flex-col items-center gap-0.5 justify-center text-muted-foreground focus-visible:scale-110 transition ease-out hover:text-primary focus-visible:text-primary outline-0
-                  ${isActivePath(link.href) ? "scale-110 text-primary" : ""}`}
-              >
-                <link.icon className="size-4" />
-                <span className="text-xs">{link.title}</span>
-              </Link>
-            </div>
-          ))}
+          {NAVIGATION.map((link) => {
+            const isActive =
+              pathname === link.href ||
+              (pathname.startsWith(link.href) && link.href !== "/");
+
+            return (
+              <div className="relative" key={link.href}>
+                <Link
+                  onClick={(e) => {
+                    if (link.type !== "navigate") {
+                      e.preventDefault();
+                    }
+                    handleAction({ ...link });
+                  }}
+                  href={link.href}
+                  className={`flex flex-col items-center gap-0.5 justify-center text-muted-foreground focus-visible:scale-110 transition ease-out hover:text-primary focus-visible:text-primary outline-0
+                  ${isActive ? "scale-110 text-primary" : ""}`}
+                >
+                  <link.icon className="size-4" />
+                  <span className="text-xs">{link.title}</span>
+                </Link>
+              </div>
+            );
+          })}
 
           <Button
             onClick={() => toggle("menu")}
