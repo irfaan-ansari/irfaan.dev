@@ -83,7 +83,7 @@ export default async function BlogPage({
           </div>
         </div>
       </div>
-      <div className="sticky top-0 z-1">
+      <div className="sticky top-0 z-8">
         <Divider />
         <div className="relative py-4 after:inset-0 after:absolute after:backdrop-blur-md after:mask-b-from-80% after:mask-x-from-98%">
           <Toc toc={toc} />
