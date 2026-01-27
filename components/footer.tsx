@@ -1,15 +1,13 @@
 import Link from "next/link";
 import { Suspense } from "react";
-import { RESUME } from "@/lib/resume";
 import { LOCATION } from "@/lib/config";
+import { FooterSVG } from "./footer-svg";
 import { SocialLinks } from "./social-links";
 import VisitCount from "@/components/visit-count";
 import { Divider } from "@/components/ui/divider";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ArrowUpRight, MapPinned } from "lucide-react";
 import { DotPattern } from "@/components/ui/dot-pattern";
-
-const { name } = RESUME;
 
 const Footer = () => {
   return (
@@ -20,22 +18,13 @@ const Footer = () => {
       <Divider />
       {/* name */}
       <div className="py-10 relative">
-        <DotPattern className="mask-x-from-80% mask-y-from-80% text-border" />
-        <div className="flex flex-col items-center justify-center relative gap-3">
-          <span className="text-xs font-medium uppercase text-muted-foreground">
+        <DotPattern className="mask-x-from-80% mask-y-from-80% text-secondary" />
+        <div className="flex flex-col items-start justify-center relative gap-3">
+          <span className="text-xs font-medium italic text-muted-foreground">
             Designed and developed by
           </span>
 
-          <div className="flex justify-between w-full text-background drop-shadow-[0_1px_0.5px_var(--tw-drop-shadow-color)] text-[2.75rem] sm:text-7xl uppercase font-bold drop-shadow-highlight">
-            {[...name].map((letter, i) => (
-              <span
-                className="min-w-4 shrink-0 scale-y-125 sm:scale-y-100"
-                key={i}
-              >
-                {letter}
-              </span>
-            ))}
-          </div>
+          <FooterSVG />
         </div>
       </div>
       <Divider />
