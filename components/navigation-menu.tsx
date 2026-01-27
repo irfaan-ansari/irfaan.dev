@@ -25,7 +25,7 @@ export const NavigationMenu = () => {
             const isActive =
               pathname === link.href ||
               (pathname.startsWith(link.href) && link.href !== "/");
-
+            console.log("pathname: ", pathname);
             return (
               <div className="relative" key={link.href}>
                 <Link
