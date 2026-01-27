@@ -81,8 +81,8 @@ export const CONTACT_LINKS = [
 export const SOCIAL_LINKS = {
   x: {
     title: "X",
-    href: "https://x.com/",
-    label: "@irfaanansari",
+    href: "https://x.com/irfaan_ansari1",
+    label: "@irfaan_ansari1",
     icon: siX,
   },
   instagram: {
