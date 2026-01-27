@@ -38,7 +38,7 @@ const ProjectCard = ({
   return (
     <div
       className={cn(
-        "bg-linear-to-br from-(--color-1) to-(--color-2) overflow-hidden rounded-lg ring-[3px] transition ease-out group/project ring-border relative animate-pulse hover:ring-offset-1 ring-offset-background",
+        "bg-linear-to-br from-(--color-1) to-(--color-2) overflow-hidden rounded-lg ring-[3px] transition ease-out group/project ring-border relative animate-pulse hover:ring-offset-1 ring-offset-background slide-in-from-bottom-4",
         "data-[loaded=false]:*:data-[slot=image]:opacity-0 data-[loaded=false]:*:data-[slot=image]:translate-y-2",
         "data-[loaded=true]:*:data-[slot=image]:animate-in data-[loaded=true]:*:data-[slot=image]:fade-in-50 data-[loaded=true]:*:data-[slot=image]:slide-in-from-bottom-2",
         "data-[loaded=false]:*:data-[slot=info]:opacity-0 data-[loaded=false]:*:data-[slot=info]:translate-y-2",

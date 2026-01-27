@@ -43,9 +43,9 @@ export default async function Home() {
       <Divider />
 
       {/* about */}
-      <section className="py-10">
+      <section className="py-10 animate-in slide-in-from-bottom-4">
         <div className="flex gap-4 items-center mb-8">
-          <span className="rounded-full inline-flex justify-center items-center size-16 shrink-0 ring-[2px] ring-offset-1 ring-offset-background ring-border bg-secondary">
+          <span className="rounded-full inline-flex justify-center items-center size-16 shrink-0 ring-2 ring-offset-1 ring-offset-background ring-border bg-secondary">
             <Logo className="size-10 rounded-full text-foreground" />
           </span>
           <div className="flex flex-col gap-0">
