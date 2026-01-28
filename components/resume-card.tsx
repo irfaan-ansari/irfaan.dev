@@ -47,13 +47,7 @@ const ResumeCard = async ({ item }: { item: Resume }) => {
 
         <div className="flex flex-col items-end gap-0.5 text-xs font-normal">
           <div className="inline-flex items-center gap-1.5 text-muted-foreground">
-            {item.start} -{" "}
-            {item.end ?? (
-              <span className="relative flex size-2">
-                <span className="absolute inline-flex w-full h-full rounded-full opacity-75 animate-ping bg-emerald-500"></span>
-                <span className="relative inline-flex rounded-full size-2 bg-emerald-600"></span>
-              </span>
-            )}
+            {item.start} - {item.end}
           </div>
           <span className="inline-flex items-center gap-1.5 opacity-40">
             {item.location}
@@ -63,10 +57,10 @@ const ResumeCard = async ({ item }: { item: Resume }) => {
 
       <AccordionContent className="pl-8 sm:pl-16">
         {projects.length > 0 && (
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-4 pt-1">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-4 pt-1 pr-1">
             {projects.map((project) => (
               <a
-                href={project.title}
+                href={project.href as string}
                 key={project.title}
                 target="_blank"
                 className="rounded-lg border ring-offset-1 transition ease-out ring-offset-background focus-visible:ring-2 focus-visible:ring-ring hover:ring-2 hover:ring-border"
