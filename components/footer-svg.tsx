@@ -10,26 +10,35 @@ export const FooterSVG = () => {
     <svg viewBox="0 0 300 40" className="size-full select-none">
       <defs>
         {/* text gradient */}
-        <linearGradient
+        <motion.linearGradient
           id="textGradient"
           gradientUnits="userSpaceOnUse"
           x1="0"
           x2="300"
+          initial={{ rotate: 0 }}
+          animate={{
+            rotate: [30, -20, 5, -10, 10],
+          }}
+          transition={{
+            duration: 1,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
         >
           <stop offset="0%" stopColor="#3B9EFF" />
           <stop offset="40%" stopColor="#DE51A8" />
           <stop offset="70%" stopColor="#0EB39E" />
           <stop offset="100%" stopColor="#FFD60A" />
-        </linearGradient>
+        </motion.linearGradient>
 
         <motion.radialGradient
           id="revealMask"
           gradientUnits="userSpaceOnUse"
-          r={35}
+          r={60}
           cy="20"
-          initial={{ cx: 0 }}
+          initial={{ cx: 30 }}
           animate={{
-            cx: 300,
+            cx: 270,
           }}
           transition={{
             duration: 6,
