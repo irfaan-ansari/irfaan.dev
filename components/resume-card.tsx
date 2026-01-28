@@ -1,15 +1,21 @@
+import Image from "next/image";
 import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Resume } from "@/lib/types";
+import { RESUME } from "@/lib/resume";
+import { ChevronRight } from "lucide-react";
 import Markdown from "@/components/markdown";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { ChevronDown, ChevronRight } from "lucide-react";
 
 const ResumeCard = async ({ item }: { item: Resume }) => {
+  const projects = RESUME.projects.filter(
+    ({ company }) => company === item.company
+  );
+
   return (
     <AccordionItem
       value={item.company}
@@ -56,6 +62,26 @@ const ResumeCard = async ({ item }: { item: Resume }) => {
       </AccordionTrigger>
 
       <AccordionContent className="pl-8 sm:pl-16">
+        {projects.length > 0 && (
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-4 pt-1">
+            {projects.map((project) => (
+              <a
+                href={project.title}
+                key={project.title}
+                target="_blank"
+                className="rounded-lg border ring-offset-1 transition ease-out ring-offset-background focus-visible:ring-2 focus-visible:ring-ring hover:ring-2 hover:ring-border"
+              >
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={200}
+                  height={100}
+                  className="rounded-[7px] aspect-video size-full object-cover object-top"
+                />
+              </a>
+            ))}
+          </div>
+        )}
         <div className="flex flex-wrap gap-2 mb-4 pt-1">
           {item.technologies.map((tech) => (
             <Badge

@@ -95,6 +95,7 @@ export const RESUME = {
     {
       title: "Portfolio",
       href: null,
+      company: null,
       active: true,
       description:
         "My personal website showcasing selected projects, skills, and professional experience in a clean, modern layout.",
@@ -115,6 +116,7 @@ export const RESUME = {
     {
       title: "Ethnic Fashion E-Commerce Store",
       href: "https://goldysnestt.com",
+      company: "Goldys Nestt",
       active: true,
       description:
         "An elegant online store for an ethnic wear brand, designed to look great on mobile and make shopping smooth and simple.",
@@ -127,6 +129,7 @@ export const RESUME = {
     {
       title: "Beachwear Fashion Store",
       href: "https://shopminis.in",
+      company: "Goldys Nestt",
       active: true,
       description:
         "A fun, colorful beachwear store built for easy browsing, quick checkout, and a seamless mobile shopping experience.",
@@ -139,6 +142,7 @@ export const RESUME = {
     {
       title: "Order Management Application",
       href: "https://goldys.vercel.app",
+      company: "Goldys Nestt",
       active: true,
       description:
         "A custom dashboard that brings online and offline orders into one place, helping teams track tasks and manage daily operations easily.",
@@ -160,6 +164,7 @@ export const RESUME = {
     {
       title: "Western E-commerce store",
       href: "https://theclothingfactory.in",
+      company: "Goldys Nestt",
       active: true,
       description:
         "A modern fashion store with a clean layout, fast checkout, and a shopping experience that works beautifully across devices.",
@@ -172,6 +177,7 @@ export const RESUME = {
     {
       title: "Consultant Portfolio Website",
       href: "https://nehaagarwal.in/",
+      company: "DigiAcai",
       active: true,
       description:
         "A personal brand website featuring blogs, workshops, and contact funnels to help turn visitors into leads.",
@@ -191,6 +197,7 @@ export const RESUME = {
     {
       title: "SEO Agency Website",
       href: "https://digiacai.com/",
+      company: "DigiAcai",
       active: true,
       description:
         "A fast-loading agency website designed to attract D2C brands and clearly communicate services and expertise.",
@@ -210,6 +217,7 @@ export const RESUME = {
     {
       title: "Dental Service Website",
       href: "https://saugasmilesdental.com",
+      company: null,
       active: true,
       description:
         "A friendly and informative website for a local dental clinic, with clear services and easy appointment booking.",
@@ -222,6 +230,7 @@ export const RESUME = {
     {
       title: "Link Shortner Web App",
       href: "https://url-shortner-client-eight.vercel.app/",
+      company: null,
       active: true,
       description:
         "A simple and clean URL shortener that makes sharing links easy, with built-in tracking for performance.",
@@ -240,6 +249,7 @@ export const RESUME = {
     {
       title: "Interior Design Website",
       href: "https://thedesignatelier.com",
+      company: null,
       active: true,
       description:
         "A visually rich website showcasing high-end interior projects with a strong focus on aesthetics and storytelling.",
@@ -252,6 +262,7 @@ export const RESUME = {
     {
       title: "Indo-Western Fashion Store",
       href: "https://prernaghoshlabel.in",
+      company: null,
       active: true,
       description:
         "A luxury fashion website highlighting sarees and dresses, seasonal collections, and special offers.",
@@ -264,6 +275,7 @@ export const RESUME = {
     {
       title: "Dental Clinic Website",
       href: "https://cbdentistry.ca",
+      company: null,
       active: true,
       description:
         "A complete dental website focused on local visibility, clear service information, and online booking.",
@@ -276,6 +288,7 @@ export const RESUME = {
     {
       title: "3D Interactive Animation",
       href: "https://spline-animation.vercel.app",
+      company: null,
       active: true,
       description:
         "An interactive 3D website experience that adds depth and motion to the web using modern animation tools.",
@@ -289,6 +302,7 @@ export const RESUME = {
     {
       title: "Entrepreneur Portfolio",
       href: "https://priyankagill.com",
+      company: "Priyanka Gill",
       active: true,
       description:
         "A personal brand platform featuring blogs, podcasts, and media highlights, built to grow visibility and trust.",
