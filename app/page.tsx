@@ -28,12 +28,12 @@ export default async function Home() {
   return (
     <>
       {/* intro */}
-      <section className="py-10 relative">
-        <DotPattern className="mask-x-from-90% mask-y-from-80% text-border" />
-        <div className="flex flex-col items-start justify-center h-20">
+      <section className="relative py-10">
+        <DotPattern className="mask-y-from-80% mask-x-from-90% text-border" />
+        <div className="flex h-20 flex-col items-start justify-center">
           <div className="flex items-center">
             <span className="text-muted-foreground italic">Hi there!</span>
-            <span className=" bg-[#9EB1FF] h-8 rounded-full -translate-y-3 rounded-bl-md! mx-2 justify-start inline-flex items-center px-3 w-16">
+            <span className=" mx-2 inline-flex h-8 w-16 -translate-y-3 items-center justify-start rounded-full rounded-bl-md! bg-[#9EB1FF] px-3">
               <WaveIcon className="size-3.5 text-black" />
             </span>
           </div>
@@ -43,9 +43,9 @@ export default async function Home() {
       <Divider />
 
       {/* about */}
-      <section className="py-10 animate-in slide-in-from-bottom-4">
-        <div className="flex gap-4 items-center mb-8">
-          <span className="rounded-full inline-flex justify-center items-center size-16 shrink-0 ring-2 ring-offset-1 ring-offset-background ring-border bg-secondary">
+      <section className="animate-in py-10 slide-in-from-bottom-4">
+        <div className="mb-8 flex items-center gap-4">
+          <span className="inline-flex size-16 shrink-0 items-center justify-center rounded-full bg-secondary ring-2 ring-border ring-offset-1 ring-offset-background">
             <Logo className="size-10 rounded-full text-foreground" />
           </span>
           <div className="flex flex-col gap-0">
@@ -53,7 +53,7 @@ export default async function Home() {
             <a
               href={SOCIAL_LINKS.x.href}
               target="_blank"
-              className="text-sm text-muted-foreground underline underline-offset-2 hover:underline-red-500"
+              className="hover:underline-red-500 text-sm text-muted-foreground underline underline-offset-2"
             >
               {SOCIAL_LINKS.x.label}
             </a>
@@ -61,7 +61,7 @@ export default async function Home() {
         </div>
 
         <Markdown
-          className="mb-6 leading-relaxed max-w-[70ch]"
+          className="mb-6 max-w-[70ch] leading-relaxed"
           content={RESUME.about}
         />
 
@@ -71,14 +71,14 @@ export default async function Home() {
       <Divider />
       {/* shortcuts */}
       <section className="py-6">
-        <p className="mb-2 text-sm italic text-muted-foreground">
+        <p className="mb-2 text-sm text-muted-foreground italic">
           Prefer shortcuts? Click a button or use a shortcut key.
         </p>
         <div className="flex flex-wrap gap-2 rounded-lg">
           <ResumeButton />
           <CopyEmailButton />
           <ChatButton />
-          <ShareButton className="[&>svg]:text-muted-foreground pr-1! text-xs" />
+          <ShareButton className="pr-1! text-xs [&>svg]:text-muted-foreground" />
         </div>
       </section>
 
@@ -86,7 +86,7 @@ export default async function Home() {
 
       {/* tech skills */}
       <section className="py-10" id="skills">
-        <h2 className="font-medium italic tracking-wider text-muted-foreground mb-8">
+        <h2 className="mb-8 font-medium tracking-wider text-muted-foreground italic">
           Skills
         </h2>
 
@@ -99,12 +99,12 @@ export default async function Home() {
 
       {/* projects */}
       <section className="py-10" id="projects">
-        <h2 className="font-medium italic tracking-wider text-muted-foreground mb-8">
+        <h2 className="mb-8 font-medium tracking-wider text-muted-foreground italic">
           Projects
         </h2>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {projects.slice(0, 2).map((project, index) => (
+          {projects.slice(0, 3).map((project, index) => (
             <ProjectCard index={index} project={project} key={project.title} />
           ))}
         </div>
@@ -113,7 +113,7 @@ export default async function Home() {
             asChild
             size="sm"
             variant="link"
-            className="hover:[&>svg]:translate-x-px hover:[&>svg]:-translate-y-px h-7! px-0! hover:no-underline opacity-60 hover:opacity-100"
+            className="h-7! px-0! opacity-60 hover:no-underline hover:opacity-100 hover:[&>svg]:translate-x-px hover:[&>svg]:-translate-y-px"
           >
             <Link href="/projects">
               View all
@@ -127,7 +127,7 @@ export default async function Home() {
 
       {/* experience */}
       <section className="py-10" id="experience">
-        <h2 className="font-medium italic tracking-wider text-muted-foreground mb-8">
+        <h2 className="mb-8 font-medium tracking-wider text-muted-foreground italic">
           Work
         </h2>
 
@@ -146,25 +146,25 @@ export default async function Home() {
       <Divider />
 
       {/* contact */}
-      <section className="py-10 text-center relative" id="contact">
-        <DotPattern className="text-border mask-x-from-90% mask-y-from-80%" />
+      <section className="relative py-10 text-center" id="contact">
+        <DotPattern className="mask-y-from-80% mask-x-from-90% text-border" />
 
         <div className="relative flex flex-col items-center justify-center gap-6">
           <h4 className="text-xl font-semibold">
             Want to connect and talk directly?
           </h4>
-          <div className="inline-flex items-center gap-2 p-1 rounded-full ring-4 ring-muted bg-background">
-            <Avatar className="rounded-full size-8">
-              <AvatarFallback className="text-lg font-script">i</AvatarFallback>
+          <div className="inline-flex items-center gap-2 rounded-full bg-background p-1 ring-4 ring-muted">
+            <Avatar className="size-8 rounded-full">
+              <AvatarFallback className="font-script text-lg">i</AvatarFallback>
             </Avatar>
             <Plus className="size-4" />
-            <Avatar className="rounded-full size-8">
+            <Avatar className="size-8 rounded-full">
               <AvatarImage src="" className="rounded-full" />
               <AvatarFallback className="text-[10px]">You</AvatarFallback>
             </Avatar>
           </div>
           <div className="space-y-3">
-            <p className="text-sm italic text-muted-foreground">
+            <p className="text-sm text-muted-foreground italic">
               Press <Kbd>Y</Kbd> or click the button below to
             </p>
             <BookCallButton />
@@ -176,19 +176,19 @@ export default async function Home() {
 
       {/* blog */}
       <section className="py-10" id="blog">
-        <h2 className="font-medium italic tracking-wider text-muted-foreground mb-8">
+        <h2 className="mb-8 font-medium tracking-wider text-muted-foreground italic">
           Writing
         </h2>
 
         <div className="space-y-4">
           <Blogs perPage={2} />
         </div>
-        <div className="text-right mt-4">
+        <div className="mt-4 text-right">
           <Button
             asChild
             size="sm"
             variant="link"
-            className="hover:[&>svg]:translate-x-px hover:[&>svg]:-translate-y-px h-7! px-0! hover:no-underline opacity-60 hover:opacity-100"
+            className="h-7! px-0! opacity-60 hover:no-underline hover:opacity-100 hover:[&>svg]:translate-x-px hover:[&>svg]:-translate-y-px"
           >
             <Link href="/blog">
               View all

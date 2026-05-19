@@ -17,15 +17,15 @@ export const NavigationMenu = () => {
 
   return (
     <Popover open={open} onOpenChange={() => toggle("menu")} modal>
-      <div className="fixed bottom-0 pointer-events-none inset-x-0 z-1 backdrop-blur-md mask-[linear-gradient(0deg,#000_30%,transparent)] [-webkit-mask-image:linear-gradient(0deg,#000_30%,transparent)] h-20" />
-      <div className="fixed bottom-4 z-10 left-1/2 h-fit -translate-x-1/2 rounded-lg w-[calc(100vw-2rem)] sm:w-auto sm:bottom-6 border border-border/50 bg-background/80 dark:bg-secondary/60 shadow-md backdrop-blur-md">
-        <PopoverAnchor className="opacity-0 pointer-events-none" />
-        <div className="flex flex-row gap-4 sm:gap-8 px-6 py-3 justify-between">
+      <div className="pointer-events-none fixed inset-x-0 bottom-0 z-1 h-20 mask-[linear-gradient(0deg,#000_30%,transparent)] backdrop-blur-md [-webkit-mask-image:linear-gradient(0deg,#000_30%,transparent)]" />
+      <div className="fixed bottom-4 left-1/2 z-10 h-fit w-[calc(100vw-2rem)] -translate-x-1/2 rounded-lg border border-border/50 bg-background/80 shadow-md backdrop-blur-md sm:bottom-6 sm:w-auto dark:bg-secondary/60">
+        <PopoverAnchor className="pointer-events-none opacity-0" />
+        <div className="flex flex-row justify-between gap-4 px-10 py-4 sm:gap-8">
           {NAVIGATION.map((link) => {
             const isActive =
               pathname === link.href ||
               (pathname.startsWith(link.href) && link.href !== "/");
-            console.log("pathname: ", pathname);
+
             return (
               <div className="relative" key={link.href}>
                 <Link
@@ -36,11 +36,14 @@ export const NavigationMenu = () => {
                     handleAction({ ...link });
                   }}
                   href={link.href}
-                  className={`flex flex-col items-center gap-0.5 justify-center text-muted-foreground focus-visible:scale-110 transition ease-out hover:text-primary focus-visible:text-primary outline-0
+                  className={`flex flex-col relative items-center gap-0.5 justify-center text-muted-foreground focus-visible:scale-110 transition ease-out hover:text-primary focus-visible:text-primary outline-0
                   ${isActive ? "scale-110 text-primary" : ""}`}
                 >
                   <link.icon className="size-4" />
                   <span className="text-xs">{link.title}</span>
+                  <span className="absolute -top-1 -right-1 text-[9px] text-highlight">
+                    {link.shortcutKey}
+                  </span>
                 </Link>
               </div>
             );
@@ -53,19 +56,22 @@ export const NavigationMenu = () => {
           >
             <Ellipsis className="size-4" />
             <span className="text-xs">More</span>
+            <span className="absolute -top-1 -right-1 text-[9px] text-highlight">
+              M
+            </span>
           </Button>
         </div>
       </div>
 
       <PopoverContent
-        className="no-scrollbar bg-background/80 dark:bg-secondary/60 backdrop-blur-md h-full max-h-[calc(var(--radix-popper-available-height)-1rem)] sm:max-h-[calc(var(--radix-popper-available-height)-2rem)] w-(--radix-popper-anchor-width) overflow-y-auto rounded-lg px-2 py-4 shadow-none border-border/50"
+        className="no-scrollbar h-full max-h-[calc(var(--radix-popper-available-height)-1rem)] w-(--radix-popper-anchor-width) overflow-y-auto rounded-lg border-border/50 bg-background/80 px-2 py-4 shadow-none backdrop-blur-md sm:max-h-[calc(var(--radix-popper-available-height)-2rem)] dark:bg-secondary/60"
         align="center"
         side="top"
         sideOffset={0}
       >
         <div className="flex flex-col gap-12 overflow-auto">
           <div className="flex flex-col gap-2">
-            <div className="italic text-sm font-medium px-3 text-muted-foreground">
+            <div className="px-3 text-sm font-medium text-muted-foreground italic">
               Shortcuts
             </div>
             <div className="flex flex-col gap-0.5">
@@ -74,7 +80,7 @@ export const NavigationMenu = () => {
                   variant="link"
                   asChild
                   key={item.title}
-                  className="justify-start text-sm h-auto font-normal"
+                  className="group h-auto justify-start text-xs font-normal"
                 >
                   <Link
                     href={
@@ -101,7 +107,7 @@ export const NavigationMenu = () => {
                 </Button>
               ))}
             </div>
-            <div className="text-sm font-medium px-3 italic text-muted-foreground">
+            <div className="px-3 text-sm font-medium text-muted-foreground italic">
               Social
             </div>
             <div className="flex flex-col gap-0.5">
@@ -110,7 +116,7 @@ export const NavigationMenu = () => {
                   <a
                     target="_blank"
                     href={item.href}
-                    className="justify-start text-sm h-auto font-normal"
+                    className="h-auto justify-start text-sm font-normal"
                   >
                     <svg
                       viewBox="0 0 24 24"

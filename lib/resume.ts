@@ -93,6 +93,61 @@ export const RESUME = {
   ],
   projects: [
     {
+      title: "B2B Foodservice",
+      href: "https://jimenezproduce.com",
+      company: "Jimenez Produce LLC",
+      active: true,
+      description: `A B2B foodservice ordering platform for wholesale restaurant suppliers. It features a comprehensive product catalog, streamlined multi-quantity order builder, and an automated customer onboarding application system with document management.`,
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Drizzle ORM",
+        "TanStack Form",
+        "Motion",
+        "Shadcn UI",
+      ],
+      source: null,
+      image: "/projects/jimenezproduce.png",
+      className:
+        "aspect-[1/1.5] **:data-[slot=image]:inset-x-2 **:data-[slot=image]:top-1/2 sm:aspect-video sm:col-span-2 sm:**:data-[slot=info]:max-w-1/2 sm:**:data-[slot=info]:h-full sm:**:data-[slot=info]:pr-10 sm:**:data-[slot=info]:justify-end sm:**:data-[slot=image]:w-1/2 sm:**:data-[slot=image]:right-10 sm:**:data-[slot=image]:top-10 sm:**:data-[slot=image]:left-auto",
+    },
+    {
+      title: "B2B Foodservice Ordering Platform",
+      href: "https://jimenezproduce.com/signin",
+      company: "Jimenez Produce LLC",
+      active: true,
+      description: `An end-to-end wholesale ordering platform. Features include customer accounts, multi-location operations, dynamic pricing, order guides, email notifications, and complete order management.`,
+      technologies: [
+        "Next.js",
+        "Better Auth",
+        "PostgreSQL",
+        "Vercel Blob",
+        "Drizzle ORM",
+        "TanStack Form",
+        "Motion",
+        "Shadcn UI",
+        "Twilio",
+      ],
+      source: null,
+      image: "/projects/jimenezproduce-dashboard.png",
+      className:
+        "aspect-[1/1.5] **:data-[slot=image]:inset-x-2 **:data-[slot=image]:top-1/2",
+    },
+    {
+      title: "Estimated Delivery Date API",
+      href: null,
+      company: "Goldys Nestt",
+      active: true,
+      description:
+        "A lightweight Cloudflare Worker API that calculates real-time estimated delivery dates using a third-party logistics service API.",
+      technologies: ["Cloudflare Workers", "TypeScript", "REST API"],
+      source: "https://github.com/irfaan-ansari/tcf-api",
+      image: "/projects/tcf-api.png",
+      className:
+        "aspect-[1/1.5] **:data-[slot=image]:inset-x-2 **:data-[slot=image]:top-1/2",
+    },
+    {
       title: "Portfolio",
       href: null,
       company: null,
@@ -111,7 +166,7 @@ export const RESUME = {
       source: "https://github.com/irfaan-ansari/irfaan.dev",
       image: "/projects/irfaan.dev.png",
       className:
-        "aspect-[1/1.5] **:data-[slot=image]:inset-x-2 **:data-[slot=image]:top-1/2 sm:aspect-video sm:col-span-2 sm:**:data-[slot=info]:max-w-1/2 sm:**:data-[slot=info]:h-full sm:**:data-[slot=info]:pr-10 sm:**:data-[slot=info]:justify-end sm:**:data-[slot=image]:w-1/2 sm:**:data-[slot=image]:right-10 sm:**:data-[slot=image]:top-10 sm:**:data-[slot=image]:left-auto",
+        "aspect-[1/1.5] **:data-[slot=image]:inset-x-2 **:data-[slot=image]:top-1/2",
     },
     {
       title: "Ethnic Fashion E-Commerce Store",

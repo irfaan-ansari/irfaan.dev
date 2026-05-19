@@ -38,19 +38,19 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className="scroll-smooth scroll-p-16"
+      className="no-scrollbar scroll-p-16 overflow-y-auto scroll-smooth"
       data-scroll-behavior="smooth"
     >
       <Analytics />
       <body
-        className={`${inter.variable} ${script.variable} antialiased selection:bg-highlight selection:text-white min-h-dvh relative font-inter`}
+        className={`${inter.variable} ${script.variable} antialiased  selection:bg-highlight selection:text-white min-h-dvh relative font-inter`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Toaster position="top-center" />
           {/* scroll progress */}
           <ScrollProgress />
           <NavigationMenu />
-          <div className="max-w-180 mx-auto w-full px-4">
+          <div className="mx-auto w-full max-w-180 px-4">
             {/* main */}
             <main className="relative ">{children}</main>
 
