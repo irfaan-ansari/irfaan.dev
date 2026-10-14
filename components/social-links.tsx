@@ -9,7 +9,7 @@ export const SocialLinks = () => {
         Connect
       </h2>
 
-      <ul className="flex flex-col">
+      <ul className="flex flex-col [&:hover_[data-slot=link]:not(:hover)]:opacity-50">
         {Object.values(SOCIAL_LINKS).map((link, i) => (
           <li
             key={i}
@@ -23,7 +23,8 @@ export const SocialLinks = () => {
             <a
               href={link.href}
               target="_blank"
-              className="flex items-center outline-0 group/contact"
+              className="flex items-center outline-0 group/contact transition"
+              data-slot="link"
             >
               <div className="flex items-center gap-3 grow shrink basis-0">
                 <span className="h-8 w-14 bg-(--color) inline-flex items-center justify-start rounded-full rounded-br-xs px-3">
