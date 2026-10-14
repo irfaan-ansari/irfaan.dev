@@ -43,9 +43,10 @@ const ProjectCard = ({
         "data-[loaded=true]:*:data-[slot=image]:animate-in data-[loaded=true]:*:data-[slot=image]:fade-in-50 data-[loaded=true]:*:data-[slot=image]:slide-in-from-bottom-2",
         "data-[loaded=false]:*:data-[slot=info]:opacity-0 data-[loaded=false]:*:data-[slot=info]:translate-y-2",
         "data-[loaded=true]:*:data-[slot=info]:animate-in data-[loaded=true]:*:data-[slot=info]:fade-in-50 data-[loaded=true]:*:data-[slot=info]:slide-in-from-bottom-2",
-        "data-[loaded=true]:animate-none transition-colors duration-300 hover:*:data-[slot=image]:-translate-y-1",
-        className
+        "data-[loaded=true]:animate-none  duration-300 hover:*:data-[slot=image]:-translate-y-1",
+        className,
       )}
+      data-slot="project-card"
       data-loaded={!loading}
       style={
         {

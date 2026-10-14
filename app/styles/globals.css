@@ -4,11 +4,16 @@
 @import "fumadocs-ui/css/shadcn.css";
 @import "fumadocs-ui/css/preset.css";
 
+/* The Fumadocs search UI is unused here. Next 16.1.1's CSS parser rejects
+   its custom highlight pseudo-element, so omit only those two utilities. */
+@source not inline("[&_::highlight(fd-search)]:text-fd-primary");
+@source not inline("[&_::highlight(fd-search)]:underline");
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
   --gutter-width: 1rem;
-  --radius: 0.525rem;
+  --radius: 0.825rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);

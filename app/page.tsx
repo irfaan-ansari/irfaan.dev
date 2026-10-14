@@ -85,7 +85,10 @@ export default async function Home() {
       <Divider />
 
       {/* tech skills */}
-      <section className="py-10" id="skills">
+      <section
+        className="py-10 [&:hover_[data-slot=badge]:not(:hover)]:opacity-50"
+        id="skills"
+      >
         <h2 className="mb-8 font-medium tracking-wider text-muted-foreground italic">
           Skills
         </h2>
@@ -103,7 +106,7 @@ export default async function Home() {
           Projects
         </h2>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+        <div className="grid  grid-cols-1 gap-6 sm:grid-cols-2 [&:hover_[data-slot=project-card]:not(:hover)]:opacity-50">
           {projects.slice(0, 3).map((project, index) => (
             <ProjectCard index={index} project={project} key={project.title} />
           ))}

@@ -62,7 +62,7 @@ const BlogCard = async ({ data, url }: BlogCardType) => {
       </div>
       <div className="flex-1 space-y-3 min-w-0">
         <div className="flex gap-2 items-start">
-          <h3 className="font-medium text-lg/snug line-clamp-1 flex-[1_1_0] truncate">
+          <h3 className="font-medium text-base/snug line-clamp-1 flex-[1_1_0] truncate">
             {title}
           </h3>
           <ArrowUpRight className="size-4 shrink-0 opacity-0 group-hover/blog:opacity-70 group-hover/blog:translate-x-0.5 group-focus-visible/blog:translate-x-0.5 transition ease-out" />
