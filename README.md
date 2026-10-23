@@ -17,6 +17,22 @@ pnpm build
 
 The development server runs at http://localhost:3000.
 
+## Vercel deployment
+
+The Nitro Vite plugin builds the server function and routing that Vercel needs to serve TanStack Start. `vercel.json` explicitly selects the `tanstack-start` framework. Vercel selects the deployment preset automatically.
+
+Use the repository root, the TanStack Start framework preset, and the default build/output settings. Remove any old Next.js or static Vite output directory overrides from the Vercel project before redeploying. The current adapter targets Node.js 24.
+
+To verify the Vercel output locally in PowerShell:
+
+```powershell
+$env:NITRO_PRESET = "vercel"
+pnpm build
+Remove-Item Env:NITRO_PRESET
+```
+
+The build produces `.vercel/output/config.json`, static assets, and the server function under `.vercel/output/functions/`. Generated deployment output is ignored by Git.
+
 ## Feature structure
 
 ```text
