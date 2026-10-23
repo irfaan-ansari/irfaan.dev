@@ -8,6 +8,18 @@ export function getRouter() {
     scrollRestoration: true,
     defaultPreload: "intent",
     defaultPreloadStaleTime: 0,
+    defaultViewTransition: {
+      types: ({ fromLocation, toLocation }) => {
+        if (
+          typeof window === "undefined" ||
+          window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+          fromLocation?.pathname === toLocation.pathname
+        ) {
+          return false
+        }
+        return ["page"]
+      },
+    },
   })
 
   return router
