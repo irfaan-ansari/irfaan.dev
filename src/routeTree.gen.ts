@@ -13,6 +13,8 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ProjectsIndexRouteImport } from './routes/projects.index'
 import { Route as ProjectsSlugRouteImport } from './routes/projects.$slug'
+import { Route as WorkIndexRouteImport } from './routes/work.index'
+import { Route as WorkSlugRouteImport } from './routes/work.$slug'
 import { Route as WritingsIndexRouteImport } from './routes/writings.index'
 import { Route as WritingsSlugRouteImport } from './routes/writings.$slug'
 
@@ -36,6 +38,16 @@ const ProjectsSlugRoute = ProjectsSlugRouteImport.update({
   path: '/projects/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WorkIndexRoute = WorkIndexRouteImport.update({
+  id: '/work/',
+  path: '/work/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkSlugRoute = WorkSlugRouteImport.update({
+  id: '/work/$slug',
+  path: '/work/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WritingsIndexRoute = WritingsIndexRouteImport.update({
   id: '/writings/',
   path: '/writings/',
@@ -51,16 +63,20 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/projects/$slug': typeof ProjectsSlugRoute
+  '/work/$slug': typeof WorkSlugRoute
   '/writings/$slug': typeof WritingsSlugRoute
   '/projects/': typeof ProjectsIndexRoute
+  '/work/': typeof WorkIndexRoute
   '/writings/': typeof WritingsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/projects/$slug': typeof ProjectsSlugRoute
+  '/work/$slug': typeof WorkSlugRoute
   '/writings/$slug': typeof WritingsSlugRoute
   '/projects': typeof ProjectsIndexRoute
+  '/work': typeof WorkIndexRoute
   '/writings': typeof WritingsIndexRoute
 }
 export interface FileRoutesById {
@@ -68,8 +84,10 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/projects/$slug': typeof ProjectsSlugRoute
+  '/work/$slug': typeof WorkSlugRoute
   '/writings/$slug': typeof WritingsSlugRoute
   '/projects/': typeof ProjectsIndexRoute
+  '/work/': typeof WorkIndexRoute
   '/writings/': typeof WritingsIndexRoute
 }
 export interface FileRouteTypes {
@@ -78,24 +96,30 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/projects/$slug'
+    | '/work/$slug'
     | '/writings/$slug'
     | '/projects/'
+    | '/work/'
     | '/writings/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/contact'
     | '/projects/$slug'
+    | '/work/$slug'
     | '/writings/$slug'
     | '/projects'
+    | '/work'
     | '/writings'
   id:
     | '__root__'
     | '/'
     | '/contact'
     | '/projects/$slug'
+    | '/work/$slug'
     | '/writings/$slug'
     | '/projects/'
+    | '/work/'
     | '/writings/'
   fileRoutesById: FileRoutesById
 }
@@ -103,8 +127,10 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
   ProjectsSlugRoute: typeof ProjectsSlugRoute
+  WorkSlugRoute: typeof WorkSlugRoute
   WritingsSlugRoute: typeof WritingsSlugRoute
   ProjectsIndexRoute: typeof ProjectsIndexRoute
+  WorkIndexRoute: typeof WorkIndexRoute
   WritingsIndexRoute: typeof WritingsIndexRoute
 }
 
@@ -138,6 +164,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/work/': {
+      id: '/work/'
+      path: '/work'
+      fullPath: '/work/'
+      preLoaderRoute: typeof WorkIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work/$slug': {
+      id: '/work/$slug'
+      path: '/work/$slug'
+      fullPath: '/work/$slug'
+      preLoaderRoute: typeof WorkSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/writings/': {
       id: '/writings/'
       path: '/writings'
@@ -159,8 +199,10 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
   ProjectsSlugRoute: ProjectsSlugRoute,
+  WorkSlugRoute: WorkSlugRoute,
   WritingsSlugRoute: WritingsSlugRoute,
   ProjectsIndexRoute: ProjectsIndexRoute,
+  WorkIndexRoute: WorkIndexRoute,
   WritingsIndexRoute: WritingsIndexRoute,
 }
 export const routeTree = rootRouteImport

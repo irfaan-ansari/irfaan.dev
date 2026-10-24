@@ -13,7 +13,7 @@ export function ProjectPage({ project }: { project: Project }) {
     <>
       <section className={cn("site-section", "pt-0")}>
         <Link
-          to="/projects"
+          to="/work"
           className="mb-7 inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground"
         >
           <RiArrowLeftLine aria-hidden="true" className="size-4" /> All projects

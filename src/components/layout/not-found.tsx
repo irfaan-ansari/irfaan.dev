@@ -28,7 +28,7 @@ export function NotFound() {
           <Link to="/" className={buttonVariants()}>
             Back to home
           </Link>
-          <Link to="/projects" className={buttonVariants({ variant: "outline" })}>
+          <Link to="/work" className={buttonVariants({ variant: "outline" })}>
             Explore projects
           </Link>
         </div>

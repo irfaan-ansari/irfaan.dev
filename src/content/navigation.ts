@@ -2,8 +2,8 @@ export const footerDescription =
   "Building practical web applications that solve real problems."
 
 export const footerExploreLinks = [
-  { label: "Projects", to: "/projects" },
-  { label: "What I do", to: "/", hash: "capabilities" },
+  { label: "Work", to: "/work" },
+  { label: "About me", to: "/", hash: "about" },
   { label: "Writing", to: "/writings" },
   { label: "FAQs", to: "/", hash: "faqs" },
 ] as const

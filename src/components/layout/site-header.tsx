@@ -4,12 +4,10 @@ import { useScrolled } from "@/hooks/use-scrolled"
 import { DesktopNavigation } from "@/features/navigation/components/desktop-navigation"
 import { MobileNavigation } from "@/features/navigation/components/mobile-navigation"
 import { Link } from "@tanstack/react-router"
-import { profile } from "@/content/profile"
 import { cn } from "@/lib/utils"
 import { AppearanceControls } from "@/components/appearance-controls"
 import { Logo } from "@/components/shared/logo"
 import { Icon } from "@/components/shared/icon"
-
 export function SiteHeader() {
   const scrolled = useScrolled()
   const headerRef = useRef<HTMLElement>(null)
@@ -22,11 +20,10 @@ export function SiteHeader() {
       )}
     >
       <Link
-        to="/"
+        to="/" aria-label="Irfaan home"
         className="flex shrink-0 items-center gap-1.5 text-sm font-semibold tracking-tight sm:gap-2 sm:text-base"
       >
         <Logo className="size-6 sm:size-8" />
-        {profile.brand}
       </Link>
       <DesktopNavigation />
       <div className="flex items-center gap-1 sm:gap-3">
