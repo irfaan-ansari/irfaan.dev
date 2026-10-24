@@ -36,7 +36,7 @@ export function ProjectCard({
             size="sm"
             className="mt-4"
             render={
-              <Link to="/projects/$slug" params={{ slug: project.id }}>
+              <Link to="/work/$slug" params={{ slug: project.id }}>
                 View project <Icon name="right" className="size-3.5" />
               </Link>
             }
@@ -44,7 +44,7 @@ export function ProjectCard({
         </CardContent>
         <div className="relative min-w-0 origin-top-left translate-x-2 translate-y-5 rotate-3 self-start rounded-lg shadow-md transition-[translate,rotate,box-shadow] duration-200 ease-out motion-safe:group-focus-within/project:translate-x-1 motion-safe:group-hover/project:translate-x-1 motion-reduce:transition-none sm:translate-x-7 sm:translate-y-4 sm:group-focus-within/project:translate-x-6 sm:group-hover/project:translate-x-6">
           <Link
-            to="/projects/$slug"
+            to="/work/$slug"
             params={{ slug: project.id }}
             aria-label={`View ${project.name}`}
             className="block rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4"

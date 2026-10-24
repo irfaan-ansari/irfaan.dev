@@ -4,7 +4,7 @@ import { Link } from "@tanstack/react-router"
 import { AccentUnderline } from "@/components/shared/accent-underline"
 
 interface NavigationLinkProps {
-  to: "/" | "/projects" | "/writings" | "/contact"
+  to: "/" | "/work" | "/writings" | "/contact"
   hash?: string
   active: boolean
   className?: string

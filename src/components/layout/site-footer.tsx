@@ -1,5 +1,4 @@
 import { Link } from "@tanstack/react-router"
-import { profile } from "@/content/profile"
 import {
   footerDescription,
   footerExploreLinks,
@@ -9,18 +8,16 @@ import { Logo } from "@/components/shared/logo"
 import { Icon } from "@/components/shared/icon"
 import { Button } from "@/components/ui/button"
 import { RiArrowUpLine } from "@remixicon/react"
-
 export function SiteFooter() {
   return (
     <footer className="px-5 pt-8 pb-5 sm:px-10">
       <div className="grid grid-cols-2 gap-6 sm:grid-cols-[3fr_1fr_1fr]">
         <div className="col-span-2 sm:col-span-1">
           <Link
-            to="/"
+            to="/" aria-label="Irfaan home"
             className="inline-flex items-center gap-2 text-lg font-bold tracking-tight"
           >
             <Logo className="size-7" />
-            {profile.brand}
           </Link>
           <p className="mt-1 max-w-52 text-sm leading-relaxed text-muted-foreground">
             {footerDescription}
@@ -33,7 +30,6 @@ export function SiteFooter() {
             <Icon name="github" />
           </a>
         </div>
-
         <nav aria-label="Connect">
           <p className="mb-3 font-heading text-xs font-medium tracking-wider text-muted-foreground">
             Connect

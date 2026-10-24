@@ -2,8 +2,8 @@ import { Button, buttonVariants } from "@/components/ui/button"
 import { HandDrawnHighlight } from "@/components/shared/hand-drawn-highlight"
 import { ServiceIcon } from "@/features/home/components/service-icon"
 import { HeadingUnderline } from "@/components/shared/heading-underline"
-import { Logo } from "@/components/shared/logo"
 import { BuildWorkflow } from "@/features/home/components/build-workflow"
+import { AboutSection } from "@/features/home/components/about-section"
 import { Card, CardContent } from "@/components/ui/card"
 import {
   Accordion,
@@ -53,8 +53,6 @@ export function HomePage() {
             aria-hidden="true"
             className="relative hidden flex-col items-center justify-center py-5 sm:flex"
           >
-            <div className="absolute inset-0 rounded-full bg-primary/5 blur-2xl" />
-            <Logo className="relative size-24" />
             <BuildWorkflow />
           </div>
         </div>
@@ -96,7 +94,7 @@ export function HomePage() {
             </h2>
           </div>
           <Link
-            to="/projects"
+            to="/work"
             className="flex items-center gap-1 text-sm font-semibold"
           >
             View all projects <Icon name="right" className="size-3.5" />
@@ -108,6 +106,7 @@ export function HomePage() {
           ))}
         </div>
       </section>
+      <AboutSection />
       <section
         id="capabilities"
         className={cn(
