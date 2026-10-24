@@ -1,29 +1,155 @@
-# Irfaan’s portfolio
+# Irfaan · Full Stack Developer
 
-TanStack Start, React, TypeScript, Tailwind CSS v4, and shadcn/Base UI. Initialized with:
+A personal portfolio for the websites, web applications, and connected systems I build. Designed around clear typography, practical work, and a simple browsing experience.
+
+**[Visit the live site →](https://irfaan.vercel.app/)** · [Work](https://irfaan.vercel.app/work) · [Writing](https://irfaan.vercel.app/writings) · [Contact](https://irfaan.vercel.app/contact)
+
+## Preview
+
+<a href="https://irfaan.vercel.app/">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/images/homepage-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="docs/images/homepage-light.png">
+    <img src="docs/images/homepage-light.png" alt="Irfaan’s portfolio homepage with the introduction, technology badges, and selected work" width="1280">
+  </picture>
+</a>
+
+Screenshots of the deployed homepage. The preview follows your light or dark appearance.
+
+## What’s inside
+
+- **Selected work:** project previews, technology stacks, and individual case study pages.
+- **About and capabilities:** an introduction, working approach, and services.
+- **Writing:** Markdown articles with tags, read times, featured entries, and draft support.
+- **Appearance controls:** light, dark, and system themes with ten accent choices and saved preferences.
+- **Responsive navigation:** desktop links, mobile popovers, and active section highlighting.
+- **Contact:** a validated project enquiry form that opens a prefilled email draft.
+- **Shared design system:** reusable buttons, cards, badges, FAQs, and a custom SVG mark.
+
+## Stack
+
+| Layer | Technology |
+| --- | --- |
+| Application and routing | TanStack Start, TanStack Router, React, TypeScript |
+| Styling | Tailwind CSS v4, CSS theme variables |
+| Components | shadcn/ui, Base UI, Remix Icon |
+| Forms | TanStack Form, Zod |
+| Articles | Markdown, react-markdown, remark-gfm |
+| Motion | Motion and CSS, with reduced-motion support |
+| Build and hosting | Vite, Nitro, Vercel |
+
+## Run locally
+
+Use **Node.js 24** and **pnpm**.
 
 ```sh
-pnpm dlx shadcn@latest init --preset bIkg51d --template start --pointer
-```
-
-## Development
-
-```sh
+git clone https://github.com/irfaan-ansari/irfaan.dev.git
+cd irfaan.dev
 pnpm install
 pnpm dev
-pnpm typecheck
-pnpm build
 ```
 
-The development server runs at http://localhost:3000.
+Open [localhost:3000](http://localhost:3000).
 
-## Vercel deployment
+To preview on a phone connected to the same Wi-Fi:
 
-The Nitro Vite plugin builds the server function and routing that Vercel needs to serve TanStack Start. `vercel.json` explicitly selects the `tanstack-start` framework. Vercel selects the deployment preset automatically.
+```sh
+pnpm dev --host 0.0.0.0
+```
 
-Use the repository root, the TanStack Start framework preset, and the default build/output settings. Remove any old Next.js or static Vite output directory overrides from the Vercel project before redeploying. The current adapter targets Node.js 24.
+Open the network URL printed by Vite on your phone.
 
-To verify the Vercel output locally in PowerShell:
+### Useful commands
+
+| Command | Purpose |
+| --- | --- |
+| `pnpm dev` | Start the development server |
+| `pnpm typecheck` | Check TypeScript types |
+| `pnpm build` | Create the production build |
+| `pnpm preview` | Preview the production build |
+| `pnpm generate-routes` | Regenerate the TanStack route tree |
+
+## Make it yours
+
+| Content | Location |
+| --- | --- |
+| Name, role, email, technologies | `src/content/profile.ts` |
+| Header navigation | `src/features/navigation/content/navigation.ts` |
+| Footer navigation and social links | `src/content/navigation.ts` |
+| About copy and working approach | `src/features/home/components/about-section.tsx` |
+| Services and FAQs | `src/features/home/content/home.ts` |
+| Work entries | `src/features/projects/content/projects.ts` |
+| Project thumbnails | `public/projects/` |
+| Articles | `src/features/writings/content/` |
+| Contact fields and options | `src/features/contact/content/contact.ts` |
+| Theme colors and button shadows | `src/styles.css` |
+| Theme options and constants | `src/lib/theme.ts` |
+| Logo, favicon, and sharing image | `public/` |
+
+### Add work
+
+Add an entry to `src/features/projects/content/projects.ts` and its thumbnail to `public/projects/`. The entry’s `id` becomes its URL at `/work/<id>`. The first three entries appear on the homepage.
+
+The listing lives at `/work`. Older `/projects` and `/projects/<slug>` URLs redirect to their corresponding work pages.
+
+### Publish an article
+
+Create a Markdown file in `src/features/writings/content/`. Its filename becomes the slug at `/writings/<slug>`.
+
+```markdown
+---
+title: A useful article title
+description: A short summary for readers and search engines.
+date: "2026-10-24"
+tags:
+  - Development
+featured: false
+draft: false
+---
+
+Your introduction.
+
+## A section
+
+Your article content.
+```
+
+Title, description, and a quoted `YYYY-MM-DD` date are required. Tags, `featured`, and `draft` are optional. Featured articles sort first, followed by publication date. Drafts are excluded from the listing and article routes. Rebuild after adding or editing articles.
+
+### Contact form
+
+The form validates the visitor’s name, email, project type, and message. Submission opens a prefilled email draft for them to review and send, with a copy-message fallback. It does not send or store messages on a server.
+
+## Project structure
+
+```text
+src/
+  components/
+    layout/        Shared header, footer, and page frame
+    shared/        Logo, icons, highlights, technology badges
+    ui/            Reusable UI primitives
+  content/         Shared profile and footer content
+  features/
+    home/          Hero, About, capabilities, and FAQs
+    projects/      Work content, cards, and detail pages
+    writings/      Markdown content, listings, and article rendering
+    contact/       Form, validation, and email draft helpers
+    navigation/    Desktop/mobile menus and active link state
+  hooks/           Theme, scrolling, and viewport hooks
+  lib/             Theme constants and utilities
+  routes/          Route definitions, loaders, and page metadata
+  styles.css       Theme tokens and global styles
+public/            Static branding assets and project thumbnails
+docs/images/       README screenshots
+```
+
+## Deploy on Vercel
+
+The live site is hosted at **[irfaan.vercel.app](https://irfaan.vercel.app/)**.
+
+Import the repository into Vercel, use the repository root, and select the **TanStack Start** framework preset with the default build and output settings. `vercel.json` declares the framework; Nitro generates the server function and routing for deployment.
+
+To check the Vercel build output locally in PowerShell:
 
 ```powershell
 $env:NITRO_PRESET = "vercel"
@@ -31,77 +157,4 @@ pnpm build
 Remove-Item Env:NITRO_PRESET
 ```
 
-The build produces `.vercel/output/config.json`, static assets, and the server function under `.vercel/output/functions/`. Generated deployment output is ignored by Git.
-
-## Feature structure
-
-```text
-src/
-  features/
-    home/          # Homepage, services, FAQ, cursor artwork, workflow animation
-    projects/      # Project data, listing, detail page, previews, cards
-    writings/      # Markdown files, loading, listing, article renderer
-    contact/       # Form, Zod schema, project options, email draft helpers
-    navigation/    # Desktop/mobile navigation, active state, link styling
-  components/
-    layout/        # Shared header, footer, page frame, navigation
-    shared/        # Logo, icons, accent underline, technology badge
-    ui/            # shadcn/Base UI primitives
-  content/         # Shared profile and navigation content
-  hooks/           # Theme context, initialization, scrolling, and mobile hooks
-  lib/             # Theme constants and shared utilities
-  routes/          # TanStack route definitions, loaders, metadata
-public/
-  projects/        # Named project thumbnails
-```
-
-Features own their components, content, hooks, and helpers. Navigation includes the mobile popover and desktop menu; both use one link configuration. The hero includes the logo and an animated idea/build/ship workflow. Appearance controls and ThemeProvider live in src/components, with useTheme in src/hooks/use-theme.ts and theme constants in src/lib/theme.ts. Routes import page components from features. Shared profile data lives in `src/content/profile.ts`. Styling uses Tailwind utilities; `src/styles.css` contains font imports and the generated shadcn theme.
-
-## Projects
-
-Edit `src/features/projects/content/projects.ts`. `/projects` lists all projects with category filters; `/projects/<id>` shows an overview. The homepage features the first three entries.
-
-Six supplied thumbnails are named and linked under `public/projects/`: Jimenez Produce, Goldy’s Nestt, BLAK, Folio, Fluur, and Carefinity. Folio, Fluur, and Carefinity are presented as website concepts based on the supplied images. External project URLs were not provided; thumbnails link to the corresponding portfolio detail page.
-
-## Markdown writings
-
-Add `.md` files directly in `src/features/writings/content/`. The filename becomes the article slug at `/writings/<slug>`. Featured articles appear first at `/writings`, followed by publication date.
-
-```markdown
----
-title: Your article title
-description: A short summary for the listing and search metadata.
-date: "2026-10-23"
-tags:
-  - Development
-draft: false
-featured: false
----
-
-Your introduction.
-
-## A section
-
-Write ordinary Markdown here.
-```
-
-Title, description, and a quoted `YYYY-MM-DD` date are required. Tags and the boolean featured flag are optional. `draft: true` excludes an article from the listing and its route. Rebuild after editing or adding Markdown files.
-
-Markdown supports headings, links, images, lists, blockquotes, code blocks, and GitHub-style tables. Raw HTML is not rendered.
-
-## Contact
-
-`/contact` uses TanStack Form with Zod validation. Field definitions and select options are in `src/features/contact/content/contact.ts`; the schema and email helpers are in that feature’s `lib/` folder.
-
-The form validates name, email, project type, and message. Submission opens a prefilled email draft for the visitor to review and send. It does not send or store messages on a server. A copy-message fallback is provided. Connect an email endpoint in `src/features/contact/components/contact-form.tsx` if server delivery is needed later.
-
-## UI components
-
-Shared primitives in `src/components/ui/` use the shadcn Base UI preset. Cards, badges, FAQs, and appearance controls follow ReUI’s compositions:
-
-- https://reui.io/components/card
-- https://reui.io/components/badge
-- https://reui.io/components/accordion/c-accordion-3
-- https://reui.io/components/popover/c-popover-10
-
-Confirm the contact email and social profile links in shared content before publication.
+The output is generated under `.vercel/output/` and is ignored by Git.
