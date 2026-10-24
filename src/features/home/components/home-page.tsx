@@ -75,7 +75,7 @@ export function HomePage() {
             variant="outline"
             render={
               <a
-                href="https://github.com/irfanansari"
+                href="https://github.com/irfaan-ansari"
                 target="_blank"
                 rel="noreferrer"
               >

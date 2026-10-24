@@ -9,6 +9,6 @@ export const footerExploreLinks = [
 ] as const
 
 export const footerSocialLinks = [
-  { label: "GitHub", href: "https://github.com/irfanansari" },
+  { label: "GitHub", href: "https://github.com/irfaan-ansari" },
   { label: "LinkedIn", href: "https://www.linkedin.com/" },
 ] as const
