@@ -3,7 +3,7 @@ export const footerDescription =
 
 export const footerExploreLinks = [
   { label: "Work", to: "/work" },
-  { label: "About me", to: "/", hash: "about" },
+  { label: "About", to: "/", hash: "about" },
   { label: "Writing", to: "/writings" },
   { label: "FAQs", to: "/", hash: "faqs" },
 ] as const

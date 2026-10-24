@@ -13,6 +13,7 @@ export function getRouter() {
         if (
           typeof window === "undefined" ||
           window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+          window.matchMedia("(hover: none) and (pointer: coarse)").matches ||
           fromLocation?.pathname === toLocation.pathname
         ) {
           return false

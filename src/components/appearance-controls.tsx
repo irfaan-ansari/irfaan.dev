@@ -9,27 +9,35 @@ import {
 } from "@/components/ui/popover"
 import { Button } from "@/components/ui/button"
 import { Icon } from "@/components/shared/icon"
+import { type RefObject } from "react"
+import { useMobile } from "@/hooks/use-mobile"
 
-export function AppearanceControls() {
+export function AppearanceControls({
+  anchorRef,
+}: {
+  anchorRef?: RefObject<HTMLElement | null>
+}) {
+  const isMobile = useMobile(1024)
   const { theme, primaryColor, setPrimaryColor, setTheme } = useTheme()
   return (
-    <Popover>
+    <Popover modal={true}>
       <PopoverTrigger
         render={<Button variant="ghost" size="icon" />}
         aria-label="Appearance settings"
         title="Appearance settings"
-        className="relative size-8 rounded-lg border-0 bg-transparent text-muted-foreground shadow-none sm:size-9"
+        className="relative size-11 rounded-lg border-0 bg-transparent text-muted-foreground shadow-none lg:size-9"
       >
-        <Icon name="sliders" className="size-4" />
+        <Icon name="sliders" className="size-5 lg:size-4" />
         <span
           aria-hidden="true"
-          className="absolute right-1 bottom-1 size-1.5 rounded-full bg-primary"
+          className="absolute right-2 bottom-2 size-1.5 rounded-full bg-primary lg:right-1 lg:bottom-1"
         />
       </PopoverTrigger>
       <PopoverContent
-        align="end"
+        anchor={isMobile ? anchorRef : undefined}
+        align={isMobile ? "center" : "end"}
         sideOffset={8}
-        className="w-72 max-w-[calc(100vw-2rem)] gap-0 rounded-xl bg-popover p-3 motion-reduce:animate-none"
+        className="w-(--anchor-width) max-w-[calc(100vw-2rem)] gap-0 rounded-xl bg-popover p-3 motion-reduce:animate-none lg:w-72"
       >
         <PopoverTitle className="sr-only">Appearance settings</PopoverTitle>
         <p

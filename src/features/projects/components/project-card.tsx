@@ -42,7 +42,7 @@ export function ProjectCard({
             }
           />
         </CardContent>
-        <div className="relative min-w-0 origin-top-left translate-x-2 translate-y-5 rotate-3 self-start rounded-lg shadow-md transition-[translate,rotate,box-shadow] duration-200 ease-out motion-safe:group-focus-within/project:translate-x-1 motion-safe:group-hover/project:translate-x-1 motion-reduce:transition-none sm:translate-x-7 sm:translate-y-4 sm:group-focus-within/project:translate-x-6 sm:group-hover/project:translate-x-6">
+        <div className="relative min-w-0 translate-y-4 rotate-3 self-end rounded-lg shadow-md transition-[translate,rotate,box-shadow] duration-200 ease-out motion-safe:group-hover/project:-translate-x-1 sm:translate-x-7 sm:motion-safe:group-hover/project:translate-x-6 motion-reduce:transition-none">
           <Link
             to="/work/$slug"
             params={{ slug: project.id }}

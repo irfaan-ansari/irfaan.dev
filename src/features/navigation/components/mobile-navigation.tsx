@@ -26,23 +26,24 @@ export function MobileNavigation({
   }, [isMobile])
 
   return (
-    <Popover open={open} onOpenChange={setOpen}>
+    <Popover open={open} onOpenChange={setOpen} modal={true}>
       <PopoverTrigger
         render={<Button variant="ghost" size="icon" />}
         aria-label={open ? "Close navigation" : "Open navigation"}
-        className="size-8 rounded-lg border-0 lg:hidden"
+        className="size-11 rounded-lg border-0 lg:hidden"
       >
         {open ? (
-          <RiCloseLine aria-hidden="true" className="size-5" />
+          <RiCloseLine aria-hidden="true" className="size-6" />
         ) : (
-          <RiMenuLine aria-hidden="true" className="size-5" />
+          <RiMenuLine aria-hidden="true" className="size-6" />
         )}
       </PopoverTrigger>
       <PopoverContent
         anchor={anchorRef}
+
         align="center"
-        sideOffset={0}
-        className="w-(--anchor-width) gap-2 rounded-xl border border-border/60 bg-background/95 p-2 text-foreground shadow-sm ring-0 backdrop-blur-xl motion-reduce:animate-none lg:hidden"
+        sideOffset={6}
+        className="w-(--anchor-width) gap-2 rounded-xl border border-border/60 p-2 text-foreground shadow-sm ring-0 backdrop-blur-xl lg:hidden"
       >
         <PopoverTitle className="sr-only">Navigation</PopoverTitle>
         <nav aria-label="Mobile navigation" className="flex flex-col gap-1">
