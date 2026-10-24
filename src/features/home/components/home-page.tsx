@@ -86,18 +86,18 @@ export function HomePage() {
         </div>
       </section>
       <section id="work" className={cn("site-section")}>
-        <div className="mb-6 flex items-center justify-between gap-3">
-          <div>
-            <Eyebrow>Featured work</Eyebrow>
-            <h2 className="text-3xl font-bold tracking-tight">
-              Selected projects
+        <div className="mb-7 flex flex-wrap items-end justify-between gap-x-6 gap-y-4">
+          <div className="max-w-sm">
+            <Eyebrow>Selected work</Eyebrow>
+            <h2 className="text-2xl leading-tight font-bold tracking-tight sm:text-3xl">
+              Made to work.
             </h2>
           </div>
           <Link
             to="/work"
-            className="flex items-center gap-1 text-sm font-semibold"
+            className="inline-flex shrink-0 items-center gap-1 whitespace-nowrap text-sm font-semibold"
           >
-            View all projects <Icon name="right" className="size-3.5" />
+            Explore all work <Icon name="right" className="size-3.5 shrink-0" />
           </Link>
         </div>
         <div id="projects" className="space-y-6">
@@ -115,14 +115,6 @@ export function HomePage() {
         )}
       >
         <div className="globe-surface relative isolate overflow-hidden rounded-xl px-6 py-8">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -top-16 -right-16 size-72 rounded-full bg-primary/10 blur-3xl"
-          />
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute right-0 -bottom-24 size-72 rounded-full bg-primary/15 blur-3xl"
-          />
           <Globe />
           <div className="relative z-10 max-w-80">
             <Eyebrow>What I do</Eyebrow>
@@ -184,7 +176,10 @@ export function HomePage() {
           </div>
           <Link
             to="/contact"
-            className={cn(buttonVariants({ size: "sm" }), "shrink-0 px-3 text-sm")}
+            className={cn(
+              buttonVariants({ size: "sm" }),
+              "shrink-0 px-3 text-sm"
+            )}
           >
             Ask me directly <Icon name="arrow" className="size-3" />
           </Link>

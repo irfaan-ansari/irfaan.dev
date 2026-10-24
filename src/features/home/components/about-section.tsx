@@ -28,7 +28,7 @@ export function AboutSection() {
       className="site-section scroll-mt-36 sm:scroll-mt-28"
     >
       <p className="mb-2 text-xs font-semibold tracking-wider text-muted-foreground uppercase">
-        About me
+        About
       </p>
       <div className="mt-5 space-y-8">
         <div>

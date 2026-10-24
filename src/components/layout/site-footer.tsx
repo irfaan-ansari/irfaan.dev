@@ -79,7 +79,10 @@ export function SiteFooter() {
         <Button
           type="button"
           variant="outline"
-          size="sm"
+          size="icon"
+          aria-label="Back to top"
+          title="Back to top"
+          className="size-11 rounded-full"
           onClick={() => {
             window.scrollTo({
               top: 0,
@@ -90,7 +93,7 @@ export function SiteFooter() {
             })
           }}
         >
-          Back to top <RiArrowUpLine aria-hidden="true" className="size-4" />
+          <RiArrowUpLine aria-hidden="true" className="size-5" />
         </Button>
       </div>
     </footer>
