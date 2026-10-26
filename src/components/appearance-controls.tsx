@@ -49,7 +49,7 @@ export function AppearanceControls({
         <div
           role="group"
           aria-labelledby="appearance-theme-label"
-          className="mb-3 grid grid-cols-3 gap-0.5 rounded-lg bg-secondary p-0.5 dark:bg-background"
+          className="mb-3 grid grid-cols-2 gap-0.5 rounded-lg bg-secondary p-0.5 dark:bg-background"
         >
           {THEME_OPTIONS.map((option) => (
             <Button

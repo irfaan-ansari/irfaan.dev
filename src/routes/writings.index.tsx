@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router"
-import { WritingsPage } from "@/features/writings/components/writings-page"
+import { WritingsPage } from "@/components/writing/writings-page"
 
 export const Route = createFileRoute("/writings/")({
   head: () => ({
     meta: [
-      { title: "Writings | Irfaan" },
+      { title: "Writing | Irfaan" },
       {
         name: "description",
         content:

@@ -10,7 +10,7 @@ const buttonVariantClasses = cva(
         default:
           "border-primary bg-primary text-primary-foreground shadow-button-primary transition-[transform,translate,scale,background-color,border-color,color,box-shadow] hover:bg-primary/90 hover:shadow-button-primary-hover active:bg-primary/95 active:shadow-button-primary-active motion-safe:hover:-translate-y-px motion-safe:active:translate-y-0 motion-safe:active:scale-98",
         outline:
-          "border-border bg-background text-foreground shadow-button-outline transition-[transform,translate,scale,background-color,border-color,color,box-shadow] hover:shadow-button-outline-hover active:shadow-button-outline-active motion-safe:hover:-translate-y-px motion-safe:active:translate-y-0 motion-safe:active:scale-98 hover:border-ring hover:bg-muted active:bg-secondary",
+          "border-border bg-background text-foreground shadow-button-outline transition-[transform,translate,scale,background-color,border-color,color,box-shadow] hover:border-border-strong hover:bg-background hover:shadow-button-outline-hover active:bg-muted/40 active:shadow-button-outline-active motion-safe:hover:-translate-y-px motion-safe:active:translate-y-0 motion-safe:active:scale-98",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_5%)] aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
         ghost:
@@ -68,7 +68,7 @@ function Button({
     <ButtonPrimitive
       data-slot="button"
       data-variant={variant}
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={buttonVariants({ variant, size, className })}
       {...props}
     />
   )

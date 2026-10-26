@@ -1,3 +1,4 @@
+import { RESUME } from "@/content/resume"
 import styles from "../styles.css?url"
 import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router"
 import { NotFound } from "@/components/layout/not-found"
@@ -27,22 +28,41 @@ export const Route = createRootRoute({
       { property: "og:title", content: "Irfaan | Full Stack Developer" },
       {
         property: "og:description",
-        content: "Anything and everything web. Websites, web apps, and connected systems built by Irfaan.",
+        content:
+          "Anything and everything web. Websites, web apps, and connected systems built by Irfaan.",
       },
-      { property: "og:image", content: "https://irfaan.dev/og-image.png?v=5" },
+      { property: "og:image", content: `${RESUME.siteUrl}/og-image.png?v=5` },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "Irfaan, Full Stack Developer. Anything and everything web." },
+      {
+        property: "og:image:alt",
+        content: "Irfaan, Full Stack Developer. Anything and everything web.",
+      },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Irfaan | Full Stack Developer" },
-      { name: "twitter:description", content: "Anything and everything web. Websites, web apps, and connected systems built by Irfaan." },
-      { name: "twitter:image", content: "https://irfaan.dev/og-image.png?v=5" },
-      { name: "twitter:image:alt", content: "Irfaan, Full Stack Developer. Anything and everything web." },
+      {
+        name: "twitter:description",
+        content:
+          "Anything and everything web. Websites, web apps, and connected systems built by Irfaan.",
+      },
+      { name: "twitter:image", content: `${RESUME.siteUrl}/og-image.png?v=5` },
+      {
+        name: "twitter:image:alt",
+        content: "Irfaan, Full Stack Developer. Anything and everything web.",
+      },
     ],
     links: [
-      { rel: "icon", href: "/favicon.ico?v=5", sizes: "16x16 32x32 48x48 64x64 128x128 256x256" },
+      {
+        rel: "icon",
+        href: "/favicon.ico?v=5",
+        sizes: "16x16 32x32 48x48 64x64 128x128 256x256",
+      },
       { rel: "icon", href: "/logo.svg?v=5", type: "image/svg+xml" },
-      { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" },
+      {
+        rel: "apple-touch-icon",
+        href: "/apple-touch-icon.png",
+        sizes: "180x180",
+      },
       { rel: "manifest", href: "/manifest.json" },
       {
         rel: "stylesheet",
@@ -56,7 +76,11 @@ export const Route = createRootRoute({
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth motion-reduce:scroll-auto" suppressHydrationWarning>
+    <html
+      lang="en"
+      className="scroll-smooth motion-reduce:scroll-auto"
+      suppressHydrationWarning
+    >
       <head>
         <HeadContent />
       </head>

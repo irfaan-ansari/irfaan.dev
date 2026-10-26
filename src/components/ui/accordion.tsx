@@ -1,6 +1,6 @@
+import { Icon } from "@/components/shared/icon"
 import { Accordion as AccordionPrimitive } from "@base-ui/react/accordion"
 import { cn } from "cn"
-import { RiAddLine } from "@remixicon/react"
 
 function Accordion({ className, ...props }: AccordionPrimitive.Root.Props) {
   return (
@@ -38,8 +38,9 @@ function AccordionTrigger({
         {...props}
       >
         {children}
-        <span className="pointer-events-none flex size-7 shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors group-aria-expanded/accordion-trigger:bg-primary group-aria-expanded/accordion-trigger:text-primary-foreground motion-reduce:transition-none bg-secondary">
-          <RiAddLine
+        <span className="pointer-events-none flex size-7 shrink-0 items-center justify-center rounded-full bg-secondary text-muted-foreground transition-colors group-aria-expanded/accordion-trigger:bg-primary group-aria-expanded/accordion-trigger:text-primary-foreground motion-reduce:transition-none">
+          <Icon
+            name="add"
             data-slot="accordion-trigger-icon"
             aria-hidden="true"
             className="size-4 transition-transform duration-300 group-aria-expanded/accordion-trigger:rotate-45 motion-reduce:transition-none"

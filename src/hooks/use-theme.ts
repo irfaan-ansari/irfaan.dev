@@ -13,9 +13,9 @@ type ThemeProviderState = {
   setPrimaryColor: (color: PrimaryColor) => void
 }
 
-export const ThemeProviderContext = createContext<ThemeProviderState | undefined>(
-  undefined
-)
+export const ThemeProviderContext = createContext<
+  ThemeProviderState | undefined
+>(undefined)
 
 export function useTheme() {
   const context = useContext(ThemeProviderContext)

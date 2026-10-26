@@ -11,8 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as ProjectsIndexRouteImport } from './routes/projects.index'
-import { Route as ProjectsSlugRouteImport } from './routes/projects.$slug'
 import { Route as WorkIndexRouteImport } from './routes/work.index'
 import { Route as WorkSlugRouteImport } from './routes/work.$slug'
 import { Route as WritingsIndexRouteImport } from './routes/writings.index'
@@ -26,16 +24,6 @@ const IndexRoute = IndexRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProjectsIndexRoute = ProjectsIndexRouteImport.update({
-  id: '/projects/',
-  path: '/projects/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProjectsSlugRoute = ProjectsSlugRouteImport.update({
-  id: '/projects/$slug',
-  path: '/projects/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const WorkIndexRoute = WorkIndexRouteImport.update({
@@ -62,20 +50,16 @@ const WritingsSlugRoute = WritingsSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/projects/$slug': typeof ProjectsSlugRoute
   '/work/$slug': typeof WorkSlugRoute
   '/writings/$slug': typeof WritingsSlugRoute
-  '/projects/': typeof ProjectsIndexRoute
   '/work/': typeof WorkIndexRoute
   '/writings/': typeof WritingsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/projects/$slug': typeof ProjectsSlugRoute
   '/work/$slug': typeof WorkSlugRoute
   '/writings/$slug': typeof WritingsSlugRoute
-  '/projects': typeof ProjectsIndexRoute
   '/work': typeof WorkIndexRoute
   '/writings': typeof WritingsIndexRoute
 }
@@ -83,10 +67,8 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/projects/$slug': typeof ProjectsSlugRoute
   '/work/$slug': typeof WorkSlugRoute
   '/writings/$slug': typeof WritingsSlugRoute
-  '/projects/': typeof ProjectsIndexRoute
   '/work/': typeof WorkIndexRoute
   '/writings/': typeof WritingsIndexRoute
 }
@@ -95,30 +77,19 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/contact'
-    | '/projects/$slug'
     | '/work/$slug'
     | '/writings/$slug'
-    | '/projects/'
     | '/work/'
     | '/writings/'
   fileRoutesByTo: FileRoutesByTo
   to:
-    | '/'
-    | '/contact'
-    | '/projects/$slug'
-    | '/work/$slug'
-    | '/writings/$slug'
-    | '/projects'
-    | '/work'
-    | '/writings'
+    '/' | '/contact' | '/work/$slug' | '/writings/$slug' | '/work' | '/writings'
   id:
     | '__root__'
     | '/'
     | '/contact'
-    | '/projects/$slug'
     | '/work/$slug'
     | '/writings/$slug'
-    | '/projects/'
     | '/work/'
     | '/writings/'
   fileRoutesById: FileRoutesById
@@ -126,10 +97,8 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
-  ProjectsSlugRoute: typeof ProjectsSlugRoute
   WorkSlugRoute: typeof WorkSlugRoute
   WritingsSlugRoute: typeof WritingsSlugRoute
-  ProjectsIndexRoute: typeof ProjectsIndexRoute
   WorkIndexRoute: typeof WorkIndexRoute
   WritingsIndexRoute: typeof WritingsIndexRoute
 }
@@ -148,20 +117,6 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/projects/': {
-      id: '/projects/'
-      path: '/projects'
-      fullPath: '/projects/'
-      preLoaderRoute: typeof ProjectsIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/projects/$slug': {
-      id: '/projects/$slug'
-      path: '/projects/$slug'
-      fullPath: '/projects/$slug'
-      preLoaderRoute: typeof ProjectsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/work/': {
@@ -198,10 +153,8 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
-  ProjectsSlugRoute: ProjectsSlugRoute,
   WorkSlugRoute: WorkSlugRoute,
   WritingsSlugRoute: WritingsSlugRoute,
-  ProjectsIndexRoute: ProjectsIndexRoute,
   WorkIndexRoute: WorkIndexRoute,
   WritingsIndexRoute: WritingsIndexRoute,
 }

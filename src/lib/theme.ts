@@ -22,5 +22,4 @@ export type PrimaryColor = (typeof PRIMARY_COLORS)[number]["value"]
 export const THEME_OPTIONS = [
   { value: "light", label: "Light", icon: "sun" },
   { value: "dark", label: "Dark", icon: "moon" },
-  { value: "system", label: "System", icon: "computer" },
 ] as const
