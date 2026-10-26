@@ -1,29 +1,20 @@
+import { Icon, type IconName } from "@/components/shared/icon"
 import type { ReactNode } from "react"
-import {
-  RiCodeSSlashLine,
-  RiDatabase2Line,
-  RiJavascriptFill,
-  RiLayoutLine,
-  RiNextjsFill,
-  RiNodejsLine,
-  RiReactjsLine,
-  RiShoppingBag3Line,
-} from "@remixicon/react"
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
 
-const technologyIcons: Record<string, typeof RiCodeSSlashLine> = {
-  TypeScript: RiCodeSSlashLine,
-  JavaScript: RiJavascriptFill,
-  React: RiReactjsLine,
-  "Next.js": RiNextjsFill,
-  "Node.js": RiNodejsLine,
-  PostgreSQL: RiDatabase2Line,
-  Shopify: RiShoppingBag3Line,
-  "shadcn/ui": RiLayoutLine,
+const TECHNOLOGY_ICONS: Record<string, IconName> = {
+  TypeScript: "code",
+  JavaScript: "javascript",
+  React: "react",
+  "Next.js": "nextjs",
+  "Node.js": "nodejs",
+  PostgreSQL: "database",
+  Shopify: "shopping",
+  "shadcn/ui": "layout",
 }
 
-const technologyColors: Record<string, string> = {
+const TECHNOLOGY_COLORS: Record<string, string> = {
   TypeScript: "text-technology-typescript",
   JavaScript: "text-technology-javascript",
   React: "text-technology-react",
@@ -41,10 +32,10 @@ export function TechnologyBadge({
   children: ReactNode
   className?: string
 }) {
-  const TechnologyIcon =
-    typeof children === "string" ? technologyIcons[children] : undefined
+  const icon =
+    typeof children === "string" ? TECHNOLOGY_ICONS[children] : undefined
   const colors =
-    typeof children === "string" ? technologyColors[children] : undefined
+    typeof children === "string" ? TECHNOLOGY_COLORS[children] : undefined
 
   return (
     <Badge
@@ -54,8 +45,12 @@ export function TechnologyBadge({
         className
       )}
     >
-      {TechnologyIcon && (
-        <TechnologyIcon aria-hidden={true} className={cn("size-4 shrink-0", colors)} />
+      {icon && (
+        <Icon
+          name={icon}
+          aria-hidden={true}
+          className={cn("size-4 shrink-0", colors)}
+        />
       )}
       {children}
     </Badge>

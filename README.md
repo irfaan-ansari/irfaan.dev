@@ -23,20 +23,20 @@ Screenshots of the deployed homepage. The preview follows your light or dark app
 - **Writing:** Markdown articles with tags, read times, featured entries, and draft support.
 - **Appearance controls:** light, dark, and system themes with ten accent choices and saved preferences.
 - **Responsive navigation:** desktop links, mobile popovers, and active section highlighting.
-- **Contact:** a validated project enquiry form that opens a prefilled email draft.
+- **Contact:** a validated project enquiry form with a demo submission handler.
 - **Shared design system:** reusable buttons, cards, badges, FAQs, and a custom SVG mark.
 
 ## Stack
 
-| Layer | Technology |
-| --- | --- |
+| Layer                   | Technology                                         |
+| ----------------------- | -------------------------------------------------- |
 | Application and routing | TanStack Start, TanStack Router, React, TypeScript |
-| Styling | Tailwind CSS v4, CSS theme variables |
-| Components | shadcn/ui, Base UI, Remix Icon |
-| Forms | TanStack Form, Zod |
-| Articles | Markdown, react-markdown, remark-gfm |
-| Motion | Motion and CSS, with reduced-motion support |
-| Build and hosting | Vite, Nitro, Vercel |
+| Styling                 | Tailwind CSS v4, CSS theme variables               |
+| Components              | shadcn/ui, Base UI, Remix Icon                     |
+| Forms                   | TanStack Form, Zod                                 |
+| Articles                | Markdown, react-markdown, remark-gfm               |
+| Motion                  | Motion and CSS, with reduced-motion support        |
+| Build and hosting       | Vite, Nitro, Vercel                                |
 
 ## Run locally
 
@@ -61,40 +61,41 @@ Open the network URL printed by Vite on your phone.
 
 ### Useful commands
 
-| Command | Purpose |
-| --- | --- |
-| `pnpm dev` | Start the development server |
-| `pnpm typecheck` | Check TypeScript types |
-| `pnpm build` | Create the production build |
-| `pnpm preview` | Preview the production build |
+| Command                | Purpose                            |
+| ---------------------- | ---------------------------------- |
+| `pnpm dev`             | Start the development server       |
+| `pnpm typecheck`       | Check TypeScript types             |
+| `pnpm build`           | Create the production build        |
+| `pnpm preview`         | Preview the production build       |
 | `pnpm generate-routes` | Regenerate the TanStack route tree |
 
 ## Make it yours
 
-| Content | Location |
-| --- | --- |
-| Name, role, email, technologies | `src/content/profile.ts` |
-| Header navigation | `src/features/navigation/content/navigation.ts` |
-| Footer navigation and social links | `src/content/navigation.ts` |
-| About copy and working approach | `src/features/home/components/about-section.tsx` |
-| Services and FAQs | `src/features/home/content/home.ts` |
-| Work entries | `src/features/projects/content/projects.ts` |
-| Project thumbnails | `public/projects/` |
-| Articles | `src/features/writings/content/` |
-| Contact fields and options | `src/features/contact/content/contact.ts` |
-| Theme colors and button shadows | `src/styles.css` |
-| Theme options and constants | `src/lib/theme.ts` |
-| Logo, favicon, and sharing image | `public/` |
+| Content                            | Location                                  |
+| ---------------------------------- | ----------------------------------------- |
+| Name, role, email, technologies    | `src/content/resume.ts`                   |
+| Header navigation                  | `src/content/resume.ts`                   |
+| Footer navigation and social links | `src/content/resume.ts`                   |
+| About copy and working approach    | `src/components/home/about-section.tsx`   |
+| Services and FAQs                  | `src/content/resume.ts`                   |
+| Work entries                       | `src/content/resume.ts`                   |
+| Project thumbnails                 | `public/projects/`                        |
+| Articles                           | `src/content/markdown/`                   |
+| Contact fields                     | `src/components/contact/contact-form.tsx` |
+| Contact validation                 | `src/lib/contact-schema.ts`               |
+| Theme colors and button shadows    | `src/styles.css`                          |
+| Theme options and constants        | `src/lib/theme.ts`                        |
+| Logo, favicon, and sharing image   | `public/`                                 |
 
 ### Add work
 
-Add an entry to `src/features/projects/content/projects.ts` and its thumbnail to `public/projects/`. The entry’s `id` becomes its URL at `/work/<id>`. The first three entries appear on the homepage.
+Add an entry to `src/content/resume.ts` and its thumbnail to `public/projects/`. The entry’s `id` becomes its URL at `/work/<id>`. The first three entries appear on the homepage.
 
 The listing lives at `/work`. Older `/projects` and `/projects/<slug>` URLs redirect to their corresponding work pages.
 
 ### Publish an article
 
-Create a Markdown file in `src/features/writings/content/`. Its filename becomes the slug at `/writings/<slug>`.
+Create a Markdown file in `src/content/markdown/`. Its filename becomes the slug at `/writings/<slug>`.
 
 ```markdown
 ---
@@ -118,7 +119,7 @@ Title, description, and a quoted `YYYY-MM-DD` date are required. Tags, `featured
 
 ### Contact form
 
-The form validates the visitor’s name, email, project type, and message. Submission opens a prefilled email draft for them to review and send, with a copy-message fallback. It does not send or store messages on a server.
+The form validates the visitor’s name, email, project type, and message. Submission logs the validated values to the browser console. It does not send messages or open an email draft; use the direct email link to get in touch.
 
 ## Project structure
 
@@ -128,15 +129,14 @@ src/
     layout/        Shared header, footer, and page frame
     shared/        Logo, icons, highlights, technology badges
     ui/            Reusable UI primitives
-  content/         Shared profile and footer content
-  features/
     home/          Hero, About, capabilities, and FAQs
-    projects/      Work content, cards, and detail pages
-    writings/      Markdown content, listings, and article rendering
-    contact/       Form, validation, and email draft helpers
-    navigation/    Desktop/mobile menus and active link state
+    work/          Work listing, cards, and detail pages
+    writing/       Article listings and Markdown rendering
+    contact/       Contact form and page
+    navigation/    Desktop and mobile menus
+  content/         Centralized resume data and Markdown articles
   hooks/           Theme, scrolling, and viewport hooks
-  lib/             Theme constants and utilities
+  lib/             Contact validation, Markdown parsing, and theme utilities
   routes/          Route definitions, loaders, and page metadata
   styles.css       Theme tokens and global styles
 public/            Static branding assets and project thumbnails

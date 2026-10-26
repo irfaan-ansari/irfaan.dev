@@ -1,7 +1,7 @@
 import { createFileRoute, notFound } from "@tanstack/react-router"
 import { NotFound } from "@/components/layout/not-found"
-import { PROJECTS } from "@/features/projects/content/projects"
-import { ProjectPage } from "@/features/projects/components/project-page"
+import { PROJECTS } from "@/content/resume"
+import { ProjectPage } from "@/components/work/project-page"
 
 export const Route = createFileRoute("/work/$slug")({
   loader: ({ params }) => {
@@ -19,5 +19,5 @@ export const Route = createFileRoute("/work/$slug")({
     ],
   }),
   component: () => <ProjectPage project={Route.useLoaderData()} />,
-    notFoundComponent: NotFound,
+  notFoundComponent: NotFound,
 })

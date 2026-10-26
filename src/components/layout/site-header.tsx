@@ -1,13 +1,14 @@
 import { buttonVariants } from "@/components/ui/button"
 import { useRef } from "react"
 import { useScrolled } from "@/hooks/use-scrolled"
-import { DesktopNavigation } from "@/features/navigation/components/desktop-navigation"
-import { MobileNavigation } from "@/features/navigation/components/mobile-navigation"
+import { DesktopNavigation } from "@/components/navigation/desktop-navigation"
+import { MobileNavigation } from "@/components/navigation/mobile-navigation"
 import { Link } from "@tanstack/react-router"
 import { cn } from "@/lib/utils"
 import { AppearanceControls } from "@/components/appearance-controls"
 import { Logo } from "@/components/shared/logo"
 import { Icon } from "@/components/shared/icon"
+
 export function SiteHeader() {
   const scrolled = useScrolled()
   const headerRef = useRef<HTMLElement>(null)
@@ -15,12 +16,13 @@ export function SiteHeader() {
     <header
       ref={headerRef}
       className={cn(
-        "sticky top-3 z-40 mx-3 mb-16 flex flex-wrap items-center justify-between gap-2 rounded-xl border border-border/60 bg-background px-2 py-3 shadow-sm transition-[margin,box-shadow] duration-300 ease-out motion-reduce:transition-none sm:bg-background/90 sm:backdrop-blur-xl sm:mx-5 sm:mb-20 sm:gap-3 sm:px-6",
+        "sticky top-3 z-40 mx-3 mb-16 flex flex-wrap items-center justify-between gap-2 rounded-xl border border-border/60 bg-background px-2 py-3 shadow-sm transition-[margin,box-shadow] duration-300 ease-out motion-reduce:transition-none sm:mx-5 sm:mb-20 sm:gap-3 sm:bg-background/90 sm:px-6 sm:backdrop-blur-xl",
         scrolled ? "lg:mx-16 lg:shadow-md" : "lg:mx-5"
       )}
     >
       <Link
-        to="/" aria-label="Irfaan home"
+        to="/"
+        aria-label="Irfaan home"
         className="flex shrink-0 items-center gap-1.5 text-sm font-semibold tracking-tight sm:gap-2 sm:text-base"
       >
         <Logo className="size-6 sm:size-8" />

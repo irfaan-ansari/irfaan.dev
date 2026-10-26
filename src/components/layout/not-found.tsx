@@ -7,7 +7,10 @@ export function NotFound() {
     <>
       <section
         aria-labelledby="not-found-title"
-        className={cn("site-section", "flex min-h-[50vh] flex-col items-center justify-center pb-16 text-center")}
+        className={cn(
+          "site-section",
+          "flex min-h-[50vh] flex-col items-center justify-center pb-16 text-center"
+        )}
       >
         <p
           className={cn(
@@ -17,7 +20,10 @@ export function NotFound() {
         >
           404
         </p>
-        <h1 id="not-found-title" className="text-3xl font-bold tracking-tight sm:text-4xl">
+        <h1
+          id="not-found-title"
+          className="text-3xl font-bold tracking-tight sm:text-4xl"
+        >
           Page not found
         </h1>
         <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
@@ -29,7 +35,7 @@ export function NotFound() {
             Back to home
           </Link>
           <Link to="/work" className={buttonVariants({ variant: "outline" })}>
-            Explore projects
+            Explore work
           </Link>
         </div>
       </section>

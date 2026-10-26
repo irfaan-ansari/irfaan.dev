@@ -74,7 +74,9 @@ export function ThemeProvider({
   }
 
   return (
-    <ThemeProviderContext value={{ theme, setTheme, primaryColor, setPrimaryColor }}>
+    <ThemeProviderContext
+      value={{ theme, setTheme, primaryColor, setPrimaryColor }}
+    >
       <ScriptOnce>{getThemeScript(storageKey, defaultTheme)}</ScriptOnce>
       {children}
     </ThemeProviderContext>

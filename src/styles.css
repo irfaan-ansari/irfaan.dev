@@ -98,18 +98,38 @@
   --technology-node: #39752b;
   --technology-postgres: #336791;
   --technology-shopify: #52751d;
-  --button-primary-shadow: inset 0 0 0 1px #ffffff70, inset 0 2px 3px #ffffff18, 0 1px 2px #00000015;
-  --button-primary-shadow-hover: inset 0 0 0 1px #ffffff85, inset 0 2px 3px #ffffff20, 0 3px 6px -2px #00000020;
-  --button-primary-shadow-active: inset 0 0 0 1px #ffffff50, inset 0 1px 3px #00000020;
-  --button-outline-shadow: inset 0 0 0 1px color-mix(in oklch, var(--foreground) 12%, transparent), inset 0 2px 1px color-mix(in oklch, var(--background) 90%, transparent), inset 0 -3px 3px color-mix(in oklch, var(--foreground) 9%, transparent), 0 2px 2px color-mix(in oklch, var(--foreground) 12%, transparent);
-  --button-outline-shadow-hover: inset 0 0 0 1px color-mix(in oklch, var(--foreground) 16%, transparent), inset 0 2px 1px color-mix(in oklch, var(--background) 90%, transparent), inset 0 -3px 3px color-mix(in oklch, var(--foreground) 12%, transparent), 0 3px 5px -1px color-mix(in oklch, var(--foreground) 18%, transparent);
-  --button-outline-shadow-active: inset 0 0 0 1px color-mix(in oklch, var(--foreground) 12%, transparent), inset 0 2px 4px color-mix(in oklch, var(--foreground) 14%, transparent);
+  --button-primary-shadow:
+    inset 0 0 0 1px #ffffff70, inset 0 2px 3px #ffffff18, 0 1px 2px #00000015;
+  --button-primary-shadow-hover:
+    inset 0 0 0 1px #ffffff85, inset 0 2px 3px #ffffff20,
+    0 3px 6px -2px #00000020;
+  --button-primary-shadow-active:
+    inset 0 0 0 1px #ffffff50, inset 0 1px 3px #00000020;
+  --button-outline-shadow:
+    inset 0 0 0 1px color-mix(in oklch, var(--foreground) 14%, transparent),
+    inset 0 2px 3px color-mix(in oklch, var(--background) 60%, transparent),
+    0 1px 2px #00000015;
+  --button-outline-shadow-hover:
+    inset 0 0 0 1px color-mix(in oklch, var(--foreground) 18%, transparent),
+    inset 0 2px 3px color-mix(in oklch, var(--background) 70%, transparent),
+    0 3px 6px -2px #00000020;
+  --button-outline-shadow-active:
+    inset 0 0 0 1px color-mix(in oklch, var(--foreground) 12%, transparent),
+    inset 0 1px 3px #00000020;
   --button-primary-shadow-sm: inset 0 0 0 1px #ffffff50, 0 1px 1px #0000000d;
-  --button-primary-shadow-sm-hover: inset 0 0 0 1px #ffffff65, 0 2px 3px -1px #00000018;
-  --button-primary-shadow-sm-active: inset 0 0 0 1px #ffffff40, inset 0 1px 2px #00000015;
-  --button-outline-shadow-sm: inset 0 0 0 1px color-mix(in oklch, var(--foreground) 10%, transparent), inset 0 1px 1px color-mix(in oklch, var(--background) 85%, transparent), inset 0 -2px 2px color-mix(in oklch, var(--foreground) 8%, transparent), 0 1px 2px color-mix(in oklch, var(--foreground) 10%, transparent);
-  --button-outline-shadow-sm-hover: inset 0 0 0 1px color-mix(in oklch, var(--foreground) 14%, transparent), inset 0 1px 1px color-mix(in oklch, var(--background) 85%, transparent), inset 0 -2px 2px color-mix(in oklch, var(--foreground) 10%, transparent), 0 2px 3px -1px color-mix(in oklch, var(--foreground) 16%, transparent);
-  --button-outline-shadow-sm-active: inset 0 0 0 1px color-mix(in oklch, var(--foreground) 10%, transparent), inset 0 1px 2px color-mix(in oklch, var(--foreground) 12%, transparent);
+  --button-primary-shadow-sm-hover:
+    inset 0 0 0 1px #ffffff65, 0 2px 3px -1px #00000018;
+  --button-primary-shadow-sm-active:
+    inset 0 0 0 1px #ffffff40, inset 0 1px 2px #00000015;
+  --button-outline-shadow-sm:
+    inset 0 0 0 1px color-mix(in oklch, var(--foreground) 12%, transparent),
+    0 1px 1px #0000000d;
+  --button-outline-shadow-sm-hover:
+    inset 0 0 0 1px color-mix(in oklch, var(--foreground) 16%, transparent),
+    0 2px 3px -1px #00000018;
+  --button-outline-shadow-sm-active:
+    inset 0 0 0 1px color-mix(in oklch, var(--foreground) 10%, transparent),
+    inset 0 1px 2px #00000015;
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
   --chart-1: oklch(0.87 0 0);
@@ -156,12 +176,6 @@
 
   --technology-postgres: #8bb9df;
   --technology-shopify: #b0d56d;
-  --button-outline-shadow: inset 0 0 0 1px color-mix(in oklch, var(--foreground) 12%, transparent), inset 0 2px 1px color-mix(in oklch, var(--background) 90%, transparent), inset 0 -3px 3px color-mix(in oklch, var(--foreground) 9%, transparent), 0 2px 2px color-mix(in oklch, var(--foreground) 12%, transparent);
-  --button-outline-shadow-hover: inset 0 0 0 1px color-mix(in oklch, var(--foreground) 16%, transparent), inset 0 2px 1px color-mix(in oklch, var(--background) 90%, transparent), inset 0 -3px 3px color-mix(in oklch, var(--foreground) 12%, transparent), 0 3px 5px -1px color-mix(in oklch, var(--foreground) 18%, transparent);
-  --button-outline-shadow-active: inset 0 0 0 1px color-mix(in oklch, var(--foreground) 12%, transparent), inset 0 2px 4px color-mix(in oklch, var(--foreground) 14%, transparent);
-  --button-outline-shadow-sm: inset 0 0 0 1px color-mix(in oklch, var(--foreground) 10%, transparent), inset 0 1px 1px color-mix(in oklch, var(--background) 85%, transparent), inset 0 -2px 2px color-mix(in oklch, var(--foreground) 8%, transparent), 0 1px 2px color-mix(in oklch, var(--foreground) 10%, transparent);
-  --button-outline-shadow-sm-hover: inset 0 0 0 1px color-mix(in oklch, var(--foreground) 14%, transparent), inset 0 1px 1px color-mix(in oklch, var(--background) 85%, transparent), inset 0 -2px 2px color-mix(in oklch, var(--foreground) 10%, transparent), 0 2px 3px -1px color-mix(in oklch, var(--foreground) 16%, transparent);
-  --button-outline-shadow-sm-active: inset 0 0 0 1px color-mix(in oklch, var(--foreground) 10%, transparent), inset 0 1px 2px color-mix(in oklch, var(--foreground) 12%, transparent);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
   --chart-1: oklch(0.87 0 0);
@@ -325,8 +339,14 @@
 }
 
 @keyframes workflow-travel {
-  0%, 10% { stroke-dashoffset: 16; }
-  75%, 100% { stroke-dashoffset: -112; }
+  0%,
+  10% {
+    stroke-dashoffset: 16;
+  }
+  75%,
+  100% {
+    stroke-dashoffset: -112;
+  }
 }
 
 .workflow-connector {
@@ -338,18 +358,39 @@
 }
 
 @keyframes workflow-first-node {
-  0%, 10%, 100% { opacity: 0.2; }
-  14%, 88% { opacity: 1; }
+  0%,
+  10%,
+  100% {
+    opacity: 0.2;
+  }
+  14%,
+  88% {
+    opacity: 1;
+  }
 }
 
 @keyframes workflow-second-node {
-  0%, 34%, 100% { opacity: 0.2; }
-  38%, 88% { opacity: 1; }
+  0%,
+  34%,
+  100% {
+    opacity: 0.2;
+  }
+  38%,
+  88% {
+    opacity: 1;
+  }
 }
 
 @keyframes workflow-third-node {
-  0%, 58%, 100% { opacity: 0.2; }
-  62%, 88% { opacity: 1; }
+  0%,
+  58%,
+  100% {
+    opacity: 0.2;
+  }
+  62%,
+  88% {
+    opacity: 1;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -368,13 +409,21 @@
 }
 
 @keyframes page-fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes page-fade-out {
-  from { opacity: 1; }
-  to { opacity: 0; }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 :root {
