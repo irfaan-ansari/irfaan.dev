@@ -17,7 +17,7 @@ export function ProjectsPage() {
       </section>
       <section
         aria-label="All work"
-        className={cn("site-section", "space-y-8 py-8")}
+        className={cn("site-section", "grid gap-6 py-8 md:grid-cols-2")}
       >
         {PROJECTS.map((project) => (
           <ProjectCard key={project.id} project={project} />

@@ -11,8 +11,8 @@ export function ProjectCard({
   project: (typeof PROJECTS)[number]
 }) {
   return (
-    <article className="group/project relative focus-within:z-10 hover:z-10">
-      <Card className="grid gap-5 overflow-hidden rounded-xl border border-border p-4 shadow-none ring-0 sm:grid-cols-[1.35fr_1fr]">
+    <article className="group/project relative h-full min-w-0 focus-within:z-10 hover:z-10">
+      <Card className="grid h-full grid-rows-[1fr_auto] gap-5 overflow-hidden rounded-xl border border-border p-4 shadow-none ring-0">
         <CardContent className="items-start gap-0 px-0 py-1">
           <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
             {project.category}
@@ -52,7 +52,7 @@ export function ProjectCard({
             />
           </div>
         </CardContent>
-        <div className="relative min-w-0 translate-y-4 rotate-3 self-end rounded-lg shadow-md transition-[translate,rotate,box-shadow] duration-200 ease-out motion-safe:group-hover/project:-translate-x-1 motion-reduce:transition-none sm:translate-x-7 sm:motion-safe:group-hover/project:translate-x-6">
+        <div className="relative min-w-0 translate-y-4 rotate-3 self-end rounded-lg shadow-md transition-[translate,rotate,box-shadow] duration-100 ease-out motion-safe:group-hover/project:translate-y-3.5 motion-reduce:transition-none">
           <Link
             to="/work/$slug"
             params={{ slug: project.id }}

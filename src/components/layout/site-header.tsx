@@ -16,7 +16,7 @@ export function SiteHeader() {
     <header
       ref={headerRef}
       className={cn(
-        "sticky top-3 z-40 mx-3 mb-16 flex flex-wrap items-center justify-between gap-2 rounded-xl border border-border/60 bg-background px-2 py-3 shadow-sm transition-[margin,box-shadow] duration-300 ease-out motion-reduce:transition-none sm:mx-5 sm:mb-20 sm:gap-3 sm:bg-background/90 sm:px-6 sm:backdrop-blur-xl",
+        "sticky top-3 z-40 mx-3 mb-16 flex flex-wrap items-center justify-between gap-2 rounded-xl border border-border/60 bg-background px-3 py-3 shadow-sm transition-[margin,box-shadow] duration-300 ease-out motion-reduce:transition-none sm:mx-5 sm:mb-20 sm:gap-3 sm:bg-background/90 sm:px-4 sm:backdrop-blur-xl",
         scrolled ? "lg:mx-16 lg:shadow-md" : "lg:mx-5"
       )}
     >
@@ -25,7 +25,7 @@ export function SiteHeader() {
         aria-label="Irfaan home"
         className="flex shrink-0 items-center gap-1.5 text-sm font-semibold tracking-tight sm:gap-2 sm:text-base"
       >
-        <Logo className="size-6 sm:size-8" />
+        <Logo className="size-8" />
       </Link>
       <DesktopNavigation />
       <div className="flex items-center gap-1 sm:gap-3">
