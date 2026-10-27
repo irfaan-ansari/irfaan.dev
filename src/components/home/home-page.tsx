@@ -1,4 +1,4 @@
-import { Availability } from "@/components/shared/availability"
+import { ProfileDetails } from "@/components/shared/profile-details"
 import { EmailLink } from "@/components/shared/email-link"
 import { SERVICES, FAQS, RESUME, PROJECTS } from "@/content/resume"
 import { Button, buttonVariants } from "@/components/ui/button"
@@ -30,7 +30,7 @@ export function HomePage() {
   return (
     <>
       <section className={cn("site-section", "pt-0 pb-9 sm:pb-10")}>
-        <div className="grid items-center gap-5 md:grid-cols-[minmax(0,1fr)_11rem] md:gap-6">
+        <div className="grid items-center gap-5 md:grid-cols-[minmax(0,1fr)_12rem] md:gap-6">
           <div>
             <Eyebrow>Hello, I’m</Eyebrow>
             <h1 className="text-5xl font-bold tracking-tight sm:text-6xl">
@@ -46,17 +46,7 @@ export function HomePage() {
               platform, I take it from idea to launch.
             </p>
           </div>
-          <div className="flex flex-wrap gap-x-5 gap-y-3 md:flex-col md:gap-5 md:border-l md:border-border md:py-2 md:pl-5">
-            <Availability />
-            <p className="flex items-center gap-2 text-xs text-muted-foreground">
-              <Icon name="globe" className="size-3.5 shrink-0" />
-              {RESUME.workReach}
-            </p>
-            <p className="flex items-center gap-2 text-xs text-muted-foreground">
-              <Icon name="location" className="size-3.5 shrink-0" />
-              {RESUME.location}
-            </p>
-          </div>
+          <ProfileDetails className="w-full max-w-64 md:max-w-none" />
         </div>
         <div className="mt-5 flex flex-wrap gap-2">
           {RESUME.tech.map((t) => (
@@ -87,8 +77,8 @@ export function HomePage() {
               </a>
             }
           />
+          <EmailLink className="inline-flex max-w-full items-center gap-2 text-sm text-muted-foreground hover:text-foreground" />
         </div>
-        <EmailLink className="mt-5 inline-flex max-w-full items-center gap-2 text-sm text-muted-foreground hover:text-foreground" />
       </section>
       <section id="work" className="site-section">
         <div className="mb-7 flex flex-wrap items-end justify-between gap-x-6 gap-y-4">
@@ -98,14 +88,18 @@ export function HomePage() {
               Made to work.
             </h2>
           </div>
-          <Link
-            to="/work"
-            className="inline-flex shrink-0 items-center gap-1 text-sm font-semibold whitespace-nowrap"
-          >
-            Explore all work <Icon name="right" className="size-3.5 shrink-0" />
-          </Link>
+          <Button
+            variant="link"
+            className="px-0"
+            render={
+              <Link to="/work">
+                Explore all work{" "}
+                <Icon name="right" className="size-3.5 shrink-0" />
+              </Link>
+            }
+          />
         </div>
-        <div id="projects" className="space-y-6">
+        <div id="projects" className="grid gap-6 md:grid-cols-2">
           {PROJECTS.slice(0, 4).map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
