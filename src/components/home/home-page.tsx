@@ -1,7 +1,7 @@
 import { ProfileDetails } from "@/components/shared/profile-details"
 import { EmailLink } from "@/components/shared/email-link"
 import { SERVICES, FAQS, RESUME, PROJECTS } from "@/content/resume"
-import { Button, buttonVariants } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 import { ServiceIcon } from "@/components/home/service-icon"
 import { HeadingUnderline } from "@/components/shared/heading-underline"
 import { AboutSection } from "@/components/home/about-section"
@@ -41,9 +41,9 @@ export function HomePage() {
               <HeadingUnderline />
             </p>
             <p className="mt-4 max-w-md text-sm leading-7 text-muted-foreground">
-              I build websites, web apps, and business tools that turn everyday
-              tasks into simpler experiences. From a new storefront to a custom
-              platform, I take it from idea to launch.
+              I build websites, web apps, and tools that make everyday work
+              easier. Whether you need an online store or a custom platform, I
+              can help you plan it, build it, and get it live.
             </p>
           </div>
           <ProfileDetails className="w-full max-w-64 md:max-w-none" />
@@ -56,52 +56,47 @@ export function HomePage() {
           ))}
         </div>
         <div className="mt-7 flex flex-wrap items-center gap-3 sm:gap-5">
-          <Button
-            nativeButton={false}
-            render={
-              <Link to="/contact">
-                Get in touch <Icon name="arrow" className="size-4" />
-              </Link>
-            }
-          />
-          <Button
-            nativeButton={false}
-            variant="outline"
-            render={
-              <a
-                href="https://github.com/irfaan-ansari"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Icon name="github" /> GitHub
-              </a>
-            }
-          />
-          <EmailLink className="inline-flex max-w-full items-center gap-2 text-sm text-muted-foreground hover:text-foreground" />
+          <Link to="/contact" className={buttonVariants()}>
+            Get in touch <Icon name="arrow" className="size-4" />
+          </Link>
+
+          <a
+            href="https://github.com/irfaan-ansari"
+            target="_blank"
+            rel="noreferrer"
+            className={buttonVariants({ variant: "outline" })}
+          >
+            <Icon name="github" /> GitHub
+          </a>
+
+          <EmailLink />
         </div>
       </section>
       <section id="work" className="site-section">
         <div className="mb-7 flex flex-wrap items-end justify-between gap-x-6 gap-y-4">
           <div className="max-w-sm">
-            <Eyebrow>Selected work</Eyebrow>
+            <Eyebrow>My work</Eyebrow>
             <h2 className="text-2xl leading-tight font-bold tracking-tight sm:text-3xl">
-              Made to work.
+              Projects I’ve built
             </h2>
           </div>
-          <Button
-            variant="link"
-            className="px-0"
-            render={
-              <Link to="/work">
-                Explore all work{" "}
-                <Icon name="right" className="size-3.5 shrink-0" />
-              </Link>
-            }
-          />
+          <Link
+            to="/work"
+            className={buttonVariants({ variant: "link", className: "px-0" })}
+          >
+            See all projects <Icon name="right" className="size-3.5 shrink-0" />
+          </Link>
         </div>
-        <div id="projects" className="grid gap-6 md:grid-cols-2">
-          {PROJECTS.slice(0, 4).map((project) => (
-            <ProjectCard key={project.id} project={project} />
+        <div
+          id="projects"
+          className="grid gap-6 md:grid-cols-2 md:[&>article:nth-child(4n+3)]:col-span-2 md:[&>article:nth-child(4n+4)]:col-span-2"
+        >
+          {PROJECTS.slice(0, 4).map((project, index) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              wide={index % 4 >= 2}
+            />
           ))}
         </div>
       </section>
@@ -137,7 +132,7 @@ export function HomePage() {
           <div>
             <Eyebrow>FAQs</Eyebrow>
             <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
-              Have a few questions?
+              Before we start
             </h2>
           </div>
           <Link

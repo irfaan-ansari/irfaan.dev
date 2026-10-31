@@ -137,7 +137,7 @@ export function ContactForm() {
                 return (
                   <Field data-invalid={isInvalid}>
                     <FieldLabel htmlFor="contact-subject">
-                      What are you working on?
+                      Project type
                     </FieldLabel>
                     <Select
                       name={field.name}
@@ -208,7 +208,7 @@ export function ContactForm() {
                         onChange={(event) =>
                           field.handleChange(event.target.value)
                         }
-                        placeholder="Share your goals, scope, and any timeline you have in mind."
+                        placeholder="What do you need help with? Include a link to your current site if you have one."
                         required
                         className="resize-none"
                         aria-invalid={isInvalid}
@@ -224,7 +224,7 @@ export function ContactForm() {
                       </InputGroupAddon>
                     </InputGroup>
                     <FieldDescription id="contact-message-description">
-                      A rough idea and a few goals are enough to start.
+                      A rough idea is enough to start.
                     </FieldDescription>
                     {isInvalid && (
                       <FieldError
@@ -247,7 +247,7 @@ export function ContactForm() {
                     Reset
                   </Button>
                   <Button type="submit" disabled={isSubmitting}>
-                    {isSubmitting ? "Submitting…" : "Submit"}
+                    {isSubmitting ? "Submitting..." : "Submit"}
                     <Icon name="arrow" className="size-4" />
                   </Button>
                 </Field>

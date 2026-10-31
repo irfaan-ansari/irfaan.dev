@@ -22,21 +22,23 @@ export function AboutSection() {
             Hi, I’m {RESUME.name}.
           </h2>
           <p className="mt-3 max-w-48 text-sm leading-relaxed text-muted-foreground">
-            Thoughtful code.
-            <br />A personal approach.
+            A full stack developer
+            <br />
+            based in New Delhi.
           </p>
         </div>
         <div>
           <div className="space-y-3 text-sm leading-7 text-muted-foreground">
             <p>
-              I like understanding how people actually work before deciding what
-              to build. The useful questions usually come before the first line
-              of code.
+              I build websites and web apps, including the tools businesses use
+              behind the scenes. I like getting to know how people work before
+              deciding what to build for them.
             </p>
             <p>
-              You work directly with me throughout the project. I share work
-              early, explain the tradeoffs, and make space for your feedback as
-              it takes shape.
+              When we work together, you’ll be talking directly with me from the
+              first conversation through launch. I’ll share progress early and
+              explain the choices along the way, so you have room to ask
+              questions and shape the result.
             </p>
           </div>
           <Button

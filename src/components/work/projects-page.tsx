@@ -9,18 +9,28 @@ export function ProjectsPage() {
         <p className="mb-3 text-xs font-semibold tracking-wider text-muted-foreground uppercase">
           Selected work
         </p>
-        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Work</h1>
+        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+          Explore my work
+        </h1>
         <p className="mt-4 max-w-lg text-base leading-relaxed text-muted-foreground">
-          Websites, applications, and the systems behind them. A closer look at
-          the work.
+          Take a look at the websites, online stores, and business tools I’ve
+          built, along with a few design concepts. Open a project to see what it
+          includes and how it came together.
         </p>
       </section>
       <section
         aria-label="All work"
-        className={cn("site-section", "grid gap-6 py-8 md:grid-cols-2")}
+        className={cn(
+          "site-section",
+          "grid gap-6 py-8 md:grid-cols-2 md:[&>article:nth-child(4n+3)]:col-span-2 md:[&>article:nth-child(4n+4)]:col-span-2"
+        )}
       >
-        {PROJECTS.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+        {PROJECTS.map((project, index) => (
+          <ProjectCard
+            key={project.id}
+            project={project}
+            wide={index % 4 >= 2}
+          />
         ))}
       </section>
     </>

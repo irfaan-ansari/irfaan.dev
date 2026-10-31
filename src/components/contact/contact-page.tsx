@@ -14,28 +14,26 @@ export function ContactPage() {
     <>
       <section className={cn("site-section", "pt-0 pb-10 sm:pb-12")}>
         <p className="mb-3 text-xs font-semibold tracking-wider text-muted-foreground uppercase">
-          Let’s talk
+          Contact
         </p>
         <h1 className="max-w-lg text-4xl leading-tight font-bold tracking-tight sm:text-5xl">
-          What are you
+          Let’s talk about
           <br />
-          building next?
+          your project.
         </h1>
         <p className="mt-4 max-w-lg leading-relaxed text-muted-foreground">
-          A new idea, an existing project, or a system that needs to work
-          better. Tell me a little about it.
+          Tell me what you want to build or what needs improving in your
+          existing website or app. We can work through the details together.
         </p>
       </section>
       <section className="site-section py-10 sm:py-12">
         <div className="grid items-start gap-8 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.4fr)] md:gap-10">
           <aside className="min-w-0 space-y-6">
             <div>
-              <h2 className="text-lg font-semibold tracking-tight">
-                Start a conversation.
-              </h2>
+              <h2 className="text-lg font-semibold tracking-tight">Email me</h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                Share what you want to build, who it’s for, and where you need a
-                hand. A rough idea is a good place to start.
+                Send me a short description of your project and where you need
+                help. Include a timeline or budget if you have one.
               </p>
             </div>
             <EmailLink className="inline-flex max-w-full items-center gap-2 text-sm font-medium" />
@@ -54,7 +52,7 @@ export function ContactPage() {
           id="contact-faq-heading"
           className="text-2xl font-bold tracking-tight sm:text-3xl"
         >
-          A few things you might be wondering.
+          Common questions
         </h2>
         <Accordion multiple={false} className="mt-7 gap-3">
           {CONTACT_FAQS.map((faq) => (
