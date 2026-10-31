@@ -13,7 +13,7 @@ export const PROJECTS: readonly Project[] = [
   {
     id: "jimenez-produce",
     website: "https://jimenezproduce.com/",
-    thumbnail: "/projects/jimenez-produce.png",
+    thumbnail: "/projects/jimenez-produce.jpg",
     category: "Foodservice",
     title: "Foodservice Website, Ordering & Admin Platform",
     description:
@@ -37,7 +37,7 @@ The admin portal brings orders, returns, invoices, customer accounts, and produc
   {
     id: "goldys-nestt",
     website: "https://www.goldysnestt.com/",
-    thumbnail: "/projects/goldys-nestt.png",
+    thumbnail: "/projects/goldys-nestt.jpg",
     category: "Retail operations",
     title: "Shopify Store & Retail Platform",
     description:
@@ -54,7 +54,7 @@ Shopify webhooks keep inventory in sync across locations. Role-based permissions
   {
     id: "blak",
     website: "https://www.rideblak.com/",
-    thumbnail: "/projects/blak.png",
+    thumbnail: "/projects/blak.jpg",
     category: "Transportation",
     title: "Luxury Transportation Website & Operations Platform",
     description:
@@ -73,7 +73,7 @@ The platform includes onboarding workflows and ongoing record management for ope
     id: "folio",
     title: "Creative Studio Website Concept",
     category: "Creative studio",
-    thumbnail: "/projects/folio.png",
+    thumbnail: "/projects/folio.jpg",
     description:
       "Give prospective clients a closer look at the work. A responsive studio concept with services, projects, and contact enquiries.",
     technologies: ["Next.js", "shadcn/ui"],
@@ -89,7 +89,7 @@ The concept includes service information, selected projects, and a contact link 
     id: "fluur",
     title: "Electric Mobility Website Concept",
     category: "Concept",
-    thumbnail: "/projects/fluur.png",
+    thumbnail: "/projects/fluur.jpg",
     description:
       "An expressive introduction to a mobility brand. A fictional automotive landing page for desktop and mobile.",
     technologies: ["Next.js", "shadcn/ui"],
@@ -105,7 +105,7 @@ The work covers the fictional brand presentation and responsive landing page. It
     id: "carefinity",
     title: "Healthcare Website Concept",
     category: "Healthcare",
-    thumbnail: "/projects/carefinity.png",
+    thumbnail: "/projects/carefinity.jpg",
     description:
       "Help visitors understand the care available. A responsive concept with service details and consultation enquiries.",
     technologies: ["Next.js", "shadcn/ui"],
@@ -132,7 +132,7 @@ The website gives prospective patients a way to learn about the practice and its
 
 The site includes treatment details, information about the practice, and guidance for patients. Visitors can follow appointment enquiry links when they are ready to contact the practice.`,
     technologies: [],
-    thumbnail: "/projects/cbdentistry.png",
+    thumbnail: "/projects/cbdentistry.jpg",
   },
   {
     id: "digiacai",
@@ -149,7 +149,7 @@ Visitors can read about the agency’s SEO and marketing services and explore cl
 
 The site includes agency information, client projects, and enquiry forms. A purple palette carries across the pages.`,
     technologies: [],
-    thumbnail: "/projects/digiacai.png",
+    thumbnail: "/projects/digiacai.jpg",
   },
   {
     id: "neha-agarwal",
@@ -166,7 +166,7 @@ The website introduces a speaker through her background and professional work. V
 
 The editorial layout includes a biography, speaking engagements, workshop information, and writing. Press appearances sit alongside the rest of her work.`,
     technologies: [],
-    thumbnail: "/projects/neha-agarwal.png",
+    thumbnail: "/projects/neha-agarwal.jpg",
   },
   {
     id: "prerna-ghosh",
@@ -182,7 +182,7 @@ Shoppers can explore clothing and accessories through seasonal edits or browse b
 
 The Shopify storefront includes collection pages and product grids, supported by category navigation. Photography carries through the collection and product presentation.`,
     technologies: ["Shopify"],
-    thumbnail: "/projects/prerna-ghosh.png",
+    thumbnail: "/projects/prerna-ghosh.jpg",
   },
   {
     id: "priyanka-gill",
@@ -199,7 +199,7 @@ The website brings a biography and career milestones together with published wor
 
 The editorial layout gives the biography and writing their own space alongside press and podcast content. Blush and yellow accents run through the pages.`,
     technologies: [],
-    thumbnail: "/projects/priyanka-gill.png",
+    thumbnail: "/projects/priyanka-gill.jpg",
   },
   {
     id: "sauga-smiles",
@@ -216,7 +216,7 @@ Patients can read about treatments and learn about the practice before enquiring
 
 The site includes treatment descriptions, practice details, and appointment enquiry links. A purple palette runs through the pages.`,
     technologies: [],
-    thumbnail: "/projects/sauga-smiles.png",
+    thumbnail: "/projects/sauga-smiles.jpg",
   },
   {
     id: "shop-minis",
@@ -233,7 +233,7 @@ Beach campaign photography introduces the swimwear and resortwear collections. S
 
 The storefront includes collection browsing and product grids. Campaign imagery connects the brand presentation with the shopping pages.`,
     technologies: [],
-    thumbnail: "/projects/shop-minis.png",
+    thumbnail: "/projects/shop-minis.jpg",
   },
   {
     id: "the-clothing-factory",
@@ -250,7 +250,7 @@ The storefront gives shoppers several ways to browse a fashion and lifestyle ran
 
 The store includes product grids, campaign imagery, and editorial collection pages. Seasonal collections and occasion-based browsing sit alongside category navigation.`,
     technologies: [],
-    thumbnail: "/projects/the-clothing-factory.png",
+    thumbnail: "/projects/the-clothing-factory.jpg",
   },
   {
     id: "the-design-atelier",
@@ -267,7 +267,7 @@ Architectural project photography leads this interior design portfolio. Visitors
 
 The site includes a project image gallery and studio information. Understated typography and simple navigation keep the photography prominent while making the written details available.`,
     technologies: [],
-    thumbnail: "/projects/the-design-atelier.png",
+    thumbnail: "/projects/the-design-atelier.jpg",
   },
   {
     id: "spline-animation",
@@ -284,7 +284,7 @@ This landing page exploration uses an interactive 3D scene as its main visual. A
 
 The work covers the sphere and terrain scene and the landing page around it. Spline provides the interactive 3D element.`,
     technologies: ["Spline"],
-    thumbnail: "/projects/spline-animation.png",
+    thumbnail: "/projects/spline-animation.jpg",
   },
   {
     id: "url-shortener",
@@ -301,6 +301,6 @@ This interface exploration keeps URL entry central, with an entry point for mana
 
 The interface includes a URL entry form and access to link management. Violet-to-cyan accents draw attention to the form against a dark background.`,
     technologies: [],
-    thumbnail: "/projects/url-shortener.png",
+    thumbnail: "/projects/url-shortener.jpg",
   },
 ]
