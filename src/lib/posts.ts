@@ -1,21 +1,26 @@
 import { parse } from "yaml"
 
-export interface MarkdownPost {
+export interface PostSummary {
   slug: string
   title: string
   description: string
   date: string
   tags: string[]
-  body: string
   readingMinutes: number
   featured: boolean
 }
 
-const files = import.meta.glob<string>("/src/content/markdown/*.md", {
-  query: "?raw",
-  import: "default",
-  eager: true,
-})
+export interface MarkdownPost extends PostSummary {
+  body: string
+}
+
+export function getAdjacentPosts(posts: readonly PostSummary[], slug: string) {
+  const index = posts.findIndex((post) => post.slug === slug)
+  return {
+    previous: index > 0 ? posts[index - 1] : undefined,
+    next: index >= 0 ? posts[index + 1] : undefined,
+  }
+}
 
 export function parseMarkdown(
   source: string,
@@ -58,18 +63,6 @@ export function parseMarkdown(
     readingMinutes: Math.max(1, Math.ceil(body.split(/\s+/).length / 200)),
   }
 }
-
-export const POSTS = Object.entries(files)
-  .map(([path, source]) =>
-    parseMarkdown(source, path.split("/").pop()!.replace(/\.md$/, ""))
-  )
-  .filter((writing): writing is MarkdownPost => writing !== null)
-  .sort(
-    (a, b) =>
-      Number(b.featured) - Number(a.featured) ||
-      b.date.localeCompare(a.date) ||
-      a.title.localeCompare(b.title)
-  )
 
 export function formatDate(date: string) {
   return new Intl.DateTimeFormat("en", {

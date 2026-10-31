@@ -2,12 +2,12 @@ import { Availability } from "@/components/shared/availability"
 
 import { EmailLink } from "@/components/shared/email-link"
 import { Link } from "@tanstack/react-router"
+import { PROFILE } from "@/content/profile"
 import {
-  RESUME,
   FOOTER_DESCRIPTION,
   FOOTER_EXPLORE_LINKS,
   FOOTER_SOCIAL_LINKS,
-} from "@/content/resume"
+} from "@/content/navigation"
 import { Logo } from "@/components/shared/logo"
 import { Icon } from "@/components/shared/icon"
 import { Button } from "@/components/ui/button"
@@ -32,11 +32,11 @@ export function SiteFooter() {
               <Availability className="text-xs text-foreground" />
               <p className="flex items-center gap-2">
                 <Icon name="globe" className="size-3.5 shrink-0" />
-                {RESUME.workReach}
+                {PROFILE.workReach}
               </p>
               <p className="flex items-center gap-2">
                 <Icon name="location" className="size-3.5 shrink-0" />
-                {RESUME.location}
+                {PROFILE.location}
               </p>
             </div>
             <EmailLink className="mt-3 flex w-fit max-w-full items-center gap-2 text-sm text-muted-foreground hover:text-foreground" />

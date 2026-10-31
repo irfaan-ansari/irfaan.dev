@@ -1,18 +1,18 @@
 import { Icon } from "@/components/shared/icon"
-import { RESUME } from "@/content/resume"
+import { PROFILE } from "@/content/profile"
 import { cn } from "@/lib/utils"
 
 export function EmailLink({ className }: { className?: string }) {
   return (
     <a
-      href={RESUME.email}
+      href={PROFILE.email}
       className={cn(
         "group/email relative inline-flex max-w-full items-center gap-1.5 rounded-sm text-sm outline-offset-4 transition-colors duration-100 ease-out hover:text-foreground focus-visible:outline-2 focus-visible:outline-ring",
         className
       )}
     >
       <Icon name="mail" className="size-3.5" />
-      <span className="break-all">{RESUME.email.replace(/^mailto:/, "")}</span>
+      <span className="break-all">{PROFILE.email.replace(/^mailto:/, "")}</span>
       <span
         aria-hidden="true"
         className="flex size-4 shrink-0 items-center overflow-hidden"

@@ -11,8 +11,8 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as WorkIndexRouteImport } from './routes/work.index'
-import { Route as WorkSlugRouteImport } from './routes/work.$slug'
 import { Route as WritingsIndexRouteImport } from './routes/writings.index'
 import { Route as WritingsSlugRouteImport } from './routes/writings.$slug'
 
@@ -26,14 +26,14 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WorkIndexRoute = WorkIndexRouteImport.update({
   id: '/work/',
   path: '/work/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const WorkSlugRoute = WorkSlugRouteImport.update({
-  id: '/work/$slug',
-  path: '/work/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const WritingsIndexRoute = WritingsIndexRouteImport.update({
@@ -50,7 +50,7 @@ const WritingsSlugRoute = WritingsSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/work/$slug': typeof WorkSlugRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/writings/$slug': typeof WritingsSlugRoute
   '/work/': typeof WorkIndexRoute
   '/writings/': typeof WritingsIndexRoute
@@ -58,7 +58,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/work/$slug': typeof WorkSlugRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/writings/$slug': typeof WritingsSlugRoute
   '/work': typeof WorkIndexRoute
   '/writings': typeof WritingsIndexRoute
@@ -67,7 +67,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/work/$slug': typeof WorkSlugRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/writings/$slug': typeof WritingsSlugRoute
   '/work/': typeof WorkIndexRoute
   '/writings/': typeof WritingsIndexRoute
@@ -77,18 +77,23 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/contact'
-    | '/work/$slug'
+    | '/sitemap.xml'
     | '/writings/$slug'
     | '/work/'
     | '/writings/'
   fileRoutesByTo: FileRoutesByTo
   to:
-    '/' | '/contact' | '/work/$slug' | '/writings/$slug' | '/work' | '/writings'
+    | '/'
+    | '/contact'
+    | '/sitemap.xml'
+    | '/writings/$slug'
+    | '/work'
+    | '/writings'
   id:
     | '__root__'
     | '/'
     | '/contact'
-    | '/work/$slug'
+    | '/sitemap.xml'
     | '/writings/$slug'
     | '/work/'
     | '/writings/'
@@ -97,7 +102,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
-  WorkSlugRoute: typeof WorkSlugRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   WritingsSlugRoute: typeof WritingsSlugRoute
   WorkIndexRoute: typeof WorkIndexRoute
   WritingsIndexRoute: typeof WritingsIndexRoute
@@ -119,18 +124,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/work/': {
       id: '/work/'
       path: '/work'
       fullPath: '/work/'
       preLoaderRoute: typeof WorkIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/work/$slug': {
-      id: '/work/$slug'
-      path: '/work/$slug'
-      fullPath: '/work/$slug'
-      preLoaderRoute: typeof WorkSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/writings/': {
@@ -153,7 +158,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
-  WorkSlugRoute: WorkSlugRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   WritingsSlugRoute: WritingsSlugRoute,
   WorkIndexRoute: WorkIndexRoute,
   WritingsIndexRoute: WritingsIndexRoute,

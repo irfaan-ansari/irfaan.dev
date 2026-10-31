@@ -1,16 +1,10 @@
+import { seoHead, SITE_PAGES } from "@/lib/seo"
+import { getPostSummaries } from "@/server/posts"
 import { createFileRoute } from "@tanstack/react-router"
 import { WritingsPage } from "@/components/writing/writings-page"
 
 export const Route = createFileRoute("/writings/")({
-  head: () => ({
-    meta: [
-      { title: "Writing | Irfaan" },
-      {
-        name: "description",
-        content:
-          "Notes on building useful interfaces, web applications, and connected systems.",
-      },
-    ],
-  }),
-  component: WritingsPage,
+  loader: () => getPostSummaries(),
+  head: () => seoHead(SITE_PAGES.writing),
+  component: () => <WritingsPage posts={Route.useLoaderData()} />,
 })

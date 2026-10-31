@@ -1,10 +1,10 @@
-import type { Project } from "@/content/resume"
+import type { Project } from "@/content/projects"
 
 export function ProjectPreview({ project }: { project: Project }) {
   return (
     <img
       src={project.thumbnail}
-      alt={`${project.name} website preview`}
+      alt={`${project.title} website preview`}
       width={1672}
       height={941}
       loading="lazy"

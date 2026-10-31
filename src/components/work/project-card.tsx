@@ -1,7 +1,6 @@
-import { Link } from "@tanstack/react-router"
 import { Card, CardContent } from "@/components/ui/card"
 import { buttonVariants } from "@/components/ui/button"
-import { type PROJECTS } from "@/content/resume"
+import { type PROJECTS } from "@/content/projects"
 import { cn } from "@/lib/utils"
 import { Icon } from "@/components/shared/icon"
 import { ProjectPreview } from "./project-preview"
@@ -32,12 +31,10 @@ export function ProjectCard({
             {project.category}
           </p>
           <h3 className="mt-1 text-xl font-bold tracking-tight">
-            {project.name}
+            {project.title}
           </h3>
           <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
             {project.description}
-            <br />
-            {project.detail}
           </p>
           <div className="mt-4 flex flex-wrap items-center gap-2">
             <a
@@ -45,17 +42,10 @@ export function ProjectCard({
               target="_blank"
               rel="noopener noreferrer"
               className={buttonVariants({ size: "sm" })}
-              aria-label={`View ${project.name} ${project.website ? "website" : "preview"} (opens in a new tab)`}
+              aria-label={`View ${project.title} ${project.website ? "website" : "preview"} (opens in a new tab)`}
             >
               View <Icon name="arrow" className="size-3.5" />
             </a>
-            <Link
-              to="/work/$slug"
-              className={buttonVariants({ size: "sm", variant: "link" })}
-              params={{ slug: project.id }}
-            >
-              Read more <Icon name="right" className="size-3.5" />
-            </Link>
           </div>
         </CardContent>
         <div
@@ -64,14 +54,15 @@ export function ProjectCard({
             wide && "md:w-[calc(100%-56px)] md:self-center md:justify-self-end"
           )}
         >
-          <Link
-            to="/work/$slug"
-            params={{ slug: project.id }}
-            aria-label={`Read more about ${project.name}`}
+          <a
+            href={project.website ?? project.thumbnail}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`View ${project.title} ${project.website ? "website" : "preview"} (opens in a new tab)`}
             className="block rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4"
           >
             <ProjectPreview project={project} />
-          </Link>
+          </a>
         </div>
       </Card>
     </article>

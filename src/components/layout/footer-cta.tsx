@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router"
-import { PROJECTS } from "@/content/resume"
+import { PROJECTS } from "@/content/projects"
 import { Icon } from "@/components/shared/icon"
 import { Button } from "@/components/ui/button"
 import { ProjectPreview } from "@/components/work/project-preview"

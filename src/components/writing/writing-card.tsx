@@ -1,9 +1,9 @@
 import { Icon } from "@/components/shared/icon"
 import { Link } from "@tanstack/react-router"
 import { Badge } from "@/components/ui/badge"
-import { formatDate, type MarkdownPost } from "@/lib/md"
+import { formatDate, type PostSummary } from "@/lib/posts"
 
-export function WritingCard({ writing }: { writing: MarkdownPost }) {
+export function WritingCard({ writing }: { writing: PostSummary }) {
   const titleId = `writing-${writing.slug}`
 
   return (

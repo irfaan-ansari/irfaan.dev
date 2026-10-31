@@ -1,5 +1,5 @@
 ---
-title: "Your website looks good. Why aren’t people getting in touch?"
+title: "Why your website isn’t generating enquiries"
 description: "A practical way to review your message, project evidence, and enquiry flow before committing to a redesign."
 date: "2026-10-31"
 featured: true

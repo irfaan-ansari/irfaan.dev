@@ -4,6 +4,7 @@ dist
 dist-ssr
 *.local
 .env*
+!.env.example
 .nitro
 .tanstack
 .wrangler
@@ -15,3 +16,5 @@ todos.json
 
 # typescript
 *.tsbuildinfo
+
+.superdesign/tmp/

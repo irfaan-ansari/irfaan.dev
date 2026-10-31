@@ -1,5 +1,13 @@
-import { CONTACT_PROJECT_TYPES } from "@/content/resume"
 import { z } from "zod"
+
+export const CONTACT_PROJECT_TYPES = [
+  { value: "Website", label: "Website" },
+  { value: "Web application", label: "Web application" },
+  { value: "E-commerce / Shopify", label: "E-commerce / Shopify" },
+  { value: "API / integration", label: "API / integration" },
+  { value: "Existing project", label: "Existing project" },
+  { value: "Something else", label: "Something else" },
+]
 
 export const contactSchema = z.object({
   name: z

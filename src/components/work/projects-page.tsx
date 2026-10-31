@@ -1,4 +1,4 @@
-import { PROJECTS } from "@/content/resume"
+import { PROJECTS } from "@/content/projects"
 import { ProjectCard } from "@/components/work/project-card"
 import { cn } from "@/lib/utils"
 
@@ -13,9 +13,8 @@ export function ProjectsPage() {
           Explore my work
         </h1>
         <p className="mt-4 max-w-lg text-base leading-relaxed text-muted-foreground">
-          Take a look at the websites, online stores, and business tools I’ve
-          built, along with a few design concepts. Open a project to see what it
-          includes and how it came together.
+          From service websites to online stores and admin platforms, these
+          projects show what I can help you build.
         </p>
       </section>
       <section

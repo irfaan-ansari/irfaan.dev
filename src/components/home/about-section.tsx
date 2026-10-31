@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router"
-import { RESUME } from "@/content/resume"
+import { PROFILE } from "@/content/profile"
 import { Button } from "@/components/ui/button"
 import { Icon } from "@/components/shared/icon"
 
@@ -19,7 +19,7 @@ export function AboutSection() {
             id="about-heading"
             className="text-3xl leading-tight font-bold tracking-tight sm:text-4xl"
           >
-            Hi, I’m {RESUME.name}.
+            Hi, I’m {PROFILE.name}.
           </h2>
           <p className="mt-3 max-w-48 text-sm leading-relaxed text-muted-foreground">
             A full stack developer

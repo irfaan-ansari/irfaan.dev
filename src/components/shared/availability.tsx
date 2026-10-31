@@ -1,4 +1,4 @@
-import { RESUME } from "@/content/resume"
+import { PROFILE } from "@/content/profile"
 import { cn } from "@/lib/utils"
 
 export function Availability({ className }: { className?: string }) {
@@ -13,7 +13,7 @@ export function Availability({ className }: { className?: string }) {
           <span className="relative inline-flex size-full rounded-full bg-primary" />
         </span>
       </span>
-      {RESUME.availability}
+      {PROFILE.availability}
     </p>
   )
 }
