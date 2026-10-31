@@ -1,4 +1,4 @@
-import type { SERVICES } from "@/content/resume"
+import type { SERVICES } from "@/content/home"
 import { cn } from "@/lib/utils"
 
 type ServiceName = (typeof SERVICES)[number]["icon"]

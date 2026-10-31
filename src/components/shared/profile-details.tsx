@@ -1,4 +1,4 @@
-import { RESUME } from "@/content/resume"
+import { PROFILE } from "@/content/profile"
 import { Availability } from "@/components/shared/availability"
 import { Icon } from "@/components/shared/icon"
 import { cn } from "@/lib/utils"
@@ -19,10 +19,10 @@ export function ProfileDetails({ className }: { className?: string }) {
         <div className="min-w-0">
           <p className="text-xs leading-5 text-muted-foreground">From</p>
           <p className="text-sm font-medium tracking-tight">
-            {RESUME.location}
+            {PROFILE.location}
           </p>
           <p className="mt-5 flex items-center gap-1.5 text-sm leading-tight font-semibold tracking-tight">
-            {RESUME.workReach}
+            {PROFILE.workReach}
             <Icon name="arrow" className="size-4 text-primary-text" />
           </p>
         </div>

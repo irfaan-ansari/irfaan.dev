@@ -1,4 +1,4 @@
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { useForm } from "@tanstack/react-form"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -26,9 +26,14 @@ import {
 } from "@/components/ui/select"
 import { contactSchema } from "@/lib/contact-schema"
 import { Icon } from "@/components/shared/icon"
+import { submitContact } from "@/server/contact"
 
 export function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null)
+  const [feedback, setFeedback] = useState<{
+    success: boolean
+    message: string
+  } | null>(null)
   const form = useForm({
     defaultValues: { name: "", email: "", subject: "", message: "" },
     validators: {
@@ -36,8 +41,19 @@ export function ContactForm() {
       onBlur: contactSchema,
       onSubmit: contactSchema,
     },
-    onSubmit: ({ value }) => {
-      console.log(contactSchema.parse(value))
+    onSubmit: async ({ value }) => {
+      setFeedback(null)
+      try {
+        const result = await submitContact({ data: value })
+        setFeedback(result)
+        if (result.success) form.reset()
+      } catch {
+        setFeedback({
+          success: false,
+          message:
+            "Your message couldn’t be sent. Please try again or email me directly.",
+        })
+      }
     },
   })
 
@@ -236,13 +252,29 @@ export function ContactForm() {
                 )
               }}
             </form.Field>
+            {feedback && (
+              <p
+                role={feedback.success ? "status" : "alert"}
+                className={
+                  feedback.success
+                    ? "text-sm text-foreground"
+                    : "text-sm text-destructive"
+                }
+              >
+                {feedback.message}
+              </p>
+            )}
             <form.Subscribe selector={(state) => state.isSubmitting}>
               {(isSubmitting) => (
                 <Field orientation="horizontal" className="flex-wrap">
                   <Button
                     type="button"
                     variant="outline"
-                    onClick={() => form.reset()}
+                    disabled={isSubmitting}
+                    onClick={() => {
+                      form.reset()
+                      setFeedback(null)
+                    }}
                   >
                     Reset
                   </Button>

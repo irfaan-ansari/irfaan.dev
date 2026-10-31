@@ -1,5 +1,5 @@
 import { EmailLink } from "@/components/shared/email-link"
-import { CONTACT_FAQS } from "@/content/resume"
+import { CONTACT_FAQS } from "@/content/contact"
 import { ContactForm } from "@/components/contact/contact-form"
 import {
   Accordion,

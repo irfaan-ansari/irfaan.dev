@@ -1,5 +1,5 @@
 ---
-title: "Try your website on a customer's kind of day"
+title: "Try your website the way a customer would"
 description: "Review your site as someone with limited time and a specific question."
 date: "2026-10-31"
 tags:

@@ -1,6 +1,8 @@
 import { ProfileDetails } from "@/components/shared/profile-details"
 import { EmailLink } from "@/components/shared/email-link"
-import { SERVICES, FAQS, RESUME, PROJECTS } from "@/content/resume"
+import { SERVICES, FAQS } from "@/content/home"
+import { PROFILE } from "@/content/profile"
+import { PROJECTS } from "@/content/projects"
 import { buttonVariants } from "@/components/ui/button"
 import { ServiceIcon } from "@/components/home/service-icon"
 import { HeadingUnderline } from "@/components/shared/heading-underline"
@@ -34,10 +36,10 @@ export function HomePage() {
           <div>
             <Eyebrow>Hello, I’m</Eyebrow>
             <h1 className="text-5xl font-bold tracking-tight sm:text-6xl">
-              {RESUME.name}
+              {PROFILE.name}
             </h1>
             <p className="relative mt-0.5 w-fit pb-3 font-heading text-2xl font-semibold tracking-tight sm:text-3xl">
-              {RESUME.role}
+              {PROFILE.role}
               <HeadingUnderline />
             </p>
             <p className="mt-4 max-w-md text-sm leading-7 text-muted-foreground">
@@ -49,7 +51,7 @@ export function HomePage() {
           <ProfileDetails className="w-full max-w-64 md:max-w-none" />
         </div>
         <div className="mt-5 flex flex-wrap gap-2">
-          {RESUME.tech.map((t) => (
+          {PROFILE.tech.map((t) => (
             <TechnologyBadge key={t} className="px-3 text-xs">
               {t}
             </TechnologyBadge>

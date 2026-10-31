@@ -8,7 +8,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import { Button } from "@/components/ui/button"
-import { NAVIGATION_ITEMS } from "@/content/resume"
+import { NAVIGATION_ITEMS } from "@/content/navigation"
 import { useActiveNavigation } from "@/hooks/use-active-navigation"
 import { NavigationLink } from "./navigation-link"
 

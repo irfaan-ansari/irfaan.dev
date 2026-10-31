@@ -1,5 +1,5 @@
 ---
-title: "What should you build first when everything feels important?"
+title: "What to build first when everything feels important"
 description: "Choose a manageable first version while keeping the bigger plan in view."
 date: "2026-10-31"
 tags:
