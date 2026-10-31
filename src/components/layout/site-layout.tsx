@@ -1,6 +1,7 @@
 import type { ReactNode } from "react"
 import { SiteHeader } from "@/components/layout/site-header"
 import { SiteFooter } from "@/components/layout/site-footer"
+import { FooterCta } from "./footer-cta"
 
 export function SiteLayout({ children }: { children: ReactNode }) {
   return (
@@ -18,6 +19,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
           {children}
         </main>
         <div className="relative mx-0.5">
+          <FooterCta />
           <SiteFooter />
         </div>
       </div>

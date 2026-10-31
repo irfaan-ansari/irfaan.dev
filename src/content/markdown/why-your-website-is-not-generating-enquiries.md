@@ -1,52 +1,45 @@
 ---
 title: "Your website looks good. Why aren’t people getting in touch?"
 description: "A practical way to review your message, project evidence, and enquiry flow before committing to a redesign."
-date: "2026-10-23"
+date: "2026-10-31"
+featured: true
 tags:
-  - Websites
-  - Client experience
+  - "Websites"
+  - "Client experience"
 ---
 
-A business website can look polished and still leave a visitor unsure what to do next. The typography might be right, the photographs attractive, and the pages fast enough. But if someone cannot tell whether you can solve their particular problem, a contact button has little work to do.
+You have a website you are happy to share. The images look right, the pages feel polished, and the business looks professional. Yet enquiries are quieter than you hoped.
 
-Before planning a complete redesign, I would review the path from arrival to enquiry. That often reveals a more useful starting point than choosing a new visual style.
+A redesign is one option, but first it is worth following the route a potential customer takes. Where do they arrive, what do they learn, and what might leave them unsure about contacting you?
 
-## Can the right visitor recognise themselves?
+## Can someone tell whether you can help them?
 
-Read the first screen without looking at the company name. Does it explain what the business does, who it helps, and what someone can do next?
+Read the first screen as a person who knows nothing about your business. Does it explain what you do and who the service is for?
 
-“Solutions for your success” leaves the visitor to supply all the detail. “Commercial kitchen equipment, installation, and servicing for restaurants” gives them something concrete to evaluate.
+A phrase like "Solutions for your success" leaves the visitor to work out most of the detail. A description of the actual service, such as kitchen equipment installation for restaurants, gives them something to assess.
 
-The wording does not need to cover every service. It needs to help the right person decide whether to keep reading. If your business serves different audiences, provide clear paths to the information each audience needs.
+You do not need your whole service list in the opening paragraph. Give the right visitor enough information to recognise that they are in a useful place. If you work with several kinds of customer, help each find the details relevant to them.
 
-## Show evidence that answers a buying question
+## Show what you did, with enough context
 
-A gallery tells someone what your work looks like. A useful project story explains what you were responsible for and why the work mattered.
+Project images can help someone understand your style. They may still have questions about what you were responsible for and whether the work resembles what they need.
 
-For a service business, that might mean showing the original request, the constraints, the finished work, and what the customer can now do. For a software project, it could explain how orders move through the system or how staff review incoming applications.
+Add context to a few relevant examples. Explain the customer's request and any constraints, then describe what you delivered. For a business tool, that might mean showing how staff handle a booking or review an application.
 
-Use results you can substantiate. If you do not have reliable revenue or conversion data, describe the delivered capability clearly. “Staff can review applications and update their status in one place” is more credible than an unsupported claim about business growth.
+Use results you can support. If you have no reliable figures for sales or enquiries, describe what the finished work allows people to do. Readers can assess a specific capability more easily than a broad promise of growth.
 
-## Make the next step feel manageable
+## Make the first conversation easy to begin
 
-Imagine a visitor is interested but has no formal brief. A contact page that asks for a complete specification can make an early conversation feel premature.
+Someone interested in your service may still be working out the details. Check whether your contact page makes them feel they need a complete brief before speaking to you.
 
-Explain what information is useful and what happens after they send it. A short description of the project, an existing website, and a rough timeline may be enough to start.
+Explain what information would help you respond. A description of the problem and a link to an existing site may be enough to start. If timing or budget matters to the conversation, ask clearly and explain what happens next.
 
-The action should also be accurate. If a form opens the visitor’s email app, say so before they use it. If it sends a message directly, show a clear success or failure state.
+Try the contact step yourself on a phone. Check that the message arrives where it should. Make a mistake in a field and see whether the form helps you fix it without losing the rest of your work.
 
-## Walk through the whole journey on a phone
+## Find out what you can measure
 
-Consider a hypothetical restaurant owner looking for a supplier between appointments. They arrive on a service page, look for delivery information, and try to ask about opening an account.
+A quiet inbox does not tell you how many relevant visitors reached the site. You may need to investigate traffic, the audience you attract, or the offer itself as well as the pages.
 
-Can they find the relevant details without opening several menus? Is the form comfortable to complete? Does their message survive a validation error?
+If you have analytics, use them to see where visitors arrive and whether they reach the contact step. Treat that as a starting point for questions, then walk through the pages yourself.
 
-These are small interactions, but they are part of the enquiry experience. Review them alongside the visual design.
-
-## Choose the smallest useful improvement
-
-Low enquiry volume can also reflect limited traffic, the wrong audience, or an offer that needs work. A redesign alone cannot settle those questions. Where measurement is available, look at which pages people reach and where they leave, then combine that information with an actual walkthrough.
-
-Start with a specific hypothesis: visitors cannot identify the service, cannot find relevant proof, or cannot complete the contact step. Improve that part and review what changes.
-
-[Tell me about your website](/contact). Share the page you are concerned about, the audience it serves, and the action you want visitors to take. That gives us a concrete place to begin.
+Choose one issue to address and record what you change. Review the next enquiries for their relevance as well as their number. That can help you judge whether the update made the business easier for the right customer to understand.

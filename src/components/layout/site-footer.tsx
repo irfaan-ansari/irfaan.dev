@@ -1,5 +1,5 @@
 import { Availability } from "@/components/shared/availability"
-import { FooterCta } from "@/components/layout/footer-cta"
+
 import { EmailLink } from "@/components/shared/email-link"
 import { Link } from "@tanstack/react-router"
 import {
@@ -15,7 +15,6 @@ import { Button } from "@/components/ui/button"
 export function SiteFooter() {
   return (
     <footer>
-      <FooterCta />
       <div className="px-5 pt-8 pb-5 sm:px-10">
         <div className="grid grid-cols-2 gap-6 sm:grid-cols-[3fr_1fr_1fr]">
           <div className="col-span-2 sm:col-span-1">

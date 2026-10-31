@@ -1,71 +1,64 @@
 import { Icon } from "@/components/shared/icon"
 import { Link } from "@tanstack/react-router"
 import { Badge } from "@/components/ui/badge"
-import { Card } from "@/components/ui/card"
-import { cn } from "@/lib/utils"
 import { formatDate, type MarkdownPost } from "@/lib/md"
 
 export function WritingCard({ writing }: { writing: MarkdownPost }) {
   const titleId = `writing-${writing.slug}`
 
   return (
-    <article>
-      <Card
-        className={cn(
-          "gap-0 rounded-xl border border-border p-0 shadow-none ring-0",
-          writing.featured && "border-primary/30 bg-primary/5"
-        )}
+    <article className="border-b border-border last:border-b-0">
+      <Link
+        to="/writings/$slug"
+        params={{ slug: writing.slug }}
+        aria-labelledby={titleId}
+        className="group/writing block py-7 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary sm:py-8"
       >
-        <Link
-          to="/writings/$slug"
-          params={{ slug: writing.slug }}
-          aria-labelledby={titleId}
-          className="group/writing block rounded-xl p-5 transition-colors duration-100 ease-out hover:bg-muted/40 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary motion-reduce:transition-none sm:p-6"
-        >
-          <div className="flex items-start justify-between gap-3">
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
-              {writing.featured && (
-                <Badge
-                  variant="outline"
-                  className="rounded-md border-primary/20 bg-primary/10 text-xs text-primary-text"
-                >
-                  Featured
-                </Badge>
-              )}
-              <time dateTime={writing.date}>{formatDate(writing.date)}</time>
-              <span className="inline-flex items-center gap-1.5">
-                <Icon name="time" aria-hidden="true" className="size-3.5" />
-                {writing.readingMinutes} min read
-              </span>
-            </div>
-            <span className="flex size-7 shrink-0 items-center justify-center rounded-full border border-border bg-background text-primary-text transition-colors duration-100 group-hover/writing:border-primary/20 group-hover/writing:bg-primary/10 group-focus-visible/writing:bg-primary/10 motion-reduce:transition-none">
-              <Icon name="arrow" aria-hidden="true" className="size-3.5" />
+        <div className="flex items-start justify-between gap-4">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs text-muted-foreground">
+            {writing.featured && (
+              <Badge
+                variant="outline"
+                className="rounded-md border-primary/30 bg-primary/15 text-xs font-semibold text-primary-text"
+              >
+                Featured
+              </Badge>
+            )}
+            <time dateTime={writing.date}>{formatDate(writing.date)}</time>
+            <span className="inline-flex items-center gap-1.5">
+              <Icon name="time" aria-hidden="true" className="size-3.5" />
+              {writing.readingMinutes} min read
             </span>
           </div>
-          <h2
-            id={titleId}
-            className="mt-4 max-w-xl text-xl leading-snug font-semibold tracking-tight text-foreground"
-          >
-            {writing.title}
-          </h2>
-          <p className="mt-3 max-w-xl text-sm leading-7 text-muted-foreground">
-            {writing.description}
-          </p>
-          {writing.tags.length > 0 && (
-            <div className="mt-5 flex flex-wrap gap-2">
-              {writing.tags.map((tag) => (
-                <Badge
-                  key={tag}
-                  variant="secondary"
-                  className="h-auto rounded-md px-2 py-1 text-xs font-normal text-muted-foreground"
-                >
-                  {tag}
-                </Badge>
-              ))}
-            </div>
-          )}
-        </Link>
-      </Card>
+          <Icon
+            name="arrow"
+            aria-hidden="true"
+            className="size-4 shrink-0 text-muted-foreground transition-[color,transform] duration-100 ease-out group-hover/writing:text-primary-text group-focus-visible/writing:text-primary-text motion-safe:group-hover/writing:translate-x-0.5 motion-safe:group-hover/writing:-translate-y-0.5 motion-safe:group-focus-visible/writing:translate-x-0.5 motion-safe:group-focus-visible/writing:-translate-y-0.5 motion-reduce:transition-none"
+          />
+        </div>
+        <h2
+          id={titleId}
+          className="mt-3 max-w-xl text-xl leading-snug font-semibold tracking-tight text-foreground"
+        >
+          {writing.title}
+        </h2>
+        <p className="mt-2 max-w-xl text-sm leading-7 text-muted-foreground">
+          {writing.description}
+        </p>
+        {writing.tags.length > 0 && (
+          <div className="mt-4 flex flex-wrap gap-2">
+            {writing.tags.map((tag) => (
+              <Badge
+                key={tag}
+                variant="secondary"
+                className="h-auto rounded-md border-border-strong bg-muted px-2 py-1 text-xs font-medium text-foreground"
+              >
+                {tag}
+              </Badge>
+            ))}
+          </div>
+        )}
+      </Link>
     </article>
   )
 }

@@ -1,59 +1,48 @@
 ---
 title: "When does a spreadsheet need a custom dashboard?"
 description: "How to recognise a workflow that has outgrown a shared sheet, and keep the first version of a custom tool focused."
-date: "2026-10-23"
+date: "2026-10-31"
 tags:
-  - Business systems
-  - Admin tools
+  - "Business systems"
+  - "Admin tools"
 ---
 
-A spreadsheet is often a sensible first tool for a business process. It is familiar, quick to change, and easy to inspect. Moving to custom software should solve a specific operational problem, rather than simply give the same table a more attractive interface.
+A shared spreadsheet can carry a business process for a long time. Everyone knows where it is, changes are quick, and adding a column takes very little effort.
 
-The useful question is: what has become difficult to manage around the sheet?
+Eventually, you may notice that the sheet needs a lot of explanation. Someone must remind colleagues which rows they own. An important update gets overwritten. Finding out why a decision was made means looking through messages from last week.
 
-## Look for repeated work and unclear ownership
+Before replacing it, look at where the process is becoming difficult.
 
-Consider a hypothetical team that handles customer applications. New submissions arrive by email. Someone copies them into a sheet, another person checks the details, and a third sends the decision.
+## Notice the work happening around the sheet
 
-The spreadsheet may contain the right information. The friction sits between the steps:
+Imagine a team handling customer applications. Requests arrive by email, details are copied into a sheet, and supporting documents stay in a folder. Staff message one another to check who is reviewing each application.
 
-- Two people can work on the same application without knowing it.
-- The current status depends on someone remembering to update a cell.
-- Supporting documents live in a separate inbox or folder.
-- Questions about a decision require searching old messages.
+The sheet may hold the right information. What is missing is a dependable way to manage the handoffs.
 
-Those are workflow problems. A dashboard could help if it makes responsibility, status, and the next action explicit.
+Ask the team where they repeat work or hesitate because they cannot tell what has happened. Look for tasks that depend on someone remembering to update a cell. Check whether different people need different access to the information.
 
-## Define the task before designing the screens
+A dashboard could help if it makes those responsibilities and next steps easier to manage.
 
-Instead of starting with a list of dashboard widgets, describe one complete task in plain language:
+## Describe one complete job
 
-> A reviewer opens a pending application, checks the supporting information, records a decision, and confirms that the customer has been notified.
+Choose a task the tool should support. For example, a reviewer opens a pending application, checks its documents, records a decision, and confirms that the customer has been informed.
 
-That description suggests the information and actions the tool needs. It also reveals questions a mockup alone might miss. Who is allowed to approve an application? Can a decision be changed? What should happen if sending the notification fails?
+Walk through the awkward cases too. What happens when a document is missing? Who can change a decision? How will someone correct a mistake?
 
-A chart of application totals might be useful later. It does not replace the ability to complete the review reliably.
+Those questions help you decide what the first version needs. A chart showing total applications can wait if the team still cannot complete a review reliably.
 
-## Keep the first version narrow
+## Keep the first version small enough to use
 
-A focused first version might include a shared application list, filters for status and assignee, a detail screen, controlled status changes, and a record of important actions.
+For this example, you might need a shared application list and a page for each application. Staff could assign a reviewer, record a decision, and see a history of important changes.
 
-That is already a meaningful change. It does not need to become a full customer management system on day one.
+Be explicit about what stays elsewhere. You might keep accounting in the existing package and leave older records in an archive while you agree how to move them.
 
-Before building, write down what the tool will leave alone. Perhaps the existing accounting package remains in place, customer messages still use the current email service, and historical records stay in a read-only archive until migration is agreed.
+Before importing information, decide who will check it. Duplicate entries and inconsistent labels need attention, and someone should approve the result. During the changeover, make it clear where the team should make updates so the sheet and new tool do not become competing records.
 
-Clear boundaries make the work easier to estimate and the result easier to evaluate.
+## Check whether a simpler change is enough
 
-## Plan the move from the current process
+A better sheet or a small automation may solve the problem, particularly if one person owns the work and mistakes are easy to catch.
 
-The transition deserves its own attention. Existing data may contain duplicate records, inconsistent status labels, or missing contact details. Decide which records need to move, how they will be checked, and who will approve the imported result.
+A custom tool also needs maintenance and someone responsible for access, backups, and support. Include those responsibilities when weighing the cost.
 
-Also consider the people using the tool. They need a way to learn the new process, report an issue, and recover from a mistake. If the old sheet remains editable during rollout, agree which system holds the current record so the two do not drift apart.
-
-## Sometimes the sheet should stay
-
-If one person owns the process, edits are infrequent, and mistakes are easy to spot, a cleaner spreadsheet or a small automation may be enough. Custom software brings ongoing work: hosting, access management, maintenance, backups, and support.
-
-The case for a dashboard becomes clearer when several people need to coordinate a repeatable process with defined actions and permissions.
-
-[Describe the workflow you want to improve](/contact). A sample with private information removed, the steps your team follows, and the part that causes the most rework are useful starting points. We can then assess whether a dashboard, an integration, or a smaller change makes sense.
+Try describing the problem without using the word dashboard. If you can explain who is getting stuck, what they are trying to do, and what would make that easier, you have a useful starting point for discussing what to build.

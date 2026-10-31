@@ -7,23 +7,20 @@ export function WritingsPage() {
     <>
       <section className={cn("site-section", "pt-0")}>
         <p className="mb-3 text-xs font-semibold tracking-wider text-muted-foreground uppercase">
-          Notes & ideas
+          Articles
         </p>
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
           Writing
         </h1>
         <p className="mt-4 max-w-lg leading-relaxed text-muted-foreground">
-          Thoughts on building for the web, from the first interface to the
-          systems behind it.
+          Thoughts on running a business online, making everyday work easier,
+          and deciding what your next website or tool should do for you.
         </p>
       </section>
-      <section
-        aria-label="Articles"
-        className={cn("site-section", "space-y-4")}
-      >
+      <section aria-label="Articles" className="site-section">
         {POSTS.length === 0 && (
           <p className="py-8 text-muted-foreground">
-            No articles published yet. Check back soon.
+            No articles published yet.
           </p>
         )}
         {POSTS.map((writing) => (

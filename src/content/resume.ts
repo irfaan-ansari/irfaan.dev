@@ -6,205 +6,224 @@ export interface Project {
   detail: string
   technologies: readonly string[]
   thumbnail: string
+  website?: string
   summary: string
 }
 
 export const PROJECTS: readonly Project[] = [
   {
     id: "jimenez-produce",
+    website: "https://jimenezproduce.com/",
     thumbnail: "/projects/jimenez-produce.png",
     category: "Foodservice",
-    name: "Jimenez Produce",
-    description: "Foodservice website + admin",
-    detail: "Orders, catalog, customers, and application review.",
+    name: "Foodservice Catalog & Admin",
+    description: "Foodservice catalog and order management",
+    detail:
+      "A product catalog backed by tools for handling orders and customer applications.",
     technologies: ["Next.js", "TypeScript", "PostgreSQL"],
     summary:
-      "A connected foodservice experience with a product catalog, customer management, order workflows, and application review.",
+      "Customers can browse the foodservice catalog, while staff manage orders and customer accounts through the admin area. Application review is part of the same set of tools.",
   },
   {
     id: "goldys-nestt",
+    website: "https://www.goldysnestt.com/",
     thumbnail: "/projects/goldys-nestt.png",
     category: "Retail",
-    name: "Goldy’s Nestt",
-    description: "Shopify + multi-location retail",
-    detail: "Connecting online and offline store operations.",
+    name: "Shopify Store & Retail Tools",
+    description: "Online shopping and store operations",
+    detail:
+      "A Shopify storefront with retail tools for multiple physical locations.",
     technologies: ["Shopify", "Next.js", "TypeScript"],
     summary:
-      "A retail storefront paired with the operational tools to connect online shopping and multiple physical locations.",
+      "The Shopify storefront sits alongside tools for running multiple retail locations. It connects the online shop with operations in the physical stores.",
   },
   {
     id: "blak",
+    website: "https://www.rideblak.com/",
     thumbnail: "/projects/blak.png",
     category: "Transportation",
-    name: "BLAK",
-    description: "Transportation website + admin",
-    detail: "Operator, partner, vehicle, and onboarding workflows.",
+    name: "Transportation Website & Admin",
+    description: "Transport operations and onboarding",
+    detail:
+      "A public website with tools for managing operators, partners, and vehicles.",
     technologies: ["Next.js", "TypeScript", "PostgreSQL"],
     summary:
-      "A transportation experience supported by admin workflows for operators, partners, vehicle management, and onboarding.",
+      "The transportation website includes an admin area for operators, partners, and vehicle records. Onboarding workflows cover the steps involved in adding them to the platform.",
   },
 
   {
     id: "folio",
-    name: "Folio",
+    name: "Creative Studio Website",
     category: "Creative studio",
     thumbnail: "/projects/folio.png",
-    description: "Creative studio website",
+    description: "A website concept for a creative studio",
     detail:
-      "A responsive studio presentation with services, work, and a clear contact path.",
+      "Studio services and selected projects, with layouts for desktop and mobile.",
     technologies: ["Next.js", "shadcn/ui"],
     summary:
-      "A creative studio website concept focused on bold typography, selected work, and responsive layouts.",
+      "Folio is a creative studio website concept. Bold typography introduces the services and selected projects, with responsive layouts and a contact link for enquiries.",
   },
   {
     id: "fluur",
-    name: "Fluur",
+    name: "Electric Mobility Concept",
     category: "Concept",
     thumbnail: "/projects/fluur.png",
-    description: "Electric mobility website concept",
-    detail: "A fictional brand and responsive automotive landing page.",
+    description: "A landing page for an electric mobility brand",
+    detail: "A fictional automotive concept designed for desktop and mobile.",
     technologies: ["Next.js", "shadcn/ui"],
     summary:
-      "A fictional electric mobility brand concept with an expressive landing page and layouts for desktop and mobile.",
+      "Fluur explores a website for a fictional electric mobility brand. The landing page uses an expressive visual style, adapted for desktop and mobile screens.",
   },
   {
     id: "carefinity",
-    name: "Carefinity",
+    name: "Healthcare Website Concept",
     category: "Healthcare",
     thumbnail: "/projects/carefinity.png",
-    description: "Healthcare website design",
+    description: "A healthcare website concept",
     detail:
-      "A responsive healthcare presentation with services and a consultation call to action.",
+      "Service information and a consultation enquiry, arranged for different screen sizes.",
     technologies: ["Next.js", "shadcn/ui"],
     summary:
-      "A healthcare website concept combining a calm visual direction with responsive layouts and a clear consultation path.",
+      "Carefinity is a responsive healthcare website concept. A calm visual style supports the service information, with a consultation enquiry as the next step for visitors.",
   },
   {
     id: "cbdentistry",
-    name: "Central Burlington Dental Care",
+    website: "https://www.cbdentistry.ca/",
+    name: "Dental Practice Website",
     category: "Healthcare",
-    description: "Dental practice website",
+    description: "A website for a dental practice",
     detail:
-      "Service information, patient guidance, and clear appointment enquiries.",
+      "Treatment details and patient guidance, with links to enquire about an appointment.",
     summary:
-      "A welcoming dental website that brings treatment information, practice details, patient guidance, and appointment calls to action into a clear browsing experience.",
+      "Visitors can read about treatments and the practice before making an appointment enquiry. Patient guidance sits alongside the service information.",
     technologies: [],
     thumbnail: "/projects/cbdentistry.png",
   },
   {
     id: "digiacai",
-    name: "Digi Acai",
+    website: "https://digiacai.com/",
+    name: "SEO & Marketing Agency Website",
     category: "Agency",
-    description: "SEO and marketing agency website",
+    description: "A website for an SEO and marketing agency",
     detail:
-      "A bold brand presentation with services, client work, and enquiry forms.",
+      "Agency services, client stories, and enquiry forms in a purple brand palette.",
     summary:
-      "An expressive agency website with a distinctive purple identity, service information, client stories, and clear paths to start a conversation.",
+      "Digi Acai uses a purple visual identity across its agency website. Service information and client stories explain the work, with enquiry forms for prospective clients.",
     technologies: [],
     thumbnail: "/projects/digiacai.png",
   },
   {
     id: "neha-agarwal",
-    name: "Neha Agarwal",
+    website: "https://nehaagarwal.in/",
+    name: "Speaker & Workshop Website",
     category: "Personal brand",
-    description: "Personal brand and speaker website",
-    detail: "A personal story, speaking engagements, workshops, and writing.",
+    description: "A speaker’s personal website",
+    detail:
+      "Her story and writing alongside speaking engagements, workshops, and press.",
     summary:
-      "A personal brand website that connects a professional introduction with speaking, workshops, press appearances, and articles in a clean editorial layout.",
+      "The website introduces Neha Agarwal through her personal story and professional work. Speaking engagements and workshops sit alongside articles and press appearances in an editorial layout.",
     technologies: [],
     thumbnail: "/projects/neha-agarwal.png",
   },
   {
     id: "prerna-ghosh",
-    name: "Prerna Ghosh",
+    name: "Fashion & Accessories Store",
     category: "Retail",
-    description: "Fashion storefront",
+    description: "A fashion store built on Shopify",
     detail:
-      "Collection-led browsing for clothing, accessories, and seasonal edits.",
+      "Clothing and accessories organized into collections and seasonal edits.",
     summary:
-      "An image-led fashion storefront that presents collections and individual pieces through editorial photography, product grids, and straightforward category navigation.",
+      "Editorial photography introduces the fashion collections and individual pieces. Shoppers can browse clothing, accessories, and seasonal edits through product grids and category navigation.",
     technologies: ["Shopify"],
     thumbnail: "/projects/prerna-ghosh.png",
   },
   {
     id: "priyanka-gill",
-    name: "Priyanka Gill",
+    website: "https://www.priyankagill.com/",
+    name: "Personal Website & Writing",
     category: "Personal brand",
-    description: "Personal brand and editorial website",
+    description: "A personal website for her work and writing",
     detail:
-      "Biography, career milestones, press, articles, and podcast content.",
+      "Biography and career milestones alongside press coverage, articles, and podcasts.",
     summary:
-      "A personal website that brings together a professional journey, writing, media coverage, and podcast content, using blush and yellow accents to create a distinct editorial identity.",
+      "Priyanka Gill’s website brings her biography and career milestones together with writing, media coverage, and podcasts. Blush and yellow accents run through the editorial layout.",
     technologies: [],
     thumbnail: "/projects/priyanka-gill.png",
   },
   {
     id: "sauga-smiles",
-    name: "Sauga Smiles Dental",
+    website: "https://saugasmilesdental.com/",
+    name: "Dental Services Website",
     category: "Healthcare",
-    description: "Dental practice website",
+    description: "A dental website with patient information",
     detail:
-      "Treatments, practice information, and appointment calls to action.",
+      "Treatments and practice details, with links for appointment enquiries.",
     summary:
-      "A calm dental website with a purple visual identity, readable service information, practice photography, and prominent appointment links.",
+      "A purple palette and practice photography give the dental website its visual style. Patients can read treatment information, learn about the practice, and follow links to enquire about appointments.",
     technologies: [],
     thumbnail: "/projects/sauga-smiles.png",
   },
   {
     id: "shop-minis",
-    name: "Minis",
+    website: "https://www.shopminis.in/",
+    name: "Swimwear & Resortwear Store",
     category: "Retail",
-    description: "Swimwear and resortwear storefront",
-    detail: "Campaign photography, collection browsing, and product discovery.",
+    description: "An online store for swimwear and resortwear",
+    detail:
+      "Beach campaign photography leads into collections and individual products.",
     summary:
-      "A vibrant fashion storefront that combines beach campaign imagery with collections, product grids, and a playful visual identity.",
+      "Minis uses beach campaign imagery and a playful visual identity across its storefront. Collection browsing and product grids let shoppers explore the swimwear and resortwear.",
     technologies: [],
     thumbnail: "/projects/shop-minis.png",
   },
   {
     id: "the-clothing-factory",
-    name: "The Clothing Factory",
+    website: "https://theclothingfactory.in/",
+    name: "Fashion & Lifestyle Store",
     category: "Retail",
-    description: "Fashion and lifestyle storefront",
+    description: "A fashion and lifestyle store",
     detail:
-      "Seasonal campaigns, product collections, and shop-by-occasion browsing.",
+      "Seasonal campaigns and collections, with browsing by category and occasion.",
     summary:
-      "A fashion storefront that organizes a broad collection through campaign imagery, category navigation, product grids, and editorial collection pages.",
+      "The storefront organizes fashion and lifestyle products through seasonal campaigns, category navigation, and product grids. Editorial collection pages and occasion-based browsing provide other routes into the range.",
     technologies: [],
     thumbnail: "/projects/the-clothing-factory.png",
   },
   {
     id: "the-design-atelier",
-    name: "The Design Atelier",
+    website: "https://thedesignatelier.com/",
+    name: "Interior Design Portfolio",
     category: "Interiors",
-    description: "Interior design portfolio website",
+    description: "An interior design studio’s portfolio",
     detail:
-      "An architectural image gallery with studio information and contact.",
+      "Project photography takes the lead, with studio details and contact information.",
     summary:
-      "A restrained interiors portfolio that gives project photography room to lead, supported by elegant typography, simple navigation, and studio information.",
+      "The Design Atelier’s portfolio puts architectural project photography first. Understated typography and simple navigation support the gallery, with information about the studio and how to contact it.",
     technologies: [],
     thumbnail: "/projects/the-design-atelier.png",
   },
   {
     id: "spline-animation",
-    name: "Spline Animation",
+    website: "https://spline-animation.vercel.app/",
+    name: "Interactive 3D Landing Page",
     category: "Interactive",
-    description: "3D landing page exploration",
-    detail:
-      "An atmospheric orange sphere and terrain scene with a focused hero layout.",
+    description: "A dark landing page with an interactive 3D scene",
+    detail: "An orange sphere and terrain animation built with Spline.",
     summary:
-      "An interactive design exploration built around a 3D sphere and terrain scene, bringing depth and motion to a dark landing page.",
+      "This landing page exploration uses Spline for an interactive sphere and terrain scene. The orange sphere is the focal point against a dark background, with motion adding depth to the hero layout.",
     technologies: ["Spline"],
     thumbnail: "/projects/spline-animation.png",
   },
   {
     id: "url-shortener",
-    name: "URL Shortener",
+    website: "https://url-shortner-client-eight.vercel.app/",
+    name: "Link Shortener",
     category: "Web app",
-    description: "Link-shortening interface",
-    detail: "A focused URL entry form and a clear link-management entry point.",
+    description: "An interface for shortening and managing links",
+    detail:
+      "A URL form with a link-management entry point on a dark background.",
     summary:
-      "A compact web app interface for link shortening, using a dark canvas and violet-to-cyan accents to keep attention on its URL form.",
+      "The interface centers on entering a URL, with an entry point for managing links. Violet-to-cyan accents draw attention to the form against the dark background.",
     technologies: [],
     thumbnail: "/projects/url-shortener.png",
   },
@@ -214,32 +233,32 @@ export const SERVICES = [
   {
     icon: "code",
     title: "Full-stack development",
-    description: "End-to-end web applications using modern technologies.",
+    description: "I build the interface and the systems behind your web app.",
   },
   {
     icon: "phone",
     title: "Responsive interfaces",
-    description: "Clean, accessible experiences that work everywhere.",
+    description: "Accessible interfaces that work across screen sizes.",
   },
   {
     icon: "database",
     title: "Connected systems",
-    description: "Integrations, APIs, and data that work together.",
+    description: "I connect your tools through APIs so they can share data.",
   },
   {
     icon: "cloud",
     title: "Reliable deployments",
-    description: "Production-ready builds and hosting setup.",
+    description: "I prepare your app for production and set up its hosting.",
   },
   {
     icon: "message",
     title: "Clear communication",
-    description: "Straightforward updates throughout the process.",
+    description: "You get regular updates on the work as it progresses.",
   },
   {
     icon: "chart",
     title: "Ongoing improvements",
-    description: "Iterate, optimize, and add new features over time.",
+    description: "I improve performance and add features as your needs change.",
   },
 ] as const
 
@@ -247,22 +266,22 @@ export const FAQS = [
   {
     question: "What kind of projects do you build?",
     answer:
-      "Websites, web applications, admin platforms, and integrations built around real business needs.",
+      "I build websites, web apps, and admin platforms. I also connect them to the other tools your business uses.",
   },
   {
     question: "Can you work on an existing project?",
     answer:
-      "Yes. I can help improve an existing website or application, build new features, and connect it to the systems you already use.",
+      "Yes. I can improve your existing website or app, add features, or connect it to the systems you already use.",
   },
   {
     question: "How do we get started?",
     answer:
-      "Send me a message with a little about your project, your goals, and your timeline. We’ll talk through the scope and next steps.",
+      "Tell me about your project, what you want it to do, and when you need it. We’ll work out the scope and next steps together.",
   },
   {
     question: "Do you offer ongoing support?",
     answer:
-      "Yes. I can help with maintenance, deployments, performance improvements, and new features as your project grows.",
+      "Yes. I can maintain and deploy your app, improve its performance, and add features as your project grows.",
   },
 ]
 
@@ -270,22 +289,21 @@ export const CONTACT_FAQS = [
   {
     question: "What should I include in my message?",
     answer:
-      "Tell me what you’re building, who it’s for, and what you need help with. If you have a timeline, budget range, or an existing website, include those too.",
+      "Tell me what you need help with and who will use the website or app. A link to your existing site is useful, along with any timeline or budget you have in mind.",
   },
   {
     question: "Can I reach out without a detailed brief?",
     answer:
-      "Absolutely. A rough idea and a few goals are enough to start. We can work through the details together.",
+      "Yes. Tell me what you have in mind, even if you’re still figuring it out. We can talk through the details together.",
   },
   {
-    question: "What happens after I reach out?",
-    answer:
-      "The form is currently a demo and does not send messages. Email me directly so we can discuss your goals and next steps.",
+    question: "How should I get in touch?",
+    answer: "Email me directly to discuss your project and next steps.",
   },
   {
     question: "Can we work together beyond the initial project?",
     answer:
-      "Yes. If you need maintenance, improvements, or new features over time, mention that in your message so we can discuss an arrangement that fits your project.",
+      "Yes. I can help with maintenance and improvements after launch. Mention what support you need when you get in touch, and we’ll discuss how to handle it.",
   },
 ] as const
 
@@ -306,7 +324,7 @@ export const NAVIGATION_ITEMS = [
 ] as const
 
 export const FOOTER_DESCRIPTION =
-  "Building practical web applications that solve real problems."
+  "I build web applications to help with everyday business tasks."
 
 export const FOOTER_EXPLORE_LINKS = [
   { label: "Work", to: "/work" },

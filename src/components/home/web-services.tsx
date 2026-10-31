@@ -21,13 +21,13 @@ export function WebServices() {
           What I do
         </p>
         <h2 className="text-3xl leading-tight font-bold tracking-tight sm:text-4xl">
-          Anything and
+          Websites and tools
           <br />
-          everything web.
+          for your business.
         </h2>
         <p className="mt-4 max-w-72 text-sm leading-relaxed text-muted-foreground">
-          A new website, an online store, or tools for your team. Choose the
-          help your business needs.
+          I build websites and online stores, along with tools for your team. I
+          also handle integrations, deployment, and ongoing updates.
         </p>
         <ul className="mt-6 space-y-3">
           {SERVICES.map(({ icon, label }) => (
@@ -66,14 +66,11 @@ export function WebServices() {
             <div className="mb-5 flex size-9 items-center justify-center rounded-lg bg-primary/10 text-primary-text">
               <Icon name="code" className="size-5" />
             </div>
-            <p className="text-lg font-semibold tracking-tight">
-              Your next idea.
-            </p>
+            <p className="text-lg font-semibold tracking-tight">Your project</p>
             <div className="mt-3 h-1.5 w-4/5 rounded-full bg-muted" />
             <div className="mt-2 h-1.5 w-3/5 rounded-full bg-muted" />
             <div className="mt-5 flex items-center justify-between rounded-md border border-primary/15 bg-primary/5 px-3 py-2 text-xs text-primary-text">
-              Ready for the real world{" "}
-              <Icon name="check" className="size-3.5" />
+              Ready to launch <Icon name="check" className="size-3.5" />
             </div>
           </div>
           <div className="grid grid-cols-3 divide-x divide-border border-t border-border">
