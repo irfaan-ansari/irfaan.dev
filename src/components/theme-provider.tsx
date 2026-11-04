@@ -20,6 +20,16 @@ type ThemeProviderProps = {
   storageKey?: string
 }
 
+const primaryColorValues = PRIMARY_COLORS.map((color) => color.value)
+
+function savePreference(key: string, value: string) {
+  try {
+    localStorage.setItem(key, value)
+  } catch {
+    // Apply the preference even if it cannot be saved.
+  }
+}
+
 export function ThemeProvider({
   children,
   defaultTheme = "system",
@@ -33,9 +43,10 @@ export function ThemeProvider({
     const saved = readThemePreferences(
       storageKey,
       defaultTheme,
-      PRIMARY_COLORS.map((color) => color.value),
+      primaryColorValues,
       APPEARANCE_STORAGE_KEY
     )
+
     setThemeState(saved.theme)
     setPrimaryColorState(saved.primaryColor)
     setMounted(true)
@@ -43,33 +54,32 @@ export function ThemeProvider({
 
   useEffect(() => {
     if (!mounted) return
-    applyTheme(theme)
+
     document.documentElement.dataset.accent = primaryColor
-  }, [theme, primaryColor, mounted])
+  }, [primaryColor, mounted])
 
   useEffect(() => {
-    if (!mounted || theme !== "system") return
+    if (!mounted) return
+
+    applyTheme(theme)
+
+    if (theme !== "system") return
+
     const media = window.matchMedia("(prefers-color-scheme: dark)")
+
     const onChange = () => applyTheme("system")
     media.addEventListener("change", onChange)
+
     return () => media.removeEventListener("change", onChange)
   }, [theme, mounted])
 
   const setTheme = (next: Theme) => {
-    try {
-      localStorage.setItem(storageKey, next)
-    } catch {
-      // Apply the preference even if it cannot be saved.
-    }
+    savePreference(storageKey, next)
     setThemeState(next)
   }
 
   const setPrimaryColor = (next: PrimaryColor) => {
-    try {
-      localStorage.setItem(`${storageKey}-accent`, next)
-    } catch {
-      // Apply the preference even if it cannot be saved.
-    }
+    savePreference(`${storageKey}-accent`, next)
     setPrimaryColorState(next)
   }
 

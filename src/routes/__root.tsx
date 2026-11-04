@@ -4,12 +4,15 @@ import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router"
 import { NotFound } from "@/components/layout/not-found"
 import { SiteLayout } from "@/components/layout/site-layout"
 import { ThemeProvider } from "@/components/theme-provider"
+import { useEffect } from "react"
+import { Toaster } from "@/components/ui/toast"
 
 export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "theme-color", content: "#000000" },
       { title: "Irfaan — Full Stack Developer" },
       {
         name: "description",
@@ -49,6 +52,18 @@ export const Route = createRootRoute({
 })
 
 function RootDocument({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+    if (import.meta.env.PROD && "serviceWorker" in navigator) {
+      void import("virtual:pwa-register").then(({ registerSW }) => {
+        registerSW({
+          onRegisterError(error: unknown) {
+            console.error("Service worker registration failed:", error)
+          },
+        })
+      })
+    }
+  }, [])
+
   return (
     <html
       lang="en"
@@ -63,6 +78,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           <SiteLayout>{children}</SiteLayout>
         </ThemeProvider>
         <Scripts />
+        <Toaster />
       </body>
     </html>
   )

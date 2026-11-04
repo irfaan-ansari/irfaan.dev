@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <title>You're offline — Irfaan</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: system-ui, sans-serif;
+      }
+      body {
+        margin: 0;
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        background: light-dark(#fafafa, #111);
+        color: light-dark(#171717, #fafafa);
+      }
+      main {
+        max-width: 28rem;
+        padding: 2rem;
+      }
+      .name {
+        font-size: 0.875rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      h1 {
+        font-size: clamp(2rem, 8vw, 3rem);
+        line-height: 1.1;
+      }
+      p {
+        line-height: 1.7;
+      }
+      a {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.8rem 1.2rem;
+        border-radius: 0.6rem;
+        background: light-dark(#171717, #fafafa);
+        color: light-dark(#fff, #171717);
+        text-decoration: none;
+      }
+      a:focus-visible {
+        outline: 3px solid #888;
+        outline-offset: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="name">Irfaan · Developer</p>
+      <h1>You're offline.</h1>
+      <p>
+        Connect to the internet to explore my projects and articles, then try
+        again.
+      </p>
+      <a href="/">Try again</a>
+    </main>
+  </body>
+</html>

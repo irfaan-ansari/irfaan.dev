@@ -11,6 +11,7 @@ import {
 import { Logo } from "@/components/shared/logo"
 import { Icon } from "@/components/shared/icon"
 import { Button } from "@/components/ui/button"
+import { InstallApp } from "@/components/install-app"
 
 export function SiteFooter() {
   return (
@@ -47,6 +48,7 @@ export function SiteFooter() {
             >
               <Icon name="github" />
             </a>
+            <InstallApp />
           </div>
           <nav aria-label="Connect">
             <p className="mb-3 font-heading text-xs font-medium tracking-wider text-muted-foreground">
